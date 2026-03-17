@@ -10,30 +10,49 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../../../index.html">
-      <span class="brand-mark">GS</span>
-      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Galactic-Shrine Standards Portal">
+      <img class="brand-logo" src="/assets/img/gs-wordmark.svg" alt="Galactic-Shrine">
+      <span class="sr-only">Galactic-Shrine Standards Portal</span>
     </a>
-    <nav class="nav desktop-only" aria-label="Navigation principale">
-      <a data-nav href="../../../index.html">Accueil</a>
-      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
-      <a data-nav href="../../../standards/coding/index.html">Coding</a>
-      <a data-nav href="../../../search/index.html">Recherche</a>
-      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
-      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Coding</a>
+      <a data-nav href="/search/index.html">Recherche</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
     </nav>
+
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Search" aria-label="Rechercher dans le portail">
+      <button type="submit">Search</button>
+    </form>
+
+    <nav class="nav desktop-only meta-nav" aria-label="Navigation secondaire">
+      <a href="/README.md">Connections</a>
+      <a href="https://github.com/Galactic-Shrine" target="_blank" rel="noreferrer">Github Connections</a>
+    </nav>
+
     <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
   </div>
+
   <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Search" aria-label="Rechercher dans le portail">
+      <button type="submit">Search</button>
+    </form>
     <nav class="nav" aria-label="Navigation mobile">
-      <a data-nav href="../../../index.html">Accueil</a>
-      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
-      <a data-nav href="../../../standards/coding/index.html">Coding</a>
-      <a data-nav href="../../../search/index.html">Recherche</a>
-      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
-      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Coding</a>
+      <a data-nav href="/search/index.html">Recherche</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+      <a href="/README.md">Connections</a>
+      <a href="https://github.com/Galactic-Shrine" target="_blank" rel="noreferrer">Github Connections</a>
     </nav>
   </div>
 </header>
@@ -317,11 +336,12 @@ Optimiser les zones identifiées comme coûteuses, mesurées ou critiques.</p>
 
 <footer class="site-footer">
   <div class="container footer-row">
-    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="small">© <span id="currentYear"></span> Galactic-Shrine • Tous droits réservés.</div>
     <div class="quick-links small">
-      <a href="../../../index.html">Accueil</a>
-      <a href="../../../search/index.html">Recherche</a>
-      <a href="../../../README.md">README</a>
+      <a href="/index.html">Accueil</a>
+      <a href="/search/index.html">Recherche</a>
+      <a href="/README.md">README</a>
+      <a href="https://github.com/Galactic-Shrine" target="_blank" rel="noreferrer">GitHub</a>
     </div>
   </div>
 </footer>
