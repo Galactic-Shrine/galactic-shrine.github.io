@@ -1,4 +1,4 @@
-name: Deploy Galactic-Shrine Standards
+name: Build and publish site to deploy branch
 
 on:
   push:
@@ -7,20 +7,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: deploy-branch
   cancel-in-progress: true
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -34,21 +35,42 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Disable Jekyll processing
+        run: touch _site/.nojekyll
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
+      - name: Publish _site to deploy branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: deploy
+        run: |
+          set -euo pipefail
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          PUBLISH_DIR="/tmp/pages-deploy"
+
+          rm -rf "${PUBLISH_DIR}"
+          git clone "${REPO_URL}" "${PUBLISH_DIR}"
+
+          cd "${PUBLISH_DIR}"
+
+          if git ls-remote --exit-code --heads origin "${PUBLISH_BRANCH}" > /dev/null 2>&1; then
+            git checkout -B "${PUBLISH_BRANCH}" "origin/${PUBLISH_BRANCH}"
+          else
+            git checkout --orphan "${PUBLISH_BRANCH}"
+            git rm -rf . > /dev/null 2>&1 || true
+          fi
+
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+
+          cp -R "${GITHUB_WORKSPACE}/_site/." .
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git add --all
+            git commit -m "Deploy from ${GITHUB_SHA}"
+            git push origin "${PUBLISH_BRANCH}" --force
+          else
+            echo "No changes to publish."
+          fi
