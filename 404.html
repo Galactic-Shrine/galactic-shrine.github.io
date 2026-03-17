@@ -3,19 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404 • Galactic-Shrine Standards Portal</title>
+  <title>404 • Page introuvable</title>
+  <meta name="description" content="Page introuvable.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <main class="container" style="padding:5rem 0;">
-    <div class="hero-card" style="max-width:760px;margin:0 auto;">
-      <div class="eyebrow">Erreur 404</div>
-      <h1>Page introuvable</h1>
-      <p>Le contenu demandé n’existe pas ou a été déplacé. Reviens à l’accueil du portail.</p>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">GS</span>
+      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+    </a>
+    <nav class="nav desktop-only" aria-label="Navigation principale">
+      <a data-nav href="index.html">Accueil</a>
+      <a data-nav href="standards/documentation/index.html">Documentation</a>
+      <a data-nav href="standards/coding/index.html">Coding</a>
+      <a data-nav href="search/index.html">Recherche</a>
+      <a href="downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="index.html">Accueil</a>
+      <a data-nav href="standards/documentation/index.html">Documentation</a>
+      <a data-nav href="standards/coding/index.html">Coding</a>
+      <a data-nav href="search/index.html">Recherche</a>
+      <a href="downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="kicker">404</div>
+      <h1 class="page-title">Page introuvable</h1>
+      <p class="page-intro">La page demandée n’existe pas ou n’est plus disponible à cette adresse.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="index.html">Retour à l’accueil</a>
+        <a class="button button-primary" href="/index.html">Retour à l’accueil</a>
+        <a class="button" href="/search/index.html">Ouvrir la recherche</a>
       </div>
     </div>
-  </main>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="quick-links small">
+      <a href="index.html">Accueil</a>
+      <a href="search/index.html">Recherche</a>
+      <a href="README.md">README</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galactic-Shrine Coding Standard</title>
+  <meta name="description" content="Ce standard définit les **conventions de codage transversales** applicables dans les projets Galactic-Shrine.">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-mark">GS</span>
+      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+    </a>
+    <nav class="nav desktop-only" aria-label="Navigation principale">
+      <a data-nav href="../../../index.html">Accueil</a>
+      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../../search/index.html">Recherche</a>
+      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="../../../index.html">Accueil</a>
+      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../../search/index.html">Recherche</a>
+      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../../../index.html">Accueil</a> <span>›</span>
+        <a href="../../../standards/coding/index.html">Coding Standards</a> <span>›</span>
+        <span>Galactic-Shrine Coding Standard</span>
+      </div>
+      <div class="kicker">Coding • GalacticShrineCodingStandard.md</div>
+      <h1 class="page-title">Galactic-Shrine Coding Standard</h1>
+      <p class="page-intro">Ce standard définit les **conventions de codage transversales** applicables dans les projets Galactic-Shrine.</p>
+      <div class="tag-list">
+        <span class="tag">Version 1.0.0</span>
+        <span class="tag">Standards transversaux</span><span class="tag">Bibliothèques</span><span class="tag">Frameworks</span><span class="tag">SDKs</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container viewer-layout">
+      <aside class="sidebar-card">
+        <div class="eyebrow">Dans cette section</div>
+        <nav><a class="" href="../docs/CSharpCodingStandard.html">Galactic-Shrine C# Coding Standard</a><a class="" href="../docs/CppCodingStandard.html">Galactic-Shrine C++ Coding Standard</a><a class="active" href="../docs/GalacticShrineCodingStandard.html">Galactic-Shrine Coding Standard</a><a class="" href="../docs/HtmlCodingStandard.html">Galactic-Shrine HTML Coding Standard</a><a class="" href="../docs/JsCodingStandard.html">Galactic-Shrine JavaScript Coding Standard</a><a class="" href="../docs/PhpCodingStandard.html">Galactic-Shrine PHP Coding Standard</a><a class="" href="../docs/ScssCodingStandard.html">Galactic-Shrine SCSS Coding Standard</a><a class="" href="../docs/TwigCodingStandard.html">Galactic-Shrine Twig Coding Standard</a></nav>
+        <div class="eyebrow" style="margin-top:1rem;">Sommaire</div>
+        <ul class="toc-list">
+          <li class="lvl-2"><a href="#1-objectif">1. Objectif</a></li>
+<li class="lvl-2"><a href="#2-principes-fondamentaux">2. Principes fondamentaux</a></li>
+<li class="lvl-2"><a href="#3-decisions-transversales-officielles">3. Décisions transversales officielles</a></li>
+<li class="lvl-2"><a href="#4-convention-de-nommage-globale">4. Convention de nommage globale</a></li>
+<li class="lvl-3"><a href="#41-types">4.1 Types</a></li>
+<li class="lvl-3"><a href="#42-membres">4.2 Membres</a></li>
+<li class="lvl-3"><a href="#43-fichiers-et-dossiers">4.3 Fichiers et dossiers</a></li>
+<li class="lvl-2"><a href="#5-structure-des-fichiers">5. Structure des fichiers</a></li>
+<li class="lvl-2"><a href="#6-regles-de-style">6. Règles de style</a></li>
+<li class="lvl-3"><a href="#61-lisibilite">6.1 Lisibilité</a></li>
+<li class="lvl-3"><a href="#62-conditions">6.2 Conditions</a></li>
+<li class="lvl-3"><a href="#63-commentaires">6.3 Commentaires</a></li>
+<li class="lvl-3"><a href="#64-donnees-temporaires">6.4 Données temporaires</a></li>
+<li class="lvl-2"><a href="#7-architecture-locale">7. Architecture locale</a></li>
+<li class="lvl-2"><a href="#8-validation-erreurs-et-nullabilite">8. Validation, erreurs et nullabilité</a></li>
+<li class="lvl-2"><a href="#9-securite-performance-et-compatibilite">9. Sécurité, performance et compatibilité</a></li>
+<li class="lvl-2"><a href="#10-exceptions-au-standard">10. Exceptions au standard</a></li>
+<li class="lvl-2"><a href="#11-decision-officielle-recommandee">11. Décision officielle recommandée</a></li>
+<li class="lvl-2"><a href="#12-resume-executable">12. Résumé exécutable</a></li>
+        </ul>
+      </aside>
+
+      <article class="viewer-shell">
+        <div class="viewer-header">
+          <div>
+            <div class="eyebrow">Fichier source</div>
+            <div class="quick-links">
+              <a class="button small button-primary" href="../files/GalacticShrineCodingStandard.md">Télécharger le Markdown</a>
+              <a class="button small" href="../../../search/index.html">Recherche globale</a>
+            </div>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Coding Standards</span>
+            <span class="tag">Standards transversaux / Bibliothèques / Frameworks / SDKs / Applications / Services / APIs / Outils internes / Produits Galactic-Shrine</span>
+          </div>
+        </div>
+        <div class="viewer-body"><h1 id="galactic-shrine-coding-standard">Galactic-Shrine Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br />
+<strong>Portée / Scope:</strong> Standards transversaux / Bibliothèques / Frameworks / SDKs / Applications / Services / APIs / Outils internes / Produits Galactic-Shrine</p>
+<hr />
+<h2 id="1-objectif">1. Objectif</h2>
+<p>Ce standard définit les <strong>conventions de codage transversales</strong> applicables dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser l’écriture du code entre les langages ;</li>
+<li>d’améliorer la lisibilité, la maintenabilité et la relecture ;</li>
+<li>de réduire les divergences de style entre projets et contributeurs ;</li>
+<li>de fixer les règles de nommage, de structure et de robustesse ;</li>
+<li>de fournir une base commune avant les standards spécifiques par langage.</li>
+</ul>
+<hr />
+<h2 id="2-principes-fondamentaux">2. Principes fondamentaux</h2>
+<p>Le code Galactic-Shrine doit être :</p>
+<ul>
+<li>clair ;</li>
+<li>cohérent ;</li>
+<li>explicite ;</li>
+<li>maintenable ;</li>
+<li>robuste ;</li>
+<li>raisonnablement extensible.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>la lisibilité avant l’astuce ;</li>
+<li>la cohérence avant les préférences individuelles ;</li>
+<li>des responsabilités courtes et bien délimitées ;</li>
+<li>des noms explicites ;</li>
+<li>des contrats d’entrée et de sortie compréhensibles ;</li>
+<li>des structures simples à relire.</li>
+</ul>
+<hr />
+<h2 id="3-decisions-transversales-officielles">3. Décisions transversales officielles</h2>
+<p>Décisions officielles Galactic-Shrine applicables par défaut :</p>
+<ul>
+<li>les <strong>propriétés</strong> doivent être en <code>PascalCase</code> ;</li>
+<li>les <strong>paramètres</strong> doivent être en <code>PascalCase</code> ;</li>
+<li>les <strong>méthodes / fonctions</strong> doivent être en <code>PascalCase</code> ;</li>
+<li>les <strong>types</strong> doivent être en <code>PascalCase</code> ;</li>
+<li>les <strong>constantes nommées</strong> doivent être en <code>PascalCase</code>, sauf contrainte forte du langage ou d’un standard externe ;</li>
+<li>les abréviations doivent rester lisibles et stables (<code>HttpClient</code>, <code>XmlWriter</code>, <code>UuidValue</code>) ;</li>
+<li>un nom doit décrire l’intention, pas seulement l’implémentation.</li>
+</ul>
+<p>Règle d’exception :</p>
+<blockquote>
+<p>Une convention imposée par un framework, une API externe, une sérialisation, une interopérabilité, un standard public ou un langage peut justifier une dérogation locale.<br />
+Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement justifiée.</p>
+</blockquote>
+<hr />
+<h2 id="4-convention-de-nommage-globale">4. Convention de nommage globale</h2>
+<h3 id="41-types">4.1 Types</h3>
+<ul>
+<li>classes : <code>PascalCase</code></li>
+<li>interfaces : préfixe propre au langage si nécessaire, sinon <code>PascalCase</code></li>
+<li>structures / structs : <code>PascalCase</code></li>
+<li>enums : <code>PascalCase</code></li>
+<li>namespaces / packages / modules : selon les usages du langage, mais de manière stable et prévisible</li>
+</ul>
+<h3 id="42-membres">4.2 Membres</h3>
+<ul>
+<li>propriétés : <code>PascalCase</code></li>
+<li>méthodes : <code>PascalCase</code></li>
+<li>paramètres : <code>PascalCase</code></li>
+<li>événements : <code>PascalCase</code></li>
+<li>champs privés : convention locale du langage, mais cohérente dans tout le projet</li>
+<li>variables locales : convention locale du langage, mais éviter les formes ambiguës ou cryptiques</li>
+</ul>
+<h3 id="43-fichiers-et-dossiers">4.3 Fichiers et dossiers</h3>
+<ul>
+<li>un nom de fichier doit refléter clairement le contenu principal ;</li>
+<li>éviter les noms vagues comme <code>Helper</code>, <code>Utils</code>, <code>Common</code>, <code>Misc</code> sans qualification ;</li>
+<li>préférer des regroupements fonctionnels clairs plutôt qu’un rangement opportuniste.</li>
+</ul>
+<hr />
+<h2 id="5-structure-des-fichiers">5. Structure des fichiers</h2>
+<p>Chaque fichier doit tendre vers une structure simple et prévisible.</p>
+<p>Ordre recommandé lorsque le langage le permet :</p>
+<ol>
+<li>en-tête légal ou technique si requis ;</li>
+<li>déclarations globales (<code>namespace</code>, <code>module</code>, <code>use</code>, <code>import</code>, <code>include</code>) ;</li>
+<li>types, fonctions ou constantes publics principaux ;</li>
+<li>implémentations privées ou détails internes ;</li>
+<li>éventuels helpers strictement liés au fichier.</li>
+</ol>
+<p>Règles générales :</p>
+<ul>
+<li>un fichier doit avoir une responsabilité identifiable ;</li>
+<li>éviter de mélanger API publique, logique métier et utilitaires génériques sans lien ;</li>
+<li>éviter les fichiers “fourre-tout”.</li>
+</ul>
+<hr />
+<h2 id="6-regles-de-style">6. Règles de style</h2>
+<h3 id="61-lisibilite">6.1 Lisibilité</h3>
+<ul>
+<li>préférer des blocs courts ;</li>
+<li>réduire l’imbrication quand un retour anticipé améliore la lecture ;</li>
+<li>éviter les expressions trop compactes si elles nuisent à la compréhension ;</li>
+<li>garder un style stable sur tout le projet.</li>
+</ul>
+<h3 id="62-conditions">6.2 Conditions</h3>
+<ul>
+<li>une condition doit exprimer une intention claire ;</li>
+<li>éviter les doubles négations ;</li>
+<li>extraire une variable nommée lorsque l’expression devient difficile à lire ;</li>
+<li>documenter les cas métier non évidents.</li>
+</ul>
+<h3 id="63-commentaires">6.3 Commentaires</h3>
+<ul>
+<li>commenter le <strong>pourquoi</strong> et le <strong>contrat</strong>, pas chaque ligne évidente ;</li>
+<li>éviter les commentaires qui répètent exactement le nom de la méthode ;</li>
+<li>conserver une cohérence avec les standards de documentation Galactic-Shrine.</li>
+</ul>
+<h3 id="64-donnees-temporaires">6.4 Données temporaires</h3>
+<ul>
+<li>limiter la durée de vie des variables locales ;</li>
+<li>éviter les mutations inutiles ;</li>
+<li>rapprocher la déclaration de l’usage réel.</li>
+</ul>
+<hr />
+<h2 id="7-architecture-locale">7. Architecture locale</h2>
+<p>Le code Galactic-Shrine doit éviter :</p>
+<ul>
+<li>les classes ou modules “dieu” ;</li>
+<li>les helpers génériques sans périmètre clair ;</li>
+<li>les méthodes longues qui mélangent plusieurs responsabilités ;</li>
+<li>les dépendances implicites difficiles à tracer ;</li>
+<li>les effets de bord cachés.</li>
+</ul>
+<p>Le code doit favoriser :</p>
+<ul>
+<li>une responsabilité par type ou fonction principale ;</li>
+<li>des dépendances explicites ;</li>
+<li>une séparation nette entre orchestration, logique métier et accès technique ;</li>
+<li>des noms de types orientés intention (<code>Service</code>, <code>Provider</code>, <code>Factory</code>, <code>Builder</code>, <code>Repository</code>, <code>Mapper</code>, <code>Validator</code>, <code>Options</code>, <code>Result</code>, selon le langage et le besoin réel).</li>
+</ul>
+<hr />
+<h2 id="8-validation-erreurs-et-nullabilite">8. Validation, erreurs et nullabilité</h2>
+<p>Règles générales :</p>
+<ul>
+<li>valider les entrées aux frontières importantes ;</li>
+<li>échouer tôt sur les données invalides ;</li>
+<li>distinguer autant que possible erreur métier, erreur technique et absence de donnée ;</li>
+<li>ne pas masquer silencieusement une erreur importante ;</li>
+<li>produire des messages d’erreur utiles au diagnostic.</li>
+</ul>
+<p>La nullabilité doit être traitée explicitement :</p>
+<ul>
+<li>accepter <code>null</code> uniquement si cela a du sens dans le contrat ;</li>
+<li>éviter les valeurs sentinelles ambiguës ;</li>
+<li>documenter les cas optionnels.</li>
+</ul>
+<hr />
+<h2 id="9-securite-performance-et-compatibilite">9. Sécurité, performance et compatibilité</h2>
+<p>Le code doit :</p>
+<ul>
+<li>éviter les concaténations non sûres pour les requêtes, chemins, commandes ou expressions évaluées ;</li>
+<li>normaliser et valider les entrées externes ;</li>
+<li>éviter l’exposition involontaire de données sensibles dans les logs ;</li>
+<li>viser une performance raisonnable sans sacrifier la lisibilité prématurément ;</li>
+<li>rester compatible avec les contraintes de la plateforme cible.</li>
+</ul>
+<p>Règle :</p>
+<blockquote>
+<p>Ne pas optimiser spéculativement.<br />
+Optimiser les zones identifiées comme coûteuses, mesurées ou critiques.</p>
+</blockquote>
+<hr />
+<h2 id="10-exceptions-au-standard">10. Exceptions au standard</h2>
+<p>Une exception au standard est acceptable si :</p>
+<ul>
+<li>elle répond à une contrainte réelle du langage ou du framework ;</li>
+<li>elle améliore clairement l’interopérabilité ;</li>
+<li>elle évite une complexité artificielle ;</li>
+<li>elle reste locale et documentée.</li>
+</ul>
+<p>Une exception n’est pas acceptable si :</p>
+<ul>
+<li>elle repose seulement sur une préférence personnelle ;</li>
+<li>elle crée deux styles concurrents dans le même projet ;</li>
+<li>elle réduit la lisibilité générale ;</li>
+<li>elle affaiblit le contrat de code.</li>
+</ul>
+<hr />
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine Coding :</p>
+<ul>
+<li>imposer <code>PascalCase</code> pour <strong>propriétés</strong>, <strong>paramètres</strong> et <strong>méthodes</strong> ;</li>
+<li>garder des noms explicites et stables ;</li>
+<li>structurer les fichiers et les responsabilités de manière prévisible ;</li>
+<li>limiter la taille et la complexité des blocs ;</li>
+<li>valider les entrées importantes ;</li>
+<li>documenter les dérogations imposées par l’écosystème ;</li>
+<li>conserver une cohérence stricte à l’échelle du dépôt.</li>
+</ul>
+<hr />
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets Galactic-Shrine :</p>
+<ul>
+<li>écrire un code clair, stable et relisible ;</li>
+<li>utiliser <code>PascalCase</code> pour propriétés, paramètres et méthodes ;</li>
+<li>éviter les fichiers et types “fourre-tout” ;</li>
+<li>préférer des responsabilités courtes ;</li>
+<li>valider les entrées et traiter les erreurs explicitement ;</li>
+<li>ne déroger au standard que pour une raison technique réelle.</li>
+</ul>
+</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="quick-links small">
+      <a href="../../../index.html">Accueil</a>
+      <a href="../../../search/index.html">Recherche</a>
+      <a href="../../../README.md">README</a>
+    </div>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+
+</body>
+</html>

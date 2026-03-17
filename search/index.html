@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recherche globale</title>
+  <meta name="description" content="Recherche globale des standards Galactic-Shrine.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">GS</span>
+      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+    </a>
+    <nav class="nav desktop-only" aria-label="Navigation principale">
+      <a data-nav href="../index.html">Accueil</a>
+      <a data-nav href="../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../standards/coding/index.html">Coding</a>
+      <a data-nav href="../search/index.html">Recherche</a>
+      <a href="../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="../index.html">Accueil</a>
+      <a data-nav href="../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../standards/coding/index.html">Coding</a>
+      <a data-nav href="../search/index.html">Recherche</a>
+      <a href="../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+  </div>
+</header>
+
+
+<main data-search-page data-index-url="../data/search-index.json">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html">Accueil</a> <span>›</span> <span>Recherche</span>
+      </div>
+      <div class="kicker">Global Search</div>
+      <h1 class="page-title">Recherche globale des standards</h1>
+      <p class="page-intro">
+        Recherche client à travers tout le catalogue : titres, résumés, portée et tags.
+        C’est idéal pour retrouver rapidement une techno, une convention ou un standard précis.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container explorer-layout search-page-grid">
+      <aside class="sidebar-card">
+        <div class="eyebrow">Filtres</div>
+        <div class="search-box">
+          <input class="search-input" type="search" placeholder="Ex. PascalCase, Symfony, Twig…" data-global-search-input>
+          <select class="filter-select" data-global-search-category>
+            <option value="all">Toutes les catégories</option>
+            <option value="documentation">Documentation standards</option>
+            <option value="coding">Coding standards</option>
+          </select>
+          <div class="search-results-meta"><span data-global-search-count>0</span> résultat(s)</div>
+        </div>
+        <div class="notice" style="margin-top:1rem;">
+          <strong>Note :</strong> cette recherche fonctionne sans backend. Tout repose sur un index JSON embarqué dans le site.
+        </div>
+      </aside>
+      <div id="results" class="grid-2" data-global-search-results></div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="quick-links small">
+      <a href="../index.html">Accueil</a>
+      <a href="../search/index.html">Recherche</a>
+      <a href="../README.md">README</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js"></script>
+
+</body>
+</html>

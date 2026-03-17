@@ -3,138 +3,210 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documentation Standards • Galactic-Shrine</title>
-  <meta name="description" content="Pack harmonisé des standards de documentation Galactic-Shrine, conservés en Markdown pour rester la source officielle et faciliter le versioning Git.">
+  <title>Documentation Standards</title>
+  <meta name="description" content="Portail de consultation des standards de documentation Galactic-Shrine harmonisés.">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../../index.html">
-        <span class="brand-mark">GS</span>
-        <span>Galactic-Shrine Standards Portal</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a data-nav href="../../index.html">Accueil</a>
-        <a data-nav href="../../standards/documentation/index.html">Documentation Standards</a>
-        <a data-nav href="../../standards/coding/index.html">Coding Standards</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="page-header">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">GS</span>
+      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+    </a>
+    <nav class="nav desktop-only" aria-label="Navigation principale">
+      <a data-nav href="../../index.html">Accueil</a>
+      <a data-nav href="../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../search/index.html">Recherche</a>
+      <a href="../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="../../index.html">Accueil</a>
+      <a data-nav href="../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../search/index.html">Recherche</a>
+      <a href="../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero">
+    <div class="container">
       <div class="breadcrumbs">
-        <a href="../../index.html">Accueil</a>
-        <span>•</span>
-        <span>Documentation Standards</span>
+        <a href="../../index.html">Accueil</a> <span>›</span> <span>Documentation Standards</span>
       </div>
-      <div class="eyebrow">Galactic-Shrine</div>
-      <h1>Documentation Standards</h1>
-      <p>Pack harmonisé des standards de documentation Galactic-Shrine, conservés en Markdown pour rester la source officielle et faciliter le versioning Git.</p>
-    </section>
+      <div class="kicker">Documentation Standards</div>
+      <h1 class="page-title">Documentation Standards</h1>
+      <p class="page-intro">Portail de consultation des standards de documentation Galactic-Shrine harmonisés.</p>
+      
+    </div>
+  </section>
 
-    <section class="sidebar-layout">
-      <aside class="sidebar" aria-label="Navigation secondaire">
-        <h3>Raccourcis</h3>
+  <section class="section" style="padding-top:0;">
+    <div class="container explorer-layout">
+      <aside class="sidebar-card">
+        <div class="eyebrow">Navigation</div>
         <nav>
-          <a data-nav href="../../index.html">Accueil</a>
-          <a data-nav href="../../standards/documentation/index.html">Documentation Standards</a>
-          <a data-nav href="../../standards/coding/index.html">Coding Standards</a>
-          <a href="../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">Télécharger le ZIP documentation</a>
+          <a href="docs/CSharpDocStandard.html">Galactic-Shrine C# Documentation Standard</a>
+<a href="docs/CppDocStandard.html">Galactic-Shrine C++ Documentation Standard</a>
+<a href="docs/HtmlDocStandard.html">Galactic-Shrine HTML Documentation Standard</a>
+<a href="docs/JsDocStandard.html">Galactic-Shrine JavaScript Documentation Standard</a>
+<a href="docs/PhpDocStandard.html">Galactic-Shrine PHP Documentation Standard</a>
+<a href="docs/ScssDocStandard.html">Galactic-Shrine SCSS Documentation Standard</a>
+<a href="docs/TwigDocStandard.html">Galactic-Shrine Twig Documentation Standard</a>
         </nav>
+        <div class="notice" style="margin-top:1rem;">
+          <strong>Astuce :</strong> utilise la recherche ci-contre pour filtrer rapidement par langage, stack ou mot-clé.
+        </div>
       </aside>
 
       <div>
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Fichiers disponibles</div>
-            <h2>Standards inclus</h2>
+        <div class="search-box">
+          <div class="toolbar-row">
+            <input class="search-input" type="search" placeholder="Rechercher un standard…" data-filter-search>
+            <select class="filter-select" data-filter-category>
+              <option value="all">Tous</option>
+              <option value="documentation">Documentation</option>
+            </select>
           </div>
+          <div class="search-results-meta"><span data-results-count>7</span> standard(s) affiché(s)</div>
         </div>
-        <div class="grid">
+        <div class="doc-grid" style="margin-top:1rem;">
           
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>C# Documentation Standard</h3>
-          <p>XML documentation comments, structure FR/EN, API publique et conventions .NET.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/CSharpDocStandard.md">Open file</a>
-            <a class="button" href="files/files/CSharpDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>C++ Documentation Standard</h3>
-          <p>Commentaires XML-like pour classes, templates, fonctions, enums et API natives.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/CppDocStandard.md">Open file</a>
-            <a class="button" href="files/files/CppDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>PHP Documentation Standard</h3>
-          <p>PHPDoc natif pour services, DTO, contrôleurs, commandes et API Symfony.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/PhpDocStandard.md">Open file</a>
-            <a class="button" href="files/files/PhpDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>JavaScript Documentation Standard</h3>
-          <p>JSDoc harmonisé pour modules, fonctions, types, async et composants JS.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/JsDocStandard.md">Open file</a>
-            <a class="button" href="files/files/JsDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>SCSS Documentation Standard</h3>
-          <p>Documentation des mixins, fonctions, variables, tokens et architecture de styles.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/ScssDocStandard.md">Open file</a>
-            <a class="button" href="files/files/ScssDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>HTML Documentation Standard</h3>
-          <p>Commentaires HTML structurants pour accessibilité, rôle, dépendances et zones sensibles.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/HtmlDocStandard.md">Open file</a>
-            <a class="button" href="files/files/HtmlDocStandard.md" download>Download</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-badge">Markdown</div>
-          <h3>Twig Documentation Standard</h3>
-          <p>Commentaires Twig pour layouts, blocks, includes, contextes attendus et accessibilité.</p>
-          <div class="card-actions">
-            <a class="button button-primary" href="files/files/TwigDocStandard.md">Open file</a>
-            <a class="button" href="files/files/TwigDocStandard.md" download>Download</a>
-          </div>
-        </article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine C# Documentation Standard Ce standard définit la manière de documenter le code **C#** dans les projets Galactic-Shrine. Projets C# / .NET / Bibliothèques / Applications Console / WinForms / WPF / ASP.NET / Outils internes C# Documentation Projets C# .NET Bibliothèques Applications Console">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/CSharpDocStandard.html">Galactic-Shrine C# Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **C#** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">C#</span><span class="tag">Documentation</span><span class="tag">Projets C#</span><span class="tag">.NET</span><span class="tag">Bibliothèques</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/CSharpDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/CSharpDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine C++ Documentation Standard Ce standard définit la manière de documenter le code **C++** dans les projets Galactic-Shrine. Projets C++ / Bibliothèques / Moteurs / Outils / Applications Desktop / Jeux / Composants natifs C++ Documentation Projets C++ Bibliothèques Moteurs Outils">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/CppDocStandard.html">Galactic-Shrine C++ Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **C++** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">C++</span><span class="tag">Documentation</span><span class="tag">Projets C++</span><span class="tag">Bibliothèques</span><span class="tag">Moteurs</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/CppDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/CppDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine HTML Documentation Standard Ce standard définit la manière de documenter le code **HTML** dans les projets Galactic-Shrine. Projets HTML / Twig / Templates Symfony / Pages Web / Composants UI / Fragments de vues / Emails HTML / Interfaces d’administration HTML Documentation Projets HTML Twig Templates Symfony Pages Web">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/HtmlDocStandard.html">Galactic-Shrine HTML Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **HTML** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">HTML</span><span class="tag">Documentation</span><span class="tag">Projets HTML</span><span class="tag">Twig</span><span class="tag">Templates Symfony</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/HtmlDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/HtmlDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine JavaScript Documentation Standard Ce standard définit la manière de documenter le code **JavaScript** dans les projets Galactic-Shrine. Projets JavaScript / ES Modules / Node.js / Browser / Front-end / Back-end / Scripts / Tooling / Components / Utilities JavaScript Documentation Projets JavaScript ES Modules Node.js Browser">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/JsDocStandard.html">Galactic-Shrine JavaScript Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **JavaScript** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">JavaScript</span><span class="tag">Documentation</span><span class="tag">Projets JavaScript</span><span class="tag">ES Modules</span><span class="tag">Node.js</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/JsDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/JsDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine PHP Documentation Standard Ce standard définit la manière de documenter le code **PHP** dans les projets Galactic-Shrine. Projets PHP / Symfony / API / CLI / Bibliothèques internes PHP Documentation Projets PHP Symfony API CLI">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/PhpDocStandard.html">Galactic-Shrine PHP Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **PHP** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">PHP</span><span class="tag">Documentation</span><span class="tag">Projets PHP</span><span class="tag">Symfony</span><span class="tag">API</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/PhpDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/PhpDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine SCSS Documentation Standard Ce standard définit la manière de documenter le code **SCSS** dans les projets Galactic-Shrine. Projets SCSS / CSS Frameworks / UI Kits / Design Systems / Applications Web / Interfaces d’administration / Sites vitrine / Produits front-end SCSS Documentation Projets SCSS CSS Frameworks UI Kits Design Systems">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/ScssDocStandard.html">Galactic-Shrine SCSS Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **SCSS** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">SCSS</span><span class="tag">Documentation</span><span class="tag">Projets SCSS</span><span class="tag">CSS Frameworks</span><span class="tag">UI Kits</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/ScssDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/ScssDocStandard.md">Markdown</a>
+  </div>
+</article>
+<article class="doc-card" data-search-card data-category="documentation" data-search="Galactic-Shrine Twig Documentation Standard Ce standard définit la manière de documenter le code **Twig** dans les projets Galactic-Shrine. Projets Twig / Symfony / Templates Web / Layouts / Partials / Components / Emails / Interfaces d’administration / Fragments réutilisables Twig Documentation Projets Twig Symfony Templates Web Layouts">
+  <div class="doc-meta">
+    <span class="badge badge-accent">Documentation</span>
+    <span class="badge">Version 1.2.0</span>
+  </div>
+  <h3><a href="docs/TwigDocStandard.html">Galactic-Shrine Twig Documentation Standard</a></h3>
+  <p class="summary">Ce standard définit la manière de documenter le code **Twig** dans les projets Galactic-Shrine.</p>
+  <div class="tag-list">
+    <span class="tag">Twig</span><span class="tag">Documentation</span><span class="tag">Projets Twig</span><span class="tag">Symfony</span><span class="tag">Templates Web</span>
+  </div>
+  <div class="card-actions">
+    <a class="button small button-primary" href="docs/TwigDocStandard.html">Lire en HTML</a>
+    <a class="button small" href="files/TwigDocStandard.md">Markdown</a>
+  </div>
+</article>
         </div>
+        <div class="empty-state" data-empty-state style="display:none; margin-top:1rem;">Aucun standard ne correspond à cette recherche.</div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="small muted">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
-      <div class="small muted">Documentation Standards</div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="../../assets/js/site.js"></script>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="quick-links small">
+      <a href="../../index.html">Accueil</a>
+      <a href="../../search/index.html">Recherche</a>
+      <a href="../../README.md">README</a>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/site.js"></script>
+
 </body>
 </html>

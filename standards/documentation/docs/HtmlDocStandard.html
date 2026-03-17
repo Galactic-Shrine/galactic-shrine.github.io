@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galactic-Shrine HTML Documentation Standard</title>
+  <meta name="description" content="Ce standard définit la manière de documenter le code **HTML** dans les projets Galactic-Shrine.">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-mark">GS</span>
+      <span class="brand-text">Galactic-Shrine Standards Portal<small>GitHub Pages • Premium Starter</small></span>
+    </a>
+    <nav class="nav desktop-only" aria-label="Navigation principale">
+      <a data-nav href="../../../index.html">Accueil</a>
+      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../../search/index.html">Recherche</a>
+      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="../../../index.html">Accueil</a>
+      <a data-nav href="../../../standards/documentation/index.html">Documentation</a>
+      <a data-nav href="../../../standards/coding/index.html">Coding</a>
+      <a data-nav href="../../../search/index.html">Recherche</a>
+      <a href="../../../downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Doc</a>
+      <a href="../../../downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Coding</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../../../index.html">Accueil</a> <span>›</span>
+        <a href="../../../standards/documentation/index.html">Documentation Standards</a> <span>›</span>
+        <span>Galactic-Shrine HTML Documentation Standard</span>
+      </div>
+      <div class="kicker">Documentation • HtmlDocStandard.md</div>
+      <h1 class="page-title">Galactic-Shrine HTML Documentation Standard</h1>
+      <p class="page-intro">Ce standard définit la manière de documenter le code **HTML** dans les projets Galactic-Shrine.</p>
+      <div class="tag-list">
+        <span class="tag">Version 1.2.0</span>
+        <span class="tag">HTML</span><span class="tag">Documentation</span><span class="tag">Projets HTML</span><span class="tag">Twig</span><span class="tag">Templates Symfony</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container viewer-layout">
+      <aside class="sidebar-card">
+        <div class="eyebrow">Dans cette section</div>
+        <nav><a class="" href="../docs/CSharpDocStandard.html">Galactic-Shrine C# Documentation Standard</a><a class="" href="../docs/CppDocStandard.html">Galactic-Shrine C++ Documentation Standard</a><a class="active" href="../docs/HtmlDocStandard.html">Galactic-Shrine HTML Documentation Standard</a><a class="" href="../docs/JsDocStandard.html">Galactic-Shrine JavaScript Documentation Standard</a><a class="" href="../docs/PhpDocStandard.html">Galactic-Shrine PHP Documentation Standard</a><a class="" href="../docs/ScssDocStandard.html">Galactic-Shrine SCSS Documentation Standard</a><a class="" href="../docs/TwigDocStandard.html">Galactic-Shrine Twig Documentation Standard</a></nav>
+        <div class="eyebrow" style="margin-top:1rem;">Sommaire</div>
+        <ul class="toc-list">
+          <li class="lvl-2"><a href="#1-objectif">1. Objectif</a></li>
+<li class="lvl-2"><a href="#2-principes-generaux">2. Principes généraux</a></li>
+<li class="lvl-2"><a href="#3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</a></li>
+<li class="lvl-2"><a href="#4-convention-bilingue">4. Convention bilingue</a></li>
+<li class="lvl-2"><a href="#5-elements-autorises">5. Éléments autorisés</a></li>
+<li class="lvl-2"><a href="#6-structure-recommandee-dun-commentaire">6. Structure recommandée d’un commentaire</a></li>
+<li class="lvl-2"><a href="#7-standard-par-type-delement">7. Standard par type d’élément</a></li>
+<li class="lvl-3"><a href="#71-fichier-ou-template">7.1 Fichier ou template</a></li>
+<li class="lvl-3"><a href="#72-section-principale">7.2 Section principale</a></li>
+<li class="lvl-3"><a href="#73-composant-reutilisable">7.3 Composant réutilisable</a></li>
+<li class="lvl-3"><a href="#74-zone-dynamique-ou-hook-javascript">7.4 Zone dynamique ou hook JavaScript</a></li>
+<li class="lvl-3"><a href="#75-bloc-avec-contrainte-daccessibilite">7.5 Bloc avec contrainte d’accessibilité</a></li>
+<li class="lvl-3"><a href="#76-formulaire">7.6 Formulaire</a></li>
+<li class="lvl-2"><a href="#8-regles-de-style">8. Règles de style</a></li>
+<li class="lvl-3"><a href="#81-descriptions-courtes">8.1 Descriptions courtes</a></li>
+<li class="lvl-3"><a href="#82-ordre-fixe">8.2 Ordre fixe</a></li>
+<li class="lvl-3"><a href="#83-commenter-les-blocs-pas-chaque-balise">8.3 Commenter les blocs, pas chaque balise</a></li>
+<li class="lvl-3"><a href="#84-regle-html-importante">8.4 Règle HTML importante</a></li>
+<li class="lvl-3"><a href="#85-pas-de-surdocumentation">8.5 Pas de surdocumentation</a></li>
+<li class="lvl-2"><a href="#9-types-delements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</a></li>
+<li class="lvl-2"><a href="#10-exemple-complet-recommande">10. Exemple complet recommandé</a></li>
+<li class="lvl-2"><a href="#11-decision-officielle-recommandee">11. Décision officielle recommandée</a></li>
+<li class="lvl-2"><a href="#12-resume-executable">12. Résumé exécutable</a></li>
+        </ul>
+      </aside>
+
+      <article class="viewer-shell">
+        <div class="viewer-header">
+          <div>
+            <div class="eyebrow">Fichier source</div>
+            <div class="quick-links">
+              <a class="button small button-primary" href="../files/HtmlDocStandard.md">Télécharger le Markdown</a>
+              <a class="button small" href="../../../search/index.html">Recherche globale</a>
+            </div>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Documentation Standards</span>
+            <span class="tag">Projets HTML / Twig / Templates Symfony / Pages Web / Composants UI / Fragments de vues / Emails HTML / Interfaces d’administration</span>
+          </div>
+        </div>
+        <div class="viewer-body"><h1 id="galactic-shrine-html-documentation-standard">Galactic-Shrine HTML Documentation Standard</h1>
+<p><strong>Version:</strong> 1.2.0<br />
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br />
+<strong>Portée / Scope:</strong> Projets HTML / Twig / Templates Symfony / Pages Web / Composants UI / Fragments de vues / Emails HTML / Interfaces d’administration</p>
+<hr />
+<h2 id="1-objectif">1. Objectif</h2>
+<p>Ce standard définit la manière de documenter le code <strong>HTML</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser la documentation des templates et structures HTML ;</li>
+<li>de conserver un style bilingue <code>[FR] / [EN]</code> ;</li>
+<li>de rester naturel pour le HTML ;</li>
+<li>de rendre les structures de page plus lisibles ;</li>
+<li>de documenter proprement les sections, composants, zones dynamiques et contraintes d’accessibilité.</li>
+</ul>
+<hr />
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
+<p>La documentation HTML Galactic-Shrine doit être :</p>
+<ul>
+<li>claire ;</li>
+<li>concise ;</li>
+<li>bilingue ;</li>
+<li>structurée ;</li>
+<li>utile pour la maintenance.</li>
+</ul>
+<p>La documentation doit privilégier :</p>
+<ul>
+<li>les commentaires HTML natifs ;</li>
+<li>les descriptions courtes ;</li>
+<li>les indications structurelles ;</li>
+<li>les remarques d’accessibilité lorsque nécessaire ;</li>
+<li>la documentation des blocs importants, pas de chaque balise.</li>
+</ul>
+<hr />
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
+<p>Toujours utiliser le format suivant :</p>
+<pre><code class="language-html">&lt;!--
+[FR] Représente la navigation principale du site.
+[EN] Represents the main site navigation.
+--&gt;
+</code></pre>
+<p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine HTML.</p>
+<hr />
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
+<p>Chaque bloc descriptif doit suivre l’ordre suivant :</p>
+<ol>
+<li>ligne française <code>[FR]</code></li>
+<li>ligne anglaise <code>[EN]</code></li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-html">&lt;!--
+[FR] Conteneur principal de la page profil.
+[EN] Main container of the profile page.
+--&gt;
+</code></pre>
+<hr />
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
+<p>Éléments autorisés dans les commentaires HTML Galactic-Shrine :</p>
+<ul>
+<li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
+<li><code>@role</code></li>
+<li><code>@accessibility</code></li>
+<li><code>@dependency</code></li>
+<li><code>@note</code></li>
+<li><code>@todo</code></li>
+<li><code>@see</code></li>
+</ul>
+<p>Éléments déconseillés :</p>
+<ul>
+<li>les balises XML de type <code>&lt;summary&gt;</code> ou <code>&lt;param&gt;</code> ;</li>
+<li>les commentaires trop longs ;</li>
+<li>les commentaires purement décoratifs ;</li>
+<li>les duplications d’informations déjà évidentes dans le balisage.</li>
+</ul>
+<hr />
+<h2 id="6-structure-recommandee-dun-commentaire">6. Structure recommandée d’un commentaire</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>description courte <code>[FR]</code></li>
+<li>description courte <code>[EN]</code></li>
+<li>détail complémentaire <code>[FR]</code> si nécessaire</li>
+<li>détail complémentaire <code>[EN]</code> si nécessaire</li>
+<li>tags utiles</li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-html">&lt;!--
+[FR] Section de navigation principale du tableau de bord.
+[EN] Main navigation section of the dashboard.
+
+@accessibility [FR] Utilise un libellé explicite pour les lecteurs d’écran.
+@accessibility [EN] Uses an explicit label for screen readers.
+--&gt;
+</code></pre>
+<hr />
+<h2 id="7-standard-par-type-delement">7. Standard par type d’élément</h2>
+<h3 id="71-fichier-ou-template">7.1 Fichier ou template</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Template principal de la page d’accueil.
+[EN] Main template for the homepage.
+
+[FR] Ce fichier structure le héros, les sections marketing et l’appel à l’action.
+[EN] This file structures the hero, marketing sections, and call to action.
+--&gt;
+</code></pre>
+<h3 id="72-section-principale">7.2 Section principale</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Section présentant les dernières actualités du studio.
+[EN] Section displaying the latest studio news.
+--&gt;
+&lt;section class=&quot;gs-news-section&quot;&gt;
+</code></pre>
+<h3 id="73-composant-reutilisable">7.3 Composant réutilisable</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Carte de profil utilisateur réutilisable.
+[EN] Reusable user profile card.
+
+@role [FR] Affichage synthétique du compte.
+@role [EN] Compact account display.
+--&gt;
+&lt;article class=&quot;gs-user-card&quot;&gt;
+</code></pre>
+<h3 id="74-zone-dynamique-ou-hook-javascript">7.4 Zone dynamique ou hook JavaScript</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Point d’injection pour la liste chargée dynamiquement.
+[EN] Injection point for the dynamically loaded list.
+
+@dependency [FR] Rempli par JavaScript après chargement des données.
+@dependency [EN] Filled by JavaScript after data loading.
+--&gt;
+&lt;div id=&quot;news-feed&quot; data-controller=&quot;news-feed&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="75-bloc-avec-contrainte-daccessibilite">7.5 Bloc avec contrainte d’accessibilité</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Boîte de dialogue de confirmation de suppression.
+[EN] Delete confirmation dialog.
+
+@accessibility [FR] Doit conserver aria-modal, aria-labelledby et le focus initial.
+@accessibility [EN] Must preserve aria-modal, aria-labelledby, and initial focus.
+--&gt;
+&lt;div class=&quot;gs-modal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;delete-title&quot;&gt;
+</code></pre>
+<h3 id="76-formulaire">7.6 Formulaire</h3>
+<pre><code class="language-html">&lt;!--
+[FR] Formulaire de connexion utilisateur.
+[EN] User login form.
+
+@note [FR] Les messages d’erreur sont injectés côté serveur.
+@note [EN] Error messages are injected server-side.
+--&gt;
+&lt;form method=&quot;post&quot; action=&quot;/login&quot;&gt;
+</code></pre>
+<hr />
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="81-descriptions-courtes">8.1 Descriptions courtes</h3>
+<p>Toujours préférer une phrase simple et directe.</p>
+<h3 id="82-ordre-fixe">8.2 Ordre fixe</h3>
+<p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
+<h3 id="83-commenter-les-blocs-pas-chaque-balise">8.3 Commenter les blocs, pas chaque balise</h3>
+<p>Documenter layouts, sections majeures, composants réutilisables, zones dynamiques, hooks JavaScript, formulaires métier et éléments sensibles pour l’accessibilité.</p>
+<h3 id="84-regle-html-importante">8.4 Règle HTML importante</h3>
+<p>Éviter la séquence <code>--</code> dans le contenu des commentaires, car elle peut rendre le commentaire invalide.</p>
+<h3 id="85-pas-de-surdocumentation">8.5 Pas de surdocumentation</h3>
+<p>Ne pas commenter l’évidence.</p>
+<hr />
+<h2 id="9-types-delements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
+<p>Documenter en priorité :</p>
+<ul>
+<li>templates principaux ;</li>
+<li>layouts ;</li>
+<li>partials ;</li>
+<li>composants réutilisables ;</li>
+<li>sections de page importantes ;</li>
+<li>zones pilotées par JavaScript ;</li>
+<li>blocs dépendants d’un contrôleur Symfony ou Twig ;</li>
+<li>éléments critiques pour l’accessibilité ;</li>
+<li>structures de formulaires métier ;</li>
+<li>fragments complexes conditionnels.</li>
+</ul>
+<hr />
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
+<pre><code class="language-html">&lt;!--
+[FR] Template principal de la page profil utilisateur.
+[EN] Main template for the user profile page.
+
+[FR] Ce template structure l’en-tête, les statistiques et l’activité récente.
+[EN] This template structures the header, statistics, and recent activity.
+--&gt;
+
+&lt;main class=&quot;gs-profile-page&quot;&gt;
+    &lt;!--
+    [FR] En-tête de profil avec avatar et informations principales.
+    [EN] Profile header with avatar and primary information.
+    --&gt;
+    &lt;section class=&quot;gs-profile-header&quot;&gt;
+        &lt;h1&gt;{{ user.displayName }}&lt;/h1&gt;
+    &lt;/section&gt;
+
+    &lt;!--
+    [FR] Zone dynamique des activités récentes.
+    [EN] Dynamic recent activity area.
+
+    @dependency [FR] Alimentée via Turbo ou JavaScript.
+    @dependency [EN] Populated via Turbo or JavaScript.
+    --&gt;
+    &lt;section id=&quot;recent-activity&quot; data-controller=&quot;recent-activity&quot;&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+<hr />
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine HTML :</p>
+<ul>
+<li>utiliser <code>&lt;!-- ... --&gt;</code> ;</li>
+<li>écrire d’abord <code>[FR]</code>, puis <code>[EN]</code> ;</li>
+<li>utiliser <code>@role</code>, <code>@accessibility</code>, <code>@dependency</code>, <code>@note</code> selon le besoin ;</li>
+<li>documenter les blocs structurants, pas chaque élément trivial ;</li>
+<li>garder un style court, propre et uniforme.</li>
+</ul>
+<hr />
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets HTML Galactic-Shrine :</p>
+<ul>
+<li>utiliser des commentaires HTML natifs ;</li>
+<li>écrire <code>[FR]</code> puis <code>[EN]</code> ;</li>
+<li>documenter templates, sections majeures, composants, hooks JS et zones sensibles ;</li>
+<li>éviter <code>--</code> dans le contenu des commentaires ;</li>
+<li>documenter ce qui compte, pas l’évidence.</li>
+</ul>
+</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="small">Galactic-Shrine Standards Portal • <span id="currentYear"></span></div>
+    <div class="quick-links small">
+      <a href="../../../index.html">Accueil</a>
+      <a href="../../../search/index.html">Recherche</a>
+      <a href="../../../README.md">README</a>
+    </div>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+
+</body>
+</html>
