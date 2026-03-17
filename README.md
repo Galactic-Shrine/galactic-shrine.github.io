@@ -14,10 +14,17 @@ Starter premium pour le dépôt GitHub Pages **`galactic-shrine.github.io`**.
 
 ## Déploiement rapide
 
+### Option recommandée : GitHub Actions
+
 1. crée le dépôt `galactic-shrine.github.io`
 2. copie le contenu de ce dossier à la racine
 3. pousse sur la branche `main`
-4. active GitHub Pages sur `main` + `/ (root)`
+4. dans **Settings → Pages**, choisis **GitHub Actions**
+5. laisse le workflow `.github/workflows/deploy-pages.yml` publier automatiquement le site
+
+### Option simple : branche racine
+
+Le starter reste aussi compatible avec une publication directe depuis `main` + `/ (root)`.
 
 ## Structure
 
@@ -29,6 +36,10 @@ galactic-shrine.github.io/
 ├─ robots.txt
 ├─ README.md
 ├─ CNAME.example
+├─ DEPLOYMENT.md
+├─ .github/
+│  └─ workflows/
+│     └─ deploy-pages.yml
 ├─ assets/
 │  ├─ css/site.css
 │  ├─ js/site.js
@@ -65,3 +76,12 @@ Le portail met en évidence ta règle Galactic-Shrine :
 - intégration d’un domaine personnalisé
 - ajout d’une page “About Galactic-Shrine Standards”
 - migration future vers un générateur statique si nécessaire
+
+## Palette du site appliquée
+
+- **violet principal** : `#6F42C1`
+- **violet secondaire** : `#6610F2`
+- **lilas clair** : `#D5C8ED`
+- **prune sombre** : `#22143D`
+
+Le thème a été recoloré à partir de la palette visible dans le thème Bootstrap public du site/projet Symfony-Forum.
