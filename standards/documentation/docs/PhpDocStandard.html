@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galactic-Shrine PHP Documentation Standard · Portail des standards Galactic-Shrine</title>
+  <meta name="description" content="Ce standard définit la manière de documenter le code **PHP** dans les projets Galactic-Shrine.">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Portail des standards Galactic-Shrine">
+      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+      <span class="sr-only">Portail des standards Galactic-Shrine</span>
+    </a>
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+  </div>
+</header>
+<main><section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Documentation · 1.2.0</div>
+        <h1>Galactic-Shrine PHP Documentation Standard</h1>
+        <p class="lead">Ce standard définit la manière de documenter le code **PHP** dans les projets Galactic-Shrine.</p>
+      </div>
+      <div class="card-actions">
+        <a class="button" href="/standards/documentation/files/PhpDocStandard.md">Markdown source</a>
+        <a class="button button-primary" href="../index.html">Retour à la section</a>
+      </div>
+    </div>
+    
+    <div class="tag-list">
+      <span class="tag">PHP</span><span class="tag">Documentation</span><span class="tag">Projets PHP</span><span class="tag">Symfony</span><span class="tag">API</span><span class="tag">CLI</span>
+    </div>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2 standard-layout-grid">
+    <aside class="aside-card toc-card">
+      <div class="eyebrow">Portée</div>
+      <p>Projets PHP / Symfony / API / CLI / Bibliothèques internes</p>
+      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
+      <ul class="footer-links">
+        <li><a href="/standards/documentation/files/PhpDocStandard.md">Markdown brut</a></li>
+        <li><a href="/standards/documentation/index.html">Index documentation</a></li>
+        <li><a href="/search/index.html">Recherche globale</a></li>
+      </ul>
+    </aside>
+    <article class="doc-markdown standard-markdown">
+      <h1>Galactic-Shrine PHP Documentation Standard</h1>
+<p><strong>Version:</strong> 1.2.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets PHP / Symfony / API / CLI / Bibliothèques internes</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière de documenter le code <strong>PHP</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser la documentation du code ;</li>
+<li>de conserver un style bilingue <code>[FR] / [EN]</code> ;</li>
+<li>de rester compatible avec les outils PHP modernes ;</li>
+<li>de conserver un format visuel homogène ;</li>
+<li>d’éviter les conventions C# non adaptées à PHP.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>La documentation PHP Galactic-Shrine doit être :</p>
+<ul>
+<li>claire ;</li>
+<li>concise ;</li>
+<li>bilingue ;</li>
+<li>standard ;</li>
+<li>utile techniquement.</li>
+</ul>
+<p>La documentation doit privilégier :</p>
+<ul>
+<li>le format PHPDoc natif ;</li>
+<li>les descriptions courtes ;</li>
+<li>les tags PHPDoc standard ;</li>
+<li>les types précis lorsqu’ils apportent une vraie valeur.</li>
+</ul>
+<hr>
+<h2>3. Format obligatoire des blocs</h2>
+<p>Toujours utiliser le format suivant :</p>
+<pre><code class="language-php">/**
+ * [FR] Génère les fichiers de traduction YAML.
+ * [EN] Generates YAML translation files.
+ */
+</code></pre>
+<p>Ne pas utiliser :</p>
+<pre><code class="language-php">/** ... **/
+</code></pre>
+<hr>
+<h2>4. Convention bilingue</h2>
+<p>Chaque description doit suivre l’ordre suivant :</p>
+<ol>
+<li>ligne française <code>[FR]</code></li>
+<li>ligne anglaise <code>[EN]</code></li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-php">/**
+ * [FR] Charge les locales configurées.
+ * [EN] Loads the configured locales.
+ */
+</code></pre>
+<hr>
+<h2>5. Éléments autorisés</h2>
+<p>Éléments autorisés dans les commentaires PHPDoc Galactic-Shrine :</p>
+<ul>
+<li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
+<li><code>@param</code></li>
+<li><code>@return</code></li>
+<li><code>@throws</code></li>
+<li><code>@var</code></li>
+<li><code>@property</code></li>
+<li><code>@method</code></li>
+<li><code>@deprecated</code></li>
+<li><code>@example</code></li>
+<li><code>@see</code></li>
+<li><code>@note</code></li>
+</ul>
+<p>Éléments déconseillés ou interdits :</p>
+<ul>
+<li><code>&lt;summary&gt;</code></li>
+<li><code>&lt;param&gt;</code></li>
+<li><code>&lt;remarks&gt;</code></li>
+<li><code>&lt;returns&gt;</code></li>
+<li><code>&lt;exception&gt;</code></li>
+</ul>
+<p>Ces balises sont réservées aux conventions XML de type C# / C++ et ne doivent pas être utilisées en PHP.</p>
+<hr>
+<h2>6. Structure recommandée d’un commentaire</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>description courte <code>[FR]</code></li>
+<li>description courte <code>[EN]</code></li>
+<li>détail complémentaire <code>[FR]</code> si nécessaire</li>
+<li>détail complémentaire <code>[EN]</code> si nécessaire</li>
+<li>tags PHPDoc techniques</li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-php">/**
+ * [FR] Exécute la génération des traductions.
+ * [EN] Executes translation generation.
+ *
+ * [FR] La méthode valide les entrées, exécute le traitement,
+ *      puis retourne un code de sortie Symfony.
+ * [EN] The method validates inputs, runs the process,
+ *      then returns a Symfony exit code.
+ *
+ * @param InputInterface $input [FR] Entrée console.
+ *                              [EN] Console input.
+ * @param OutputInterface $output [FR] Sortie console.
+ *                                [EN] Console output.
+ * @return int [FR] Code de retour Symfony.
+ *             [EN] Symfony return code.
+ */
+</code></pre>
+<hr>
+<h2>7. Standard par type d’élément</h2>
+<h3>7.1 Classe</h3>
+<pre><code class="language-php">/**
+ * [FR] Commande Symfony permettant de générer les fichiers de traduction YAML.
+ * [EN] Symfony command used to generate YAML translation files.
+ *
+ * [FR] Cette commande s’appuie sur la commande native de Symfony
+ *      et ajoute une logique métier complémentaire.
+ * [EN] This command relies on Symfony's native command
+ *      and adds complementary business logic.
+ */
+final class GenerateLangCommand extends Command
+{
+}
+</code></pre>
+<h3>7.2 Propriété</h3>
+<pre><code class="language-php">/**
+ * @var array&lt;int, string&gt;|string [FR] Locales configurées.
+ *                                [EN] Configured locales.
+ */
+private readonly array|string $appLocales;
+</code></pre>
+<h3>7.3 Constructeur</h3>
+<pre><code class="language-php">/**
+ * [FR] Initialise une nouvelle instance de la classe.
+ * [EN] Initializes a new instance of the class.
+ *
+ * @param string $projectDir [FR] Répertoire racine du projet.
+ *                           [EN] Project root directory.
+ * @param array&lt;int, string&gt;|string $appLocales [FR] Locales configurées.
+ *                                              [EN] Configured locales.
+ */
+public function __construct(string $projectDir, array|string $appLocales)
+{
+}
+</code></pre>
+<h3>7.4 Méthode simple</h3>
+<pre><code class="language-php">/**
+ * [FR] Normalise une liste de valeurs.
+ * [EN] Normalizes a list of values.
+ *
+ * @param array&lt;int, string&gt;|string|null $values [FR] Valeurs d’entrée.
+ *                                               [EN] Input values.
+ * @return list&lt;string&gt; [FR] Valeurs normalisées.
+ *                      [EN] Normalized values.
+ */
+private function normalizeValues(array|string|null $values): array
+{
+}
+</code></pre>
+<h3>7.5 Méthode métier</h3>
+<pre><code class="language-php">/**
+ * [FR] Exécute le traitement principal de la commande.
+ * [EN] Executes the main command processing.
+ *
+ * [FR] La méthode valide les entrées, prépare les dépendances,
+ *      lance le traitement puis retourne un code de sortie Symfony.
+ * [EN] The method validates inputs, prepares dependencies,
+ *      runs the process, then returns a Symfony exit code.
+ *
+ * @param InputInterface $input [FR] Entrée console.
+ *                              [EN] Console input.
+ * @param OutputInterface $output [FR] Sortie console.
+ *                                [EN] Console output.
+ * @return int [FR] Code de retour Symfony.
+ *             [EN] Symfony return code.
+ */
+protected function execute(InputInterface $input, OutputInterface $output): int
+{
+}
+</code></pre>
+<h3>7.6 Méthode avec exception</h3>
+<pre><code class="language-php">/**
+ * [FR] Écrit les données dans un fichier YAML.
+ * [EN] Writes data into a YAML file.
+ *
+ * @param string $filePath [FR] Chemin du fichier.
+ *                         [EN] File path.
+ * @param array&lt;string, mixed&gt; $data [FR] Données à écrire.
+ *                                   [EN] Data to write.
+ * @throws \RuntimeException [FR] Si l’écriture échoue.
+ *                           [EN] If writing fails.
+ */
+private function writeYamlFile(string $filePath, array $data): void
+{
+}
+</code></pre>
+<h3>7.7 Méthode récursive ou technique</h3>
+<pre><code class="language-php">/**
+ * [FR] Parcourt récursivement un tableau pour collecter les entrées terminales.
+ * [EN] Recursively walks an array to collect terminal entries.
+ *
+ * @param array&lt;string, mixed&gt; $data [FR] Données à parcourir.
+ *                                   [EN] Data to traverse.
+ * @param list&lt;string&gt; $path [FR] Chemin courant.
+ *                           [EN] Current path.
+ * @return list&lt;array{id:string, path:list&lt;string&gt;, value:mixed}&gt; [FR] Entrées collectées.
+ *                                                                [EN] Collected entries.
+ */
+private function collectEntries(array $data, array $path = []): array
+{
+}
+</code></pre>
+<hr>
+<h2>8. Règles de style</h2>
+<h3>8.1 Descriptions courtes</h3>
+<p>Toujours préférer une phrase simple et directe.</p>
+<h3>8.2 Ordre fixe</h3>
+<p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
+<h3>8.3 Tags techniques compacts</h3>
+<p>Écrire les tags sur une seule ligne lorsque c’est lisible. Utiliser plusieurs lignes si cela améliore la lisibilité.</p>
+<h3>8.4 <code>@return</code></h3>
+<p>Documenter <code>@return</code> lorsqu’il existe une vraie valeur de retour. Ne pas écrire <code>@return void</code> sauf besoin particulier d’uniformité stricte.</p>
+<h3>8.5 <code>@throws</code></h3>
+<p>N’ajouter <code>@throws</code> que si l’information est importante pour l’appelant.</p>
+<h3>8.6 Pas de surdocumentation</h3>
+<p>Ne pas commenter l’évidence.</p>
+<hr>
+<h2>9. Types d’éléments à documenter en priorité</h2>
+<p>Documenter en priorité :</p>
+<ul>
+<li>classes de service ;</li>
+<li>commandes Symfony ;</li>
+<li>écouteurs, subscribers et composants techniques ;</li>
+<li>méthodes publiques ;</li>
+<li>méthodes complexes ;</li>
+<li>propriétés dont le rôle ou le type n’est pas trivial ;</li>
+<li>structures de données documentaires ;</li>
+<li>API internes importantes.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace App\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * [FR] Génère les fichiers de traduction YAML pour les locales configurées.
+ * [EN] Generates YAML translation files for configured locales.
+ *
+ * [FR] Cette commande s’appuie sur la commande native de Symfony
+ *      et ajoute une logique de filtrage et de nettoyage.
+ * [EN] This command relies on Symfony's native command
+ *      and adds filtering and cleanup logic.
+ */
+final class GenerateLangCommand extends Command
+{
+    /**
+     * @var array&lt;int, string&gt;|string [FR] Locales configurées.
+     *                                [EN] Configured locales.
+     */
+    private readonly array|string $appLocales;
+
+    /**
+     * [FR] Initialise la commande.
+     * [EN] Initializes the command.
+     *
+     * @param array&lt;int, string&gt;|string $appLocales [FR] Locales configurées.
+     *                                              [EN] Configured locales.
+     * @param string $projectDir [FR] Répertoire racine du projet.
+     *                           [EN] Project root directory.
+     */
+    public function __construct(
+        array|string $appLocales,
+        private readonly string $projectDir,
+    ) {
+        parent::__construct();
+        $this-&gt;appLocales = $appLocales;
+    }
+
+    /**
+     * [FR] Exécute la génération des traductions.
+     * [EN] Executes translation generation.
+     *
+     * @param InputInterface $input [FR] Entrée console.
+     *                              [EN] Console input.
+     * @param OutputInterface $output [FR] Sortie console.
+     *                                [EN] Console output.
+     * @return int [FR] Code de retour Symfony.
+     *             [EN] Symfony return code.
+     */
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        return Command::SUCCESS;
+    }
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine PHP :</p>
+<ul>
+<li>utiliser <code>/** ... */</code> ;</li>
+<li>écrire d’abord <code>[FR]</code>, puis <code>[EN]</code> ;</li>
+<li>utiliser uniquement des balises PHPDoc natives ;</li>
+<li>utiliser <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@var</code> lorsque cela apporte une vraie valeur ;</li>
+<li>ne pas importer les conventions XML C# / C++ ;</li>
+<li>documenter ce qui compte, pas l’évidence.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets PHP Galactic-Shrine :</p>
+<ul>
+<li>utiliser PHPDoc natif ;</li>
+<li>écrire <code>[FR]</code> puis <code>[EN]</code> ;</li>
+<li>documenter les classes, méthodes et structures réellement utiles ;</li>
+<li>garder un style court, propre et uniforme ;</li>
+<li>éviter les commentaires inutiles sur le code trivial.</li>
+</ul>
+
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>© <span id="currentYear"></span> Galactic-Shrine</strong>
+      <p>Galactic-Shrine • Tous droits réservés.<br>Propulsé par GitHub Pages et GitHub Actions.</p>
+    </div>
+    <div>
+      <strong>Navigation</strong>
+      <ul class="footer-links">
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/about/index.html">À propos</a></li>
+        <li><a href="/changelog/index.html">Changelog</a></li>
+        <li><a href="/roadmap/index.html">Roadmap</a></li>
+        <li><a href="/search/index.html">Recherche</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Projet</strong>
+      <ul class="footer-links">
+        <li><a href="/README.html">README</a></li>
+        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
+        <li>Domaine personnalisé préconfiguré : <code>docs.galactic-shrine.com</code></li>
+        <li><a href="/CNAME">CNAME</a></li>
+        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

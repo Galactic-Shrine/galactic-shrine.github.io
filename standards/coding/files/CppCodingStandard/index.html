@@ -1,0 +1,207 @@
+<h1>Galactic-Shrine C++ Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets C++ / Moteurs / Bibliothèques natives / Outils / Applications Desktop / Modules système / Intégrations Unreal-like ou propriétaires</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière d’écrire le code <strong>C++</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser le style C++ des bibliothèques et modules natifs ;</li>
+<li>de conserver une base robuste, lisible et industrialisable ;</li>
+<li>de limiter les erreurs de gestion mémoire, de contrat et d’interface ;</li>
+<li>d’aligner les conventions de nommage avec Galactic-Shrine.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>Le code C++ Galactic-Shrine doit être :</p>
+<ul>
+<li>clair ;</li>
+<li>sûr autant que possible ;</li>
+<li>cohérent ;</li>
+<li>orienté RAII ;</li>
+<li>attentif aux coûts réels.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>des interfaces nettes ;</li>
+<li>des responsabilités courtes ;</li>
+<li>l’usage de types explicites ;</li>
+<li>des ressources gérées automatiquement ;</li>
+<li>la réduction des dépendances de compilation inutiles.</li>
+</ul>
+<hr>
+<h2>3. Décisions officielles Galactic-Shrine pour C++</h2>
+<p>Décisions officielles :</p>
+<ul>
+<li>classes, structs, enums, aliases de types : <code>PascalCase</code> ;</li>
+<li>méthodes : <code>PascalCase</code> ;</li>
+<li>paramètres : <code>PascalCase</code> ;</li>
+<li>propriétés ou accesseurs exposés : <code>PascalCase</code> ;</li>
+<li>variables locales : <code>PascalCase</code> ;</li>
+<li>champs privés : <code>_PascalCase</code> ;</li>
+<li>constantes nommées : <code>PascalCase</code> ;</li>
+<li>préférer <code>enum class</code> à <code>enum</code> lorsque pertinent ;</li>
+<li>préférer <code>nullptr</code> à <code>NULL</code> ;</li>
+<li>privilégier RAII et smart pointers quand la sémantique le justifie.</li>
+</ul>
+<hr>
+<h2>4. Convention de nommage</h2>
+<ul>
+<li>fichiers <code>.hpp</code> / <code>.h</code> et <code>.cpp</code> alignés sur le type principal ;</li>
+<li>classes / structs : <code>PascalCase</code> ;</li>
+<li>méthodes : <code>PascalCase</code> ;</li>
+<li>paramètres : <code>PascalCase</code> ;</li>
+<li>variables locales : <code>PascalCase</code> ;</li>
+<li>membres privés : <code>_PascalCase</code> ;</li>
+<li>namespaces : stables, hiérarchiques et lisibles ;</li>
+<li>macros : uniquement si nécessaire, clairement nommées.</li>
+</ul>
+<p>À éviter :</p>
+<ul>
+<li>noms trop courts sans signification ;</li>
+<li>préfixes techniques omniprésents sans valeur ;</li>
+<li>noms ambigus pour des pointeurs propriétaires ou non propriétaires.</li>
+</ul>
+<hr>
+<h2>5. Structure recommandée d’un fichier C++</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>en-tête légal si requis ;</li>
+<li>include guard ou <code>#pragma once</code> ;</li>
+<li>includes minimaux ;</li>
+<li>namespace ;</li>
+<li>déclaration du type ou des fonctions ;</li>
+<li>implémentation en <code>.cpp</code>.</li>
+</ol>
+<p>Règles :</p>
+<ul>
+<li>limiter les includes dans les headers ;</li>
+<li>préférer les forward declarations lorsque raisonnable ;</li>
+<li>séparer clairement l’interface et l’implémentation ;</li>
+<li>éviter les dépendances transversales cachées.</li>
+</ul>
+<hr>
+<h2>6. Style d’écriture</h2>
+<h3>6.1 Accolades</h3>
+<p>Utiliser un style d’accolades cohérent sur tout le dépôt.<br>
+Toujours préférer la stabilité au mélange de styles.</p>
+<h3>6.2 <code>const</code> correctness</h3>
+<ul>
+<li>marquer <code>const</code> tout ce qui doit l’être ;</li>
+<li>utiliser des références constantes pour éviter des copies inutiles ;</li>
+<li>rendre explicite l’intention de mutation.</li>
+</ul>
+<h3>6.3 Valeurs de retour</h3>
+<ul>
+<li>éviter les pointeurs nus propriétaires ;</li>
+<li>retourner des types de valeur, références ou wrappers explicites selon le contrat ;</li>
+<li>documenter la sémantique de possession quand elle n’est pas évidente.</li>
+</ul>
+<h3>6.4 Conditions et branches</h3>
+<ul>
+<li>privilégier les gardes précoces ;</li>
+<li>factoriser les expressions complexes dans des variables lisibles ;</li>
+<li>éviter la logique métier cachée dans des macros.</li>
+</ul>
+<hr>
+<h2>7. Règles spécifiques C++</h2>
+<ul>
+<li>préférer <code>std::unique_ptr</code> à la possession manuelle ;</li>
+<li>utiliser <code>std::shared_ptr</code> seulement pour une propriété partagée réelle ;</li>
+<li>éviter <code>new</code> / <code>delete</code> directs hors cas spécialisés ;</li>
+<li>marquer <code>override</code> explicitement ;</li>
+<li>utiliser <code>explicit</code> sur les constructeurs à un paramètre quand nécessaire ;</li>
+<li>préférer <code>std::string_view</code> pour la lecture non propriétaire lorsque sûr ;</li>
+<li>faire attention à la durée de vie des références et vues.</li>
+</ul>
+<hr>
+<h2>8. Gestion des erreurs et robustesse</h2>
+<ul>
+<li>utiliser les exceptions selon la politique du projet ou une alternative claire ;</li>
+<li>ne pas ignorer silencieusement un code d’erreur ;</li>
+<li>garder les invariants de classe simples et défendables ;</li>
+<li>valider les préconditions importantes ;</li>
+<li>documenter les contrats de possession et les cas d’échec.</li>
+</ul>
+<hr>
+<h2>9. Types d’éléments à revoir en priorité</h2>
+<p>Relire en priorité :</p>
+<ul>
+<li>types manipulant des ressources ;</li>
+<li>code concurrent ou multithread ;</li>
+<li>wrappers système ;</li>
+<li>interfaces publiques de bibliothèques ;</li>
+<li>sérialisation binaire ou réseau ;</li>
+<li>interopérabilité C / C++ / moteur.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-cpp">#pragma once
+
+#include &lt;memory&gt;
+#include &lt;string_view&gt;
+
+namespace GalacticShrine::Users
+{
+    class UserProfileRepository;
+
+    class UserProfileService final
+    {
+    public:
+        explicit UserProfileService(std::shared_ptr&lt;UserProfileRepository&gt; Repository);
+
+        bool UpdateDisplayName(std::string_view UserId, std::string_view DisplayName);
+
+    private:
+        std::shared_ptr&lt;UserProfileRepository&gt; _Repository;
+    };
+}
+</code></pre>
+<pre><code class="language-cpp">#include &quot;UserProfileService.hpp&quot;
+#include &quot;UserProfileRepository.hpp&quot;
+
+namespace GalacticShrine::Users
+{
+    UserProfileService::UserProfileService(std::shared_ptr&lt;UserProfileRepository&gt; Repository)
+        : _Repository(std::move(Repository))
+    {
+    }
+
+    bool UserProfileService::UpdateDisplayName(std::string_view UserId, std::string_view DisplayName)
+    {
+        if (UserId.empty())
+        {
+            return false;
+        }
+
+        if (DisplayName.empty())
+        {
+            return false;
+        }
+
+        return _Repository-&gt;UpdateDisplayName(UserId, DisplayName);
+    }
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine C++ :</p>
+<ul>
+<li>utiliser <code>PascalCase</code> pour méthodes, paramètres et variables locales ;</li>
+<li>utiliser <code>_PascalCase</code> pour les membres privés ;</li>
+<li>appliquer RAII systématiquement ;</li>
+<li>séparer interface et implémentation clairement ;</li>
+<li>rendre explicites la possession, les coûts et la durée de vie.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets C++ Galactic-Shrine :</p>
+<ul>
+<li><code>PascalCase</code> pour types, méthodes, paramètres et variables locales ;</li>
+<li><code>_PascalCase</code> pour membres privés ;</li>
+<li><code>enum class</code>, <code>nullptr</code>, <code>override</code>, <code>explicit</code> quand approprié ;</li>
+<li>pas de gestion mémoire propriétaire implicite ;</li>
+<li>headers légers, dépendances limitées ;</li>
+<li>contrats de possession clairs.</li>
+</ul>

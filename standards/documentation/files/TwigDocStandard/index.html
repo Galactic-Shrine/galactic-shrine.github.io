@@ -1,0 +1,254 @@
+<h1>Galactic-Shrine Twig Documentation Standard</h1>
+<p><strong>Version:</strong> 1.2.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets Twig / Symfony / Templates Web / Layouts / Partials / Components / Emails / Interfaces d’administration / Fragments réutilisables</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière de documenter le code <strong>Twig</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser la documentation des templates Twig ;</li>
+<li>de conserver un style bilingue <code>[FR] / [EN]</code> ;</li>
+<li>de rester naturel pour Twig et son écosystème ;</li>
+<li>d’améliorer la lisibilité des layouts, blocks, includes, macros et fragments ;</li>
+<li>de documenter proprement les dépendances de contexte, points d’extension et contraintes d’intégration.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>La documentation Twig Galactic-Shrine doit être :</p>
+<ul>
+<li>claire ;</li>
+<li>concise ;</li>
+<li>bilingue ;</li>
+<li>structurée ;</li>
+<li>utile techniquement ;</li>
+<li>naturelle pour Twig.</li>
+</ul>
+<p>La documentation doit privilégier :</p>
+<ul>
+<li>les commentaires Twig natifs ;</li>
+<li>des descriptions courtes ;</li>
+<li>des indications de contexte utiles ;</li>
+<li>la documentation des blocs importants et des dépendances réelles ;</li>
+<li>une approche simple, sans conventions artificielles non adaptées à Twig.</li>
+</ul>
+<hr>
+<h2>3. Format obligatoire des blocs</h2>
+<p>Toujours utiliser le format suivant :</p>
+<pre><code class="language-twig">{#
+[FR] Représente la section principale du tableau de bord.
+[EN] Represents the main dashboard section.
+#}
+</code></pre>
+<p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine Twig.</p>
+<hr>
+<h2>4. Convention bilingue</h2>
+<p>Chaque bloc descriptif doit suivre l’ordre suivant :</p>
+<ol>
+<li>ligne française <code>[FR]</code></li>
+<li>ligne anglaise <code>[EN]</code></li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-twig">{#
+[FR] Conteneur principal de la page profil.
+[EN] Main container of the profile page.
+#}
+</code></pre>
+<hr>
+<h2>5. Éléments autorisés</h2>
+<p>Éléments autorisés dans les commentaires Twig Galactic-Shrine :</p>
+<ul>
+<li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
+<li><code>@context</code></li>
+<li><code>@block</code></li>
+<li><code>@extends</code></li>
+<li><code>@include</code></li>
+<li><code>@embed</code></li>
+<li><code>@macro</code></li>
+<li><code>@accessibility</code></li>
+<li><code>@dependency</code></li>
+<li><code>@note</code></li>
+<li><code>@todo</code></li>
+<li><code>@deprecated</code></li>
+<li><code>@see</code></li>
+</ul>
+<p>Éléments déconseillés :</p>
+<ul>
+<li>les balises XML de type <code>&lt;summary&gt;</code>, <code>&lt;param&gt;</code>, <code>&lt;returns&gt;</code> ;</li>
+<li>les commentaires trop longs ;</li>
+<li>les commentaires décoratifs sans valeur technique ;</li>
+<li>la duplication d’informations déjà triviales dans le code.</li>
+</ul>
+<hr>
+<h2>6. Structure recommandée d’un commentaire</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>description courte <code>[FR]</code></li>
+<li>description courte <code>[EN]</code></li>
+<li>détail complémentaire <code>[FR]</code> si nécessaire</li>
+<li>détail complémentaire <code>[EN]</code> si nécessaire</li>
+<li>tags techniques utiles</li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-twig">{#
+[FR] Bloc d’en-tête du profil utilisateur.
+[EN] User profile header block.
+
+[FR] Ce bloc affiche le nom, l’avatar et les actions rapides.
+[EN] This block displays the name, avatar, and quick actions.
+
+@context [FR] Requiert `user`, `is_owner`.
+@context [EN] Requires `user`, `is_owner`.
+#}
+</code></pre>
+<hr>
+<h2>7. Standard par type d’élément</h2>
+<h3>7.1 Template principal</h3>
+<pre><code class="language-twig">{#
+[FR] Template principal de la page profil utilisateur.
+[EN] Main template for the user profile page.
+
+[FR] Ce template structure l’en-tête, les statistiques et l’activité récente.
+[EN] This template structures the header, statistics, and recent activity.
+
+@extends [FR] Hérite de `layout/base.html.twig`.
+@extends [EN] Extends `layout/base.html.twig`.
+#}
+{% extends 'layout/base.html.twig' %}
+</code></pre>
+<h3>7.2 Block Twig</h3>
+<pre><code class="language-twig">{#
+[FR] Bloc principal du contenu de la page profil.
+[EN] Main content block of the profile page.
+#}
+{% block body %}
+{% endblock %}
+</code></pre>
+<h3>7.3 Include ou partial</h3>
+<pre><code class="language-twig">{#
+[FR] Fragment réutilisable d’informations de profil.
+[EN] Reusable profile information partial.
+
+@include [FR] Inclus depuis plusieurs pages compte.
+@include [EN] Included from several account pages.
+#}
+</code></pre>
+<h3>7.4 Macro</h3>
+<pre><code class="language-twig">{#
+[FR] Macro de rendu d’un badge de statut.
+[EN] Status badge rendering macro.
+
+@macro [FR] Rend un badge selon un code de statut.
+@macro [EN] Renders a badge according to a status code.
+#}
+</code></pre>
+<h3>7.5 Embed</h3>
+<pre><code class="language-twig">{#
+[FR] Carte de panneau réutilisable avec zones surchargeables.
+[EN] Reusable panel card with overridable areas.
+
+@embed [FR] Permet une spécialisation locale du contenu.
+@embed [EN] Allows local specialization of the content.
+#}
+</code></pre>
+<h3>7.6 Zone dynamique ou dépendance JavaScript</h3>
+<pre><code class="language-twig">{#
+[FR] Zone dynamique de chargement des notifications.
+[EN] Dynamic notifications loading area.
+
+@dependency [FR] Alimentée par Turbo, Stimulus ou JavaScript.
+@dependency [EN] Populated by Turbo, Stimulus, or JavaScript.
+#}
+&lt;div id=&quot;notifications-feed&quot; data-controller=&quot;notifications-feed&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3>7.7 Formulaire Twig</h3>
+<pre><code class="language-twig">{#
+[FR] Formulaire de connexion utilisateur.
+[EN] User login form.
+
+@context [FR] Requiert `loginForm`.
+@context [EN] Requires `loginForm`.
+#}
+{{ form_start(loginForm) }}
+</code></pre>
+<hr>
+<h2>8. Règles de style</h2>
+<h3>8.1 Descriptions courtes</h3>
+<p>Toujours préférer une phrase simple et directe.</p>
+<h3>8.2 Ordre fixe</h3>
+<p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
+<h3>8.3 Commenter les blocs utiles, pas chaque balise</h3>
+<p>Documenter templates principaux, layouts, blocks importants, includes réutilisables, macros, embeds, zones dynamiques et fragments dépendants d’un contexte précis.</p>
+<h3>8.4 Cohérence avec Twig et Symfony</h3>
+<p>La documentation doit aider à identifier le layout parent, le contexte attendu, les dépendances Stimulus/Turbo/JS et les variables critiques fournies par le contrôleur.</p>
+<h3>8.5 Pas de surdocumentation</h3>
+<p>Ne pas commenter une interpolation triviale sans enjeu technique.</p>
+<hr>
+<h2>9. Types d’éléments à documenter en priorité</h2>
+<p>Documenter en priorité :</p>
+<ul>
+<li>templates principaux ;</li>
+<li>layouts ;</li>
+<li>blocks importants ;</li>
+<li>includes réutilisables ;</li>
+<li>macros ;</li>
+<li>embeds ;</li>
+<li>zones dynamiques ;</li>
+<li>formulaires métier ;</li>
+<li>parties sensibles pour l’accessibilité ;</li>
+<li>fragments dépendants d’un contexte précis.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-twig">{#
+[FR] Template principal de la page profil utilisateur.
+[EN] Main template for the user profile page.
+
+[FR] Ce template structure l’en-tête, les statistiques et l’activité récente.
+[EN] This template structures the header, statistics, and recent activity.
+
+@extends [FR] Hérite de `layout/base.html.twig`.
+@extends [EN] Extends `layout/base.html.twig`.
+#}
+{% extends 'layout/base.html.twig' %}
+
+{#
+[FR] Bloc principal du contenu de la page profil.
+[EN] Main content block of the profile page.
+
+@context [FR] Requiert `user` et `recentActivities`.
+@context [EN] Requires `user` and `recentActivities`.
+#}
+{% block body %}
+    &lt;main class=&quot;gs-profile-page&quot;&gt;
+        {#
+        [FR] En-tête du profil avec avatar et métadonnées.
+        [EN] Profile header with avatar and metadata.
+        #}
+        &lt;section class=&quot;gs-profile-header&quot;&gt;
+            &lt;h1&gt;{{ user.displayName }}&lt;/h1&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+{% endblock %}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine Twig :</p>
+<ul>
+<li>utiliser <code>{# ... #}</code> ;</li>
+<li>écrire d’abord <code>[FR]</code>, puis <code>[EN]</code> ;</li>
+<li>utiliser <code>@context</code>, <code>@block</code>, <code>@extends</code>, <code>@include</code>, <code>@embed</code>, <code>@macro</code>, <code>@accessibility</code>, <code>@dependency</code>, <code>@note</code> selon le besoin ;</li>
+<li>documenter les éléments structurants, pas chaque expression triviale ;</li>
+<li>garder un style court, propre et uniforme.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets Twig Galactic-Shrine :</p>
+<ul>
+<li>utiliser les commentaires Twig natifs ;</li>
+<li>écrire <code>[FR]</code> puis <code>[EN]</code> ;</li>
+<li>documenter templates, blocks, includes, macros, embeds et zones sensibles ;</li>
+<li>préciser le contexte attendu lorsque nécessaire ;</li>
+<li>indiquer les dépendances utiles ;</li>
+<li>documenter ce qui compte, pas l’évidence.</li>
+</ul>

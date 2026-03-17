@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galactic-Shrine C# Coding Standard · Portail des standards Galactic-Shrine</title>
+  <meta name="description" content="Ce standard définit la manière d’écrire le code **C#** dans les projets Galactic-Shrine.">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Portail des standards Galactic-Shrine">
+      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+      <span class="sr-only">Portail des standards Galactic-Shrine</span>
+    </a>
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+  </div>
+</header>
+<main><section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Codage · 1.0.0</div>
+        <h1>Galactic-Shrine C# Coding Standard</h1>
+        <p class="lead">Ce standard définit la manière d’écrire le code **C#** dans les projets Galactic-Shrine.</p>
+      </div>
+      <div class="card-actions">
+        <a class="button" href="/standards/coding/files/CSharpCodingStandard.md">Markdown source</a>
+        <a class="button button-primary" href="../index.html">Retour à la section</a>
+      </div>
+    </div>
+    
+    <div class="tag-list">
+      <span class="tag">C#</span><span class="tag">Codage</span><span class="tag">Projets C#</span><span class="tag">.NET</span><span class="tag">Class Libraries</span><span class="tag">SDKs</span>
+    </div>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2 standard-layout-grid">
+    <aside class="aside-card toc-card">
+      <div class="eyebrow">Portée</div>
+      <p>Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</p>
+      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
+      <ul class="footer-links">
+        <li><a href="/standards/coding/files/CSharpCodingStandard.md">Markdown brut</a></li>
+        <li><a href="/standards/coding/index.html">Index codage</a></li>
+        <li><a href="/search/index.html">Recherche globale</a></li>
+      </ul>
+    </aside>
+    <article class="doc-markdown standard-markdown">
+      <h1>Galactic-Shrine C# Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière d’écrire le code <strong>C#</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser le style C# dans les bibliothèques et applications ;</li>
+<li>d’imposer une convention de nommage claire et stable ;</li>
+<li>d’intégrer explicitement la règle Galactic-Shrine <code>PascalCase</code> pour propriétés, paramètres et méthodes ;</li>
+<li>de garder un code compatible avec un usage industriel et maintenable.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>Le code C# Galactic-Shrine doit être :</p>
+<ul>
+<li>lisible ;</li>
+<li>explicite ;</li>
+<li>idiomatique quand cela ne contredit pas les décisions Galactic-Shrine ;</li>
+<li>robuste ;</li>
+<li>facile à refactoriser.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>des types courts et spécialisés ;</li>
+<li>des dépendances injectées explicitement ;</li>
+<li>des signatures nettes ;</li>
+<li>une nullabilité traitée consciemment ;</li>
+<li>des exceptions réservées aux erreurs réellement exceptionnelles ou contractuelles.</li>
+</ul>
+<hr>
+<h2>3. Décisions officielles Galactic-Shrine pour C#</h2>
+<p>Décisions officielles :</p>
+<ul>
+<li><strong>propriétés</strong> en <code>PascalCase</code> ;</li>
+<li><strong>paramètres</strong> en <code>PascalCase</code> ;</li>
+<li><strong>méthodes</strong> en <code>PascalCase</code> ;</li>
+<li><strong>classes</strong>, <strong>records</strong>, <strong>structs</strong>, <strong>enums</strong> et <strong>delegates</strong> en <code>PascalCase</code> ;</li>
+<li><strong>champs privés</strong> en <code>_PascalCase</code> ;</li>
+<li><strong>interfaces</strong> en <code>IPascalCase</code> ;</li>
+<li><strong>variables locales</strong> en <code>PascalCase</code> ;</li>
+<li><strong>fichiers</strong> nommés selon le type principal ;</li>
+<li>activer et respecter la <strong>nullabilité</strong> quand elle est disponible ;</li>
+<li>éviter les abréviations opaques.</li>
+</ul>
+<p>Exemple :</p>
+<pre><code class="language-csharp">public sealed class UserProfileService
+{
+    private readonly IUserRepository _UserRepository;
+
+    public UserProfileService(IUserRepository UserRepository)
+    {
+        ArgumentNullException.ThrowIfNull(UserRepository);
+
+        _UserRepository = UserRepository;
+    }
+
+    public async Task&lt;UserProfile?&gt; GetProfileAsync(Guid UserId, CancellationToken CancellationToken)
+    {
+        return await _UserRepository.FindProfileAsync(UserId, CancellationToken);
+    }
+}
+</code></pre>
+<hr>
+<h2>4. Convention de nommage</h2>
+<ul>
+<li>namespace : stable, hiérarchique, orienté domaine ou couche ;</li>
+<li>classe / record / struct / enum : <code>PascalCase</code> ;</li>
+<li>interface : <code>IPascalCase</code> ;</li>
+<li>propriété : <code>PascalCase</code> ;</li>
+<li>méthode : <code>PascalCase</code> ;</li>
+<li>paramètre : <code>PascalCase</code> ;</li>
+<li>variable locale : <code>PascalCase</code> ;</li>
+<li>champ privé : <code>_PascalCase</code> ;</li>
+<li>champ <code>const</code> : <code>PascalCase</code> ;</li>
+<li>champ <code>static readonly</code> : <code>PascalCase</code> ou <code>_PascalCase</code> selon visibilité, mais rester uniforme dans le projet.</li>
+</ul>
+<p>À éviter :</p>
+<ul>
+<li><code>obj</code>, <code>mgr</code>, <code>svc</code>, <code>tmp</code>, <code>data2</code> sans contexte ;</li>
+<li>les noms qui décrivent la technique sans l’intention ;</li>
+<li>des suffixes artificiels partout.</li>
+</ul>
+<hr>
+<h2>5. Structure recommandée d’un fichier C#</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>en-tête légal si requis ;</li>
+<li><code>using</code> ;</li>
+<li><code>namespace</code> ;</li>
+<li>type principal ;</li>
+<li>types internes liés uniquement si cela reste lisible.</li>
+</ol>
+<p>Ordre recommandé dans un type :</p>
+<ol>
+<li>constantes ;</li>
+<li>champs statiques ;</li>
+<li>champs d’instance ;</li>
+<li>constructeurs ;</li>
+<li>propriétés ;</li>
+<li>méthodes publiques ;</li>
+<li>méthodes protégées ;</li>
+<li>méthodes privées ;</li>
+<li>types imbriqués si vraiment nécessaires.</li>
+</ol>
+<p>Éviter :</p>
+<ul>
+<li>plusieurs gros types publics sans lien dans le même fichier ;</li>
+<li>des régions utilisées pour masquer un manque de structure ;</li>
+<li>des méthodes privées éparpillées sans ordre.</li>
+</ul>
+<hr>
+<h2>6. Style d’écriture</h2>
+<h3>6.1 Accolades et blocs</h3>
+<p>Toujours utiliser des blocs explicites pour <code>if</code>, <code>else</code>, <code>for</code>, <code>foreach</code>, <code>while</code>, <code>using</code>, sauf cas ultra-triviaux validés par le projet.</p>
+<h3>6.2 Retours anticipés</h3>
+<p>Préférer un retour anticipé lorsqu’il réduit l’imbrication et clarifie le contrat.</p>
+<h3>6.3 LINQ</h3>
+<p>Utiliser LINQ lorsqu’il améliore clairement la lecture.<br>
+Éviter les chaînes LINQ trop denses ou difficiles à déboguer.</p>
+<h3>6.4 <code>var</code></h3>
+<p>Utiliser <code>var</code> lorsque le type est évident à la lecture immédiate.<br>
+Sinon, préférer le type explicite.</p>
+<h3>6.5 <code>async/await</code></h3>
+<ul>
+<li>suffixer les méthodes asynchrones par <code>Async</code> ;</li>
+<li>propager <code>CancellationToken</code> lorsque pertinent ;</li>
+<li>éviter <code>async void</code> sauf gestionnaires d’événements ;</li>
+<li>ne pas bloquer artificiellement sur du code asynchrone.</li>
+</ul>
+<hr>
+<h2>7. Règles spécifiques C#</h2>
+<ul>
+<li>utiliser <code>ArgumentNullException.ThrowIfNull(...)</code> aux frontières appropriées ;</li>
+<li>marquer <code>sealed</code> lorsqu’un type n’a pas vocation à être hérité ;</li>
+<li>préférer <code>enum</code> explicites et lisibles ;</li>
+<li>privilégier <code>record</code> seulement si la sémantique valeur est réelle ;</li>
+<li>limiter les extension methods aux cas légitimes ;</li>
+<li>éviter les classes statiques utilitaires trop larges ;</li>
+<li>ne pas exposer de collection mutable si une abstraction plus sûre convient ;</li>
+<li>rester prudent avec la réflexion, le <code>dynamic</code> et les conversions implicites coûteuses.</li>
+</ul>
+<hr>
+<h2>8. Gestion des erreurs et robustesse</h2>
+<ul>
+<li>lancer des exceptions avec un message exploitable ;</li>
+<li>ne pas avaler une exception sans traitement ou journalisation pertinente ;</li>
+<li>utiliser des types de résultat dédiés quand l’absence d’un élément est un cas normal ;</li>
+<li>documenter les contrats importants côté API publique ;</li>
+<li>séparer les validations d’entrée, les erreurs métier et les erreurs d’infrastructure.</li>
+</ul>
+<hr>
+<h2>9. Types d’éléments à revoir en priorité</h2>
+<p>Relire en priorité :</p>
+<ul>
+<li>services applicatifs ;</li>
+<li>factories, builders, providers ;</li>
+<li>repositories et accès externes ;</li>
+<li>modèles exposés publiquement ;</li>
+<li>code asynchrone ;</li>
+<li>sérialisation / désérialisation ;</li>
+<li>gestion des options et configuration ;</li>
+<li>utilitaires partagés.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-csharp">namespace GalacticShrine.Users;
+
+public sealed class UserProfileService
+{
+    private readonly IUserRepository _UserRepository;
+    private readonly IClock _Clock;
+
+    public UserProfileService(IUserRepository UserRepository, IClock Clock)
+    {
+        ArgumentNullException.ThrowIfNull(UserRepository);
+        ArgumentNullException.ThrowIfNull(Clock);
+
+        _UserRepository = UserRepository;
+        _Clock = Clock;
+    }
+
+    public async Task&lt;UserProfileResult&gt; UpdateDisplayNameAsync(
+        Guid UserId,
+        string DisplayName,
+        CancellationToken CancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(DisplayName);
+
+        string NormalizedDisplayName = DisplayName.Trim();
+
+        if (NormalizedDisplayName.Length == 0)
+        {
+            return UserProfileResult.Invalid(&quot;DisplayName cannot be empty.&quot;);
+        }
+
+        UserProfile? ExistingProfile = await _UserRepository.FindProfileAsync(UserId, CancellationToken);
+
+        if (ExistingProfile is null)
+        {
+            return UserProfileResult.NotFound();
+        }
+
+        ExistingProfile.UpdateDisplayName(NormalizedDisplayName, _Clock.UtcNow);
+
+        await _UserRepository.SaveAsync(ExistingProfile, CancellationToken);
+
+        return UserProfileResult.Success(ExistingProfile);
+    }
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine C# :</p>
+<ul>
+<li>utiliser <code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
+<li>utiliser <code>_PascalCase</code> pour les champs privés ;</li>
+<li>garder un type principal par fichier ;</li>
+<li>écrire des méthodes courtes et testables ;</li>
+<li>respecter la nullabilité et les contrats d’erreur ;</li>
+<li>utiliser <code>Async</code> pour les méthodes asynchrones.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets C# Galactic-Shrine :</p>
+<ul>
+<li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
+<li><code>_PascalCase</code> pour les champs privés ;</li>
+<li><code>IPascalCase</code> pour les interfaces ;</li>
+<li>un type principal par fichier ;</li>
+<li>validation explicite des entrées ;</li>
+<li><code>async/await</code> propre, avec <code>CancellationToken</code> quand nécessaire ;</li>
+<li>pas de classes “god object”.</li>
+</ul>
+
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>© <span id="currentYear"></span> Galactic-Shrine</strong>
+      <p>Galactic-Shrine • Tous droits réservés.<br>Propulsé par GitHub Pages et GitHub Actions.</p>
+    </div>
+    <div>
+      <strong>Navigation</strong>
+      <ul class="footer-links">
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/about/index.html">À propos</a></li>
+        <li><a href="/changelog/index.html">Changelog</a></li>
+        <li><a href="/roadmap/index.html">Roadmap</a></li>
+        <li><a href="/search/index.html">Recherche</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Projet</strong>
+      <ul class="footer-links">
+        <li><a href="/README.html">README</a></li>
+        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
+        <li>Domaine personnalisé préconfiguré : <code>docs.galactic-shrine.com</code></li>
+        <li><a href="/CNAME">CNAME</a></li>
+        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

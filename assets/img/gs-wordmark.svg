@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="84" viewBox="0 0 560 84" role="img" aria-labelledby="title desc">
+  <title id="title">Galactic-Shrine</title>
+  <desc id="desc">Galactic-Shrine wordmark with cyan brackets and warm orange-red title.</desc>
+  <defs>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb15b"/>
+      <stop offset="40%" stop-color="#ff8a3d"/>
+      <stop offset="72%" stop-color="#d4463b"/>
+      <stop offset="100%" stop-color="#a11f1f"/>
+    </linearGradient>
+    <linearGradient id="braceGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#62d8ff"/>
+      <stop offset="100%" stop-color="#2a9cf7"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-50%" width="160%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.8" flood-color="#1ba0ff" flood-opacity=".45"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="2.8" flood-color="#000000" flood-opacity=".35"/>
+    </filter>
+    <filter id="textShadow" x="-20%" y="-40%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.8" flood-color="#150b28" flood-opacity=".75"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softGlow)" stroke="url(#braceGrad)" stroke-width="4.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+    <path d="M12 41 L42 15 M12 41 L42 67"/>
+    <path d="M548 41 L518 15 M548 41 L518 67"/>
+    <path d="M38 13 L72 13"/>
+    <path d="M522 69 L488 69"/>
+  </g>
+
+  <text x="280" y="53"
+        text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="44"
+        font-style="italic"
+        letter-spacing=".4"
+        fill="url(#textGrad)"
+        stroke="#491322"
+        stroke-width="1.35"
+        paint-order="stroke"
+        filter="url(#textShadow)">Galactic-Shrine</text>
+</svg>

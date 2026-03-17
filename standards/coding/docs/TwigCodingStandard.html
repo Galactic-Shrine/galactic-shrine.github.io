@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galactic-Shrine Twig Coding Standard · Portail des standards Galactic-Shrine</title>
+  <meta name="description" content="Ce standard définit la manière d’écrire le code **Twig** dans les projets Galactic-Shrine.">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Portail des standards Galactic-Shrine">
+      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+      <span class="sr-only">Portail des standards Galactic-Shrine</span>
+    </a>
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+  </div>
+</header>
+<main><section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Codage · 1.0.0</div>
+        <h1>Galactic-Shrine Twig Coding Standard</h1>
+        <p class="lead">Ce standard définit la manière d’écrire le code **Twig** dans les projets Galactic-Shrine.</p>
+      </div>
+      <div class="card-actions">
+        <a class="button" href="/standards/coding/files/TwigCodingStandard.md">Markdown source</a>
+        <a class="button button-primary" href="../index.html">Retour à la section</a>
+      </div>
+    </div>
+    
+    <div class="tag-list">
+      <span class="tag">Twig</span><span class="tag">Codage</span><span class="tag">Projets Twig</span><span class="tag">Symfony</span><span class="tag">Layouts</span><span class="tag">Pages</span>
+    </div>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2 standard-layout-grid">
+    <aside class="aside-card toc-card">
+      <div class="eyebrow">Portée</div>
+      <p>Projets Twig / Symfony / Layouts / Pages / Partials / Components / Emails / Back-office / Fragments réutilisables</p>
+      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
+      <ul class="footer-links">
+        <li><a href="/standards/coding/files/TwigCodingStandard.md">Markdown brut</a></li>
+        <li><a href="/standards/coding/index.html">Index codage</a></li>
+        <li><a href="/search/index.html">Recherche globale</a></li>
+      </ul>
+    </aside>
+    <article class="doc-markdown standard-markdown">
+      <h1>Galactic-Shrine Twig Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets Twig / Symfony / Layouts / Pages / Partials / Components / Emails / Back-office / Fragments réutilisables</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière d’écrire le code <strong>Twig</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser les templates Twig ;</li>
+<li>de limiter la logique applicative dans les vues ;</li>
+<li>de garder des layouts et composants lisibles ;</li>
+<li>d’aligner l’organisation Twig avec Symfony et les conventions Galactic-Shrine.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>Le code Twig Galactic-Shrine doit être :</p>
+<ul>
+<li>lisible ;</li>
+<li>structuré ;</li>
+<li>peu chargé en logique ;</li>
+<li>prévisible ;</li>
+<li>compatible avec une maintenance long terme.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>des templates ciblés ;</li>
+<li>des blocks utiles ;</li>
+<li>des includes explicites ;</li>
+<li>un contexte de vue préparé en amont ;</li>
+<li>une logique d’affichage simple.</li>
+</ul>
+<hr>
+<h2>3. Décisions officielles Galactic-Shrine pour Twig</h2>
+<p>Décisions officielles :</p>
+<ul>
+<li>garder la logique métier hors Twig ;</li>
+<li>préparer les données dans le contrôleur, le presenter ou la couche dédiée ;</li>
+<li>nommer les blocks, templates et partials de manière explicite ;</li>
+<li>utiliser des variables de contexte claires ;</li>
+<li>limiter les conditions imbriquées dans les vues ;</li>
+<li>conserver une cohérence forte entre layout, partials et composants.</li>
+</ul>
+<hr>
+<h2>4. Convention de nommage</h2>
+<ul>
+<li>templates : nommés selon leur rôle (<code>profile/show.html.twig</code>, <code>components/user-card.html.twig</code>) ;</li>
+<li>blocks : explicites ;</li>
+<li>variables Twig : convention du contexte préparé par l’application ;</li>
+<li>macros : rares, ciblées et clairement nommées ;</li>
+<li>fragments : pas de noms vagues.</li>
+</ul>
+<p>Lorsque le contexte applicatif appartient à Galactic-Shrine, privilégier des noms clairs et stables.<br>
+Lorsque Twig consomme des structures externes, conserver la convention imposée par la source.</p>
+<hr>
+<h2>5. Structure recommandée d’un template Twig</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li><code>extends</code> ou structure principale ;</li>
+<li>définition des blocks majeurs ;</li>
+<li>includes ou embeds ciblés ;</li>
+<li>fragments secondaires ;</li>
+<li>scripts et hooks spécifiques si nécessaires.</li>
+</ol>
+<p>Règles :</p>
+<ul>
+<li>un template doit avoir un rôle identifiable ;</li>
+<li>un partial doit être réellement réutilisable ou spécialisé ;</li>
+<li>ne pas transformer un template en couche métier déguisée.</li>
+</ul>
+<hr>
+<h2>6. Style d’écriture</h2>
+<h3>6.1 Conditions</h3>
+<ul>
+<li>garder des conditions simples ;</li>
+<li>éviter l’enchaînement de logique métier ;</li>
+<li>préparer les états complexes en amont.</li>
+</ul>
+<h3>6.2 Blocks et includes</h3>
+<ul>
+<li>créer un <code>block</code> pour un vrai point d’extension ;</li>
+<li>utiliser <code>include</code> pour les fragments réutilisables ;</li>
+<li>utiliser <code>embed</code> seulement si le gain structurel est réel.</li>
+</ul>
+<h3>6.3 Variables</h3>
+<ul>
+<li>préférer des variables déjà normalisées ;</li>
+<li>éviter les chaînes d’accès trop profondes répétées ;</li>
+<li>garder les noms du contexte cohérents entre contrôleurs et templates.</li>
+</ul>
+<hr>
+<h2>7. Règles spécifiques Twig</h2>
+<ul>
+<li>ne pas effectuer de calcul métier important dans Twig ;</li>
+<li>limiter les filtres chaînés difficiles à lire ;</li>
+<li>traiter les permissions et états complexes avant rendu quand possible ;</li>
+<li>garder les composants Twig stables et bien délimités ;</li>
+<li>préserver l’accessibilité du HTML produit.</li>
+</ul>
+<hr>
+<h2>8. Gestion des erreurs et robustesse</h2>
+<ul>
+<li>prévoir les données optionnelles explicitement ;</li>
+<li>ne pas supposer silencieusement qu’une variable existe si le contrat est flou ;</li>
+<li>centraliser les valeurs par défaut importantes ;</li>
+<li>garder les templates résilients aux contextes partiels raisonnables.</li>
+</ul>
+<hr>
+<h2>9. Types d’éléments à revoir en priorité</h2>
+<p>Relire en priorité :</p>
+<ul>
+<li>layouts ;</li>
+<li>templates de page ;</li>
+<li>composants réutilisables ;</li>
+<li>partials complexes ;</li>
+<li>emails ;</li>
+<li>blocs avec permissions ou états multiples ;</li>
+<li>vues fortement couplées à JavaScript.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-twig">{% extends 'layout/base.html.twig' %}
+
+{% block body %}
+    &lt;main class=&quot;GsProfilePage&quot;&gt;
+        {% include 'components/profile/header.html.twig' with {
+            User: User,
+            Statistics: Statistics
+        } only %}
+
+        {% if RecentActivities is not empty %}
+            {% include 'components/profile/recent-activities.html.twig' with {
+                Activities: RecentActivities
+            } only %}
+        {% endif %}
+    &lt;/main&gt;
+{% endblock %}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine Twig :</p>
+<ul>
+<li>logique métier hors template ;</li>
+<li>templates et partials explicites ;</li>
+<li>contexte préparé en amont ;</li>
+<li>conditions courtes ;</li>
+<li>structure de layout propre et maintenable.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets Twig Galactic-Shrine :</p>
+<ul>
+<li>peu de logique dans Twig ;</li>
+<li>blocks et includes ciblés ;</li>
+<li>noms de templates explicites ;</li>
+<li>contexte clair ;</li>
+<li>HTML produit sémantique et stable.</li>
+</ul>
+
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>© <span id="currentYear"></span> Galactic-Shrine</strong>
+      <p>Galactic-Shrine • Tous droits réservés.<br>Propulsé par GitHub Pages et GitHub Actions.</p>
+    </div>
+    <div>
+      <strong>Navigation</strong>
+      <ul class="footer-links">
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/about/index.html">À propos</a></li>
+        <li><a href="/changelog/index.html">Changelog</a></li>
+        <li><a href="/roadmap/index.html">Roadmap</a></li>
+        <li><a href="/search/index.html">Recherche</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Projet</strong>
+      <ul class="footer-links">
+        <li><a href="/README.html">README</a></li>
+        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
+        <li>Domaine personnalisé préconfiguré : <code>docs.galactic-shrine.com</code></li>
+        <li><a href="/CNAME">CNAME</a></li>
+        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

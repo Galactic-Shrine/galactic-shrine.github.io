@@ -1,0 +1,187 @@
+<h1>Galactic-Shrine JavaScript Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets JavaScript / ES Modules / Browser / Node.js / Tooling / Front-end / Back-end / Scripts / Components</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière d’écrire le code <strong>JavaScript</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser le style JavaScript ;</li>
+<li>de conserver une base lisible malgré la souplesse du langage ;</li>
+<li>d’aligner le nommage avec la convention Galactic-Shrine ;</li>
+<li>de réduire les zones implicites et ambiguës.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>Le code JavaScript Galactic-Shrine doit être :</p>
+<ul>
+<li>explicite ;</li>
+<li>stable ;</li>
+<li>lisible ;</li>
+<li>prudent vis-à-vis de l’implicite ;</li>
+<li>structuré selon le runtime visé.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>des modules petits et ciblés ;</li>
+<li>des noms explicites ;</li>
+<li>des fonctions courtes ;</li>
+<li>des transformations de données lisibles ;</li>
+<li>une séparation claire entre DOM, logique métier et intégrations.</li>
+</ul>
+<hr>
+<h2>3. Décisions officielles Galactic-Shrine pour JavaScript</h2>
+<p>Décisions officielles :</p>
+<ul>
+<li>classes : <code>PascalCase</code> ;</li>
+<li>méthodes : <code>PascalCase</code> ;</li>
+<li>paramètres : <code>PascalCase</code> ;</li>
+<li>propriétés d’objets applicatifs internes : <code>PascalCase</code> lorsque le contrat est maîtrisé ;</li>
+<li>variables locales : <code>PascalCase</code> ;</li>
+<li>constantes de module : <code>PascalCase</code> ;</li>
+<li>fichiers de modules : nom cohérent avec la responsabilité ;</li>
+<li>fonctions asynchrones suffixées par <code>Async</code> lorsque cela améliore la clarté.</li>
+</ul>
+<p>Règle d’exception :</p>
+<blockquote>
+<p>Les objets JSON, APIs publiques web, conventions DOM, noms d’options imposés par une bibliothèque ou formats externes peuvent conserver leur convention native.</p>
+</blockquote>
+<hr>
+<h2>4. Convention de nommage</h2>
+<ul>
+<li>classe : <code>PascalCase</code> ;</li>
+<li>méthode : <code>PascalCase</code> ;</li>
+<li>paramètre : <code>PascalCase</code> ;</li>
+<li>variable locale : <code>PascalCase</code> ;</li>
+<li>constante : <code>PascalCase</code> ;</li>
+<li>événement ou handler interne : explicite, orienté intention ;</li>
+<li>nom de module : clair et ciblé.</li>
+</ul>
+<p>À éviter :</p>
+<ul>
+<li><code>data</code>, <code>item</code>, <code>obj</code>, <code>el</code>, <code>tmp</code> répétés sans contexte ;</li>
+<li>les noms qui cachent une mutation ou un effet de bord ;</li>
+<li>les fonctions “helpers” énormes.</li>
+</ul>
+<hr>
+<h2>5. Structure recommandée d’un module JavaScript</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>imports ;</li>
+<li>constantes locales ;</li>
+<li>types ou classes locales si besoin ;</li>
+<li>fonction ou classe principale exportée ;</li>
+<li>helpers privés strictement liés au module.</li>
+</ol>
+<p>Règles :</p>
+<ul>
+<li>un module doit avoir une responsabilité identifiable ;</li>
+<li>limiter le nombre d’exports si cela brouille le rôle du fichier ;</li>
+<li>éviter de mélanger orchestration UI et logique de transformation profonde.</li>
+</ul>
+<hr>
+<h2>6. Style d’écriture</h2>
+<h3>6.1 Déclarations</h3>
+<ul>
+<li>préférer <code>const</code> puis <code>let</code> ;</li>
+<li>éviter <code>var</code> ;</li>
+<li>rapprocher la déclaration de l’usage.</li>
+</ul>
+<h3>6.2 Fonctions</h3>
+<ul>
+<li>préférer des fonctions nommées pour la logique importante ;</li>
+<li>garder les callbacks courts ;</li>
+<li>éviter les chaînes de transformations illisibles.</li>
+</ul>
+<h3>6.3 <code>async/await</code></h3>
+<ul>
+<li>préférer <code>async/await</code> à des chaînes de <code>then</code> complexes ;</li>
+<li>gérer les erreurs explicitement ;</li>
+<li>éviter les appels parallèles non maîtrisés.</li>
+</ul>
+<h3>6.4 Conditions</h3>
+<ul>
+<li>rendre les tests lisibles ;</li>
+<li>éviter les coercitions surprenantes ;</li>
+<li>utiliser <code>===</code> et <code>!==</code> par défaut.</li>
+</ul>
+<hr>
+<h2>7. Règles spécifiques JavaScript</h2>
+<ul>
+<li>ne pas dépendre d’un état global caché ;</li>
+<li>encapsuler l’accès au DOM complexe ;</li>
+<li>isoler les appels réseau ;</li>
+<li>valider les entrées externes ou événements transformés ;</li>
+<li>éviter les objets polymorphes sans contrat ;</li>
+<li>limiter la métaprogrammation et les patterns trop abstraits si le gain est faible.</li>
+</ul>
+<hr>
+<h2>8. Gestion des erreurs et robustesse</h2>
+<ul>
+<li>lever ou propager une erreur exploitable ;</li>
+<li>ne pas masquer un échec de requête ;</li>
+<li>distinguer les erreurs attendues des défauts techniques ;</li>
+<li>renvoyer des structures de résultat stables si le flux l’exige ;</li>
+<li>journaliser avec discernement.</li>
+</ul>
+<hr>
+<h2>9. Types d’éléments à revoir en priorité</h2>
+<p>Relire en priorité :</p>
+<ul>
+<li>modules réseau ;</li>
+<li>services front-end ;</li>
+<li>composants riches en état ;</li>
+<li>gestionnaires d’événements complexes ;</li>
+<li>adaptateurs d’APIs externes ;</li>
+<li>code de transformation JSON ;</li>
+<li>scripts de build ou tooling critiques.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-js">export class UserProfileService {
+    constructor(ApiClient) {
+        this.ApiClient = ApiClient;
+    }
+
+    async UpdateDisplayNameAsync(UserId, DisplayName) {
+        const NormalizedDisplayName = DisplayName.trim();
+
+        if (NormalizedDisplayName.length === 0) {
+            return { IsSuccess: false, ErrorCode: &quot;EmptyDisplayName&quot; };
+        }
+
+        const Response = await this.ApiClient.PostAsync(&quot;/users/display-name&quot;, {
+            userId: UserId,
+            displayName: NormalizedDisplayName,
+        });
+
+        if (!Response.ok) {
+            return { IsSuccess: false, ErrorCode: &quot;RequestFailed&quot; };
+        }
+
+        return { IsSuccess: true };
+    }
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine JavaScript :</p>
+<ul>
+<li>utiliser <code>PascalCase</code> pour méthodes, paramètres et variables locales ;</li>
+<li>appliquer <code>PascalCase</code> aux propriétés internes quand le contrat t’appartient ;</li>
+<li>conserver les conventions externes quand l’interopérabilité l’exige ;</li>
+<li>écrire des modules courts, avec responsabilités nettes ;</li>
+<li>éviter l’implicite fragile.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets JavaScript Galactic-Shrine :</p>
+<ul>
+<li><code>PascalCase</code> pour méthodes, paramètres et variables locales ;</li>
+<li><code>const</code> par défaut ;</li>
+<li><code>async/await</code> propre ;</li>
+<li>modules ciblés ;</li>
+<li>validation des entrées externes ;</li>
+<li>exceptions ciblées pour les conventions JSON ou APIs externes.</li>
+</ul>

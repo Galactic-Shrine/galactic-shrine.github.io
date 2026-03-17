@@ -1,0 +1,223 @@
+<h1>Galactic-Shrine PHP Coding Standard</h1>
+<p><strong>Version:</strong> 1.0.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets PHP / Symfony / APIs / CLI / Services / Domain Models / Back-office / Applications Web</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière d’écrire le code <strong>PHP</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser le style PHP et Symfony ;</li>
+<li>d’aligner le nommage et la structure sur la convention Galactic-Shrine ;</li>
+<li>d’intégrer explicitement la règle Galactic-Shrine <code>PascalCase</code> pour propriétés, paramètres et méthodes ;</li>
+<li>d’améliorer la lisibilité du code applicatif et des services.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>Le code PHP Galactic-Shrine doit être :</p>
+<ul>
+<li>strict ;</li>
+<li>lisible ;</li>
+<li>explicite ;</li>
+<li>cohérent avec le framework sans lui être totalement soumis ;</li>
+<li>maintenable à long terme.</li>
+</ul>
+<p>Le code doit privilégier :</p>
+<ul>
+<li>des services spécialisés ;</li>
+<li>des DTO, value objects et résultats explicites lorsque pertinents ;</li>
+<li>des dépendances injectées ;</li>
+<li>des types déclarés ;</li>
+<li>une logique de contrôleur légère.</li>
+</ul>
+<hr>
+<h2>3. Décisions officielles Galactic-Shrine pour PHP</h2>
+<p>Décisions officielles :</p>
+<ul>
+<li>utiliser <code>declare(strict_types=1);</code> lorsque compatible avec le projet ;</li>
+<li>classes, interfaces, traits, enums : <code>PascalCase</code> ;</li>
+<li>propriétés : <code>PascalCase</code> ;</li>
+<li>paramètres : <code>PascalCase</code> ;</li>
+<li>méthodes : <code>PascalCase</code> ;</li>
+<li>variables locales : <code>PascalCase</code> ;</li>
+<li>propriétés privées : <code>$PascalCase</code> ;</li>
+<li>fichiers nommés selon le type principal ;</li>
+<li>typage des paramètres et retours obligatoire dès que possible.</li>
+</ul>
+<p>Exemple :</p>
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace App\Service\User;
+
+final class UserProfileService
+{
+    public function UpdateDisplayName(string $UserId, string $DisplayName): bool
+    {
+        $NormalizedDisplayName = trim($DisplayName);
+
+        if ($NormalizedDisplayName === '') {
+            return false;
+        }
+
+        return true;
+    }
+}
+</code></pre>
+<hr>
+<h2>4. Convention de nommage</h2>
+<ul>
+<li>namespace : hiérarchique et orienté domaine ;</li>
+<li>classe / interface / trait / enum : <code>PascalCase</code> ;</li>
+<li>propriété : <code>PascalCase</code> ;</li>
+<li>méthode : <code>PascalCase</code> ;</li>
+<li>paramètre : <code>PascalCase</code> ;</li>
+<li>variable locale : <code>PascalCase</code> ;</li>
+<li>propriété privée : <code>$PascalCase</code> ;</li>
+<li>constantes de classe : <code>PascalCase</code> ;</li>
+<li>fichiers : un type principal par fichier.</li>
+</ul>
+<p>Règle d’exception :</p>
+<blockquote>
+<p>Les noms imposés par Symfony, Serializer, API Platform, Doctrine, JSON, Twig ou une API externe peuvent conserver leur convention native lorsque l’interopérabilité l’exige.</p>
+</blockquote>
+<hr>
+<h2>5. Structure recommandée d’un fichier PHP</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>ouverture PHP ;</li>
+<li><code>declare(strict_types=1);</code> ;</li>
+<li>namespace ;</li>
+<li><code>use</code> ;</li>
+<li>type principal.</li>
+</ol>
+<p>Ordre recommandé dans une classe :</p>
+<ol>
+<li>constantes ;</li>
+<li>propriétés ;</li>
+<li>constructeur ;</li>
+<li>méthodes publiques ;</li>
+<li>méthodes privées.</li>
+</ol>
+<p>Éviter :</p>
+<ul>
+<li>les fichiers mélangeant plusieurs grosses classes ;</li>
+<li>la logique métier lourde dans les contrôleurs ;</li>
+<li>les méthodes “utilitaires globales” sans périmètre clair.</li>
+</ul>
+<hr>
+<h2>6. Style d’écriture</h2>
+<h3>6.1 Types</h3>
+<p>Toujours typer les paramètres et les retours dès que raisonnable.</p>
+<h3>6.2 Contrôleurs</h3>
+<ul>
+<li>rester minces ;</li>
+<li>déléguer la logique métier aux services ;</li>
+<li>éviter les transformations complexes inline.</li>
+</ul>
+<h3>6.3 Méthodes</h3>
+<ul>
+<li>une méthode doit avoir une responsabilité identifiable ;</li>
+<li>préférer les retours précoces ;</li>
+<li>éviter les tableaux polymorphes sans contrat.</li>
+</ul>
+<h3>6.4 Collections et tableaux</h3>
+<ul>
+<li>préférer des structures explicites lorsqu’un tableau devient contractuel ;</li>
+<li>documenter la forme attendue si nécessaire ;</li>
+<li>éviter les clés “magiques” dispersées.</li>
+</ul>
+<hr>
+<h2>7. Règles spécifiques PHP / Symfony</h2>
+<ul>
+<li>ne pas injecter le conteneur complet ;</li>
+<li>préférer l’autowiring sur des dépendances précises ;</li>
+<li>éviter les services statiques ;</li>
+<li>séparer DTO, entités, value objects et services ;</li>
+<li>garder Doctrine propre : pas de logique d’infrastructure disséminée partout ;</li>
+<li>traiter explicitement les conversions d’UUID, dates et entrées externes ;</li>
+<li>rester cohérent avec les conventions Symfony lorsqu’elles sont structurelles.</li>
+</ul>
+<hr>
+<h2>8. Gestion des erreurs et robustesse</h2>
+<ul>
+<li>distinguer validation utilisateur, erreur métier et erreur technique ;</li>
+<li>ne pas retourner <code>null</code> si un résultat dédié serait plus clair ;</li>
+<li>utiliser des exceptions ciblées pour les fautes contractuelles ou techniques importantes ;</li>
+<li>journaliser les erreurs d’infrastructure utiles ;</li>
+<li>ne pas masquer une erreur silencieusement dans un <code>catch</code> vide.</li>
+</ul>
+<hr>
+<h2>9. Types d’éléments à revoir en priorité</h2>
+<p>Relire en priorité :</p>
+<ul>
+<li>services métier ;</li>
+<li>contrôleurs ;</li>
+<li>normalizers / serializers ;</li>
+<li>DTO de requête ou de réponse ;</li>
+<li>repositories ;</li>
+<li>listeners / subscribers ;</li>
+<li>commandes CLI ;</li>
+<li>intégrations externes.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace App\Service\User;
+
+use App\Repository\UserProfileRepository;
+
+final class UserProfileService
+{
+    public function __construct(
+        private readonly UserProfileRepository $UserProfileRepository,
+    ) {
+    }
+
+    public function UpdateDisplayName(string $UserId, string $DisplayName): bool
+    {
+        $NormalizedDisplayName = trim($DisplayName);
+
+        if ($NormalizedDisplayName === '') {
+            return false;
+        }
+
+        $ExistingProfile = $this-&gt;UserProfileRepository-&gt;FindByUserId($UserId);
+
+        if ($ExistingProfile === null) {
+            return false;
+        }
+
+        $ExistingProfile-&gt;UpdateDisplayName($NormalizedDisplayName);
+
+        $this-&gt;UserProfileRepository-&gt;Save($ExistingProfile);
+
+        return true;
+    }
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine PHP :</p>
+<ul>
+<li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
+<li>code strict et typé ;</li>
+<li>contrôleurs minces ;</li>
+<li>services spécialisés ;</li>
+<li>interopérabilité framework gérée par exception ciblée, pas par dérive générale.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets PHP Galactic-Shrine :</p>
+<ul>
+<li><code>declare(strict_types=1);</code> quand possible ;</li>
+<li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
+<li>un type principal par fichier ;</li>
+<li>types explicites ;</li>
+<li>logique métier hors contrôleurs ;</li>
+<li>gestion claire des erreurs et résultats.</li>
+</ul>

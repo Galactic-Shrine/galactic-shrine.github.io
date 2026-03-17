@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>README · Portail des standards Galactic-Shrine</title>
+  <meta name="description" content="Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Portail des standards Galactic-Shrine">
+      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+      <span class="sr-only">Portail des standards Galactic-Shrine</span>
+    </a>
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+  </div>
+</header>
+<main><section class="section page-header compact-header"><div class="container"><div class="section-head"><div><div class="eyebrow">Projet</div><h1>README</h1><p class="lead">Informations de base sur la migration du portail vers Eleventy.</p></div></div></div></section><section class="section"><div class="container doc-markdown"><h2>Résumé</h2><p>Cette version migre le portail <span class="inline-code">galactic-shrine.github.io</span> vers Eleventy pour mieux structurer les layouts, les contenus éditoriaux, les standards Markdown et le déploiement GitHub Pages.</p><h2>Commandes</h2><pre class="code-block">npm install
+npm run dev
+npm run build</pre></div></section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>© <span id="currentYear"></span> Galactic-Shrine</strong>
+      <p>Galactic-Shrine • Tous droits réservés.<br>Propulsé par GitHub Pages et GitHub Actions.</p>
+    </div>
+    <div>
+      <strong>Navigation</strong>
+      <ul class="footer-links">
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/about/index.html">À propos</a></li>
+        <li><a href="/changelog/index.html">Changelog</a></li>
+        <li><a href="/roadmap/index.html">Roadmap</a></li>
+        <li><a href="/search/index.html">Recherche</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Projet</strong>
+      <ul class="footer-links">
+        <li><a href="/README.html">README</a></li>
+        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
+        <li>Domaine personnalisé préconfiguré : <code>docs.galactic-shrine.com</code></li>
+        <li><a href="/CNAME">CNAME</a></li>
+        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

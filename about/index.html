@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos · Portail des standards Galactic-Shrine</title>
+  <meta name="description" content="Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<header class="site-header site-header-login">
+  <div class="container topbar">
+    <a class="brand" href="/index.html" aria-label="Portail des standards Galactic-Shrine">
+      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+      <span class="sr-only">Portail des standards Galactic-Shrine</span>
+    </a>
+    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+  </div>
+  <div class="container mobile-nav" data-mobile-nav>
+    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav class="nav" aria-label="Navigation mobile">
+      <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
+      <a data-nav href="/standards/documentation/index.html">Documentation</a>
+      <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
+      <a data-nav href="/roadmap/index.html">Roadmap</a>
+      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+    </nav>
+  </div>
+</header>
+<main><section class="section page-header compact-header"><div class="container"><div class="section-head"><div><div class="eyebrow">Éditorial</div><h1>À propos de Galactic-Shrine Standards</h1><p class="lead">Un portail de référence pour les standards internes de documentation et de codage de l’écosystème Galactic-Shrine.</p></div></div></div></section>
+<section class="section"><div class="container grid-3"><article class="feature-card"><h3>Un socle commun</h3><p>Le portail couvre un noyau transversal Galactic-Shrine puis des standards spécifiques par technologie : C#, C++, PHP, JavaScript, SCSS, HTML et Twig.</p></article><article class="feature-card"><h3>Des règles stables</h3><p>Chaque standard aide la review, réduit les divergences de style et garde les projets lisibles même lorsqu’ils grossissent.</p></article><article class="feature-card"><h3>Une logique Galactic-Shrine</h3><p>Structure harmonisée, pages HTML lisibles, packs ZIP, palette du site et règles de codage assumées.</p></article></div></section>
+<section class="section"><div class="container grid-2"><article class="aside-card"><h2>Pourquoi ce portail existe</h2><ul class="check-list"><li>Centraliser la documentation normative dans un seul point d’entrée public et propre.</li><li>Diffuser les standards sans dépendre d’un environnement serveur dynamique.</li><li>Rendre lisible la progression de tes conventions via un changelog consultable.</li><li>Préparer une base exploitable pour les projets open source, internes et futurs produits Galactic-Shrine.</li></ul></article><article class="aside-card"><h2>Roadmap assortie au changelog</h2><p>Le portail dispose d’une roadmap dédiée pour montrer les prochaines priorités, dans le même style visuel que le changelog.</p><div class="card-actions"><a class="button button-primary" href="/changelog/index.html">Voir le changelog</a><a class="button" href="/roadmap/index.html">Voir la roadmap</a></div></article></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">Principes directeurs</div><h2>Les 4 principes directeurs</h2><p class="lead">Le portail et les standards suivent une ligne éditoriale claire, utile à long terme.</p></div></div><div class="grid-2"><article class="feature-card"><h3>1. Cohérence avant préférence individuelle</h3><p>Le but n’est pas de refléter les habitudes par défaut d’un langage, mais de garder une base homogène dans l’ensemble Galactic-Shrine.</p></article><article class="feature-card"><h3>2. Lisibilité avant astuce</h3><p>Le code, la documentation et la navigation du portail privilégient les structures simples, explicites et faciles à relire.</p></article><article class="feature-card"><h3>3. Documentation exploitable</h3><p>Les standards restent consultables rapidement, en HTML comme en Markdown, avec une recherche qui fonctionne sans backend.</p></article><article class="feature-card"><h3>4. Industrialisation progressive</h3><p>Le portail reste simple à déployer aujourd’hui tout en préparant une montée en gamme vers un domaine dédié et une meilleure gouvernance documentaire.</p></article></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>© <span id="currentYear"></span> Galactic-Shrine</strong>
+      <p>Galactic-Shrine • Tous droits réservés.<br>Propulsé par GitHub Pages et GitHub Actions.</p>
+    </div>
+    <div>
+      <strong>Navigation</strong>
+      <ul class="footer-links">
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/about/index.html">À propos</a></li>
+        <li><a href="/changelog/index.html">Changelog</a></li>
+        <li><a href="/roadmap/index.html">Roadmap</a></li>
+        <li><a href="/search/index.html">Recherche</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Projet</strong>
+      <ul class="footer-links">
+        <li><a href="/README.html">README</a></li>
+        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
+        <li>Domaine personnalisé préconfiguré : <code>docs.galactic-shrine.com</code></li>
+        <li><a href="/CNAME">CNAME</a></li>
+        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

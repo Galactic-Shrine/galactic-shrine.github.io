@@ -1,0 +1,252 @@
+<h1>Galactic-Shrine SCSS Documentation Standard</h1>
+<p><strong>Version:</strong> 1.2.0<br>
+<strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
+<strong>Portée / Scope:</strong> Projets SCSS / CSS Frameworks / UI Kits / Design Systems / Applications Web / Interfaces d’administration / Sites vitrine / Produits front-end</p>
+<hr>
+<h2>1. Objectif</h2>
+<p>Ce standard définit la manière de documenter le code <strong>SCSS</strong> dans les projets Galactic-Shrine.</p>
+<p>Il a pour objectifs :</p>
+<ul>
+<li>d’uniformiser la documentation du code SCSS ;</li>
+<li>de conserver un style bilingue <code>[FR] / [EN]</code> ;</li>
+<li>de rester cohérent avec la convention documentaire Galactic-Shrine ;</li>
+<li>de conserver un format visuel homogène ;</li>
+<li>de documenter proprement les variables, mixins, fonctions, placeholders, composants et sections structurantes.</li>
+</ul>
+<hr>
+<h2>2. Principes généraux</h2>
+<p>La documentation SCSS Galactic-Shrine doit être :</p>
+<ul>
+<li>claire ;</li>
+<li>concise ;</li>
+<li>bilingue ;</li>
+<li>naturelle pour SCSS ;</li>
+<li>utile techniquement.</li>
+</ul>
+<p>La documentation doit privilégier :</p>
+<ul>
+<li>les commentaires de bloc natifs ;</li>
+<li>des descriptions courtes ;</li>
+<li>des tags simples et lisibles ;</li>
+<li>un usage pertinent, sans surdocumentation.</li>
+</ul>
+<hr>
+<h2>3. Format obligatoire des blocs</h2>
+<p>Toujours utiliser le format suivant :</p>
+<pre><code class="language-scss">/**
+ * [FR] Applique le style principal du bouton.
+ * [EN] Applies the main button style.
+ */
+</code></pre>
+<p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine SCSS.</p>
+<hr>
+<h2>4. Convention bilingue</h2>
+<p>Chaque bloc descriptif doit suivre l’ordre suivant :</p>
+<ol>
+<li>ligne française <code>[FR]</code></li>
+<li>ligne anglaise <code>[EN]</code></li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-scss">/**
+ * [FR] Définit la couleur principale de la marque.
+ * [EN] Defines the primary brand color.
+ */
+</code></pre>
+<hr>
+<h2>5. Éléments autorisés</h2>
+<p>Éléments autorisés dans les commentaires SCSS Galactic-Shrine :</p>
+<ul>
+<li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
+<li><code>@param</code></li>
+<li><code>@return</code></li>
+<li><code>@example</code></li>
+<li><code>@deprecated</code></li>
+<li><code>@requires</code></li>
+<li><code>@see</code></li>
+<li><code>@note</code></li>
+</ul>
+<p>Éléments déconseillés :</p>
+<ul>
+<li>les balises XML de type <code>&lt;summary&gt;</code>, <code>&lt;param&gt;</code>, <code>&lt;returns&gt;</code> ;</li>
+<li>les commentaires trop verbeux ;</li>
+<li>les descriptions purement décoratives sans valeur technique.</li>
+</ul>
+<hr>
+<h2>6. Structure recommandée d’un commentaire</h2>
+<p>Ordre recommandé :</p>
+<ol>
+<li>description courte <code>[FR]</code></li>
+<li>description courte <code>[EN]</code></li>
+<li>détail complémentaire <code>[FR]</code> si nécessaire</li>
+<li>détail complémentaire <code>[EN]</code> si nécessaire</li>
+<li>tags techniques utiles</li>
+</ol>
+<p>Exemple :</p>
+<pre><code class="language-scss">/**
+ * [FR] Génère un style de bouton réutilisable.
+ * [EN] Generates a reusable button style.
+ *
+ * [FR] Ce mixin centralise les couleurs et les états visuels principaux.
+ * [EN] This mixin centralizes colors and main visual states.
+ *
+ * @param {Color} $background-color [FR] Couleur de fond.
+ *                                  [EN] Background color.
+ * @param {Color} $text-color [FR] Couleur du texte.
+ *                            [EN] Text color.
+ */
+</code></pre>
+<hr>
+<h2>7. Standard par type d’élément</h2>
+<h3>7.1 Fichier ou module SCSS</h3>
+<pre><code class="language-scss">/**
+ * [FR] Définit les styles du composant bouton.
+ * [EN] Defines the button component styles.
+ *
+ * [FR] Ce fichier contient les variantes, tailles et états interactifs.
+ * [EN] This file contains variants, sizes, and interactive states.
+ */
+</code></pre>
+<h3>7.2 Variable globale ou token</h3>
+<pre><code class="language-scss">/**
+ * [FR] Couleur principale de la marque.
+ * [EN] Primary brand color.
+ */
+$gs-color-primary: #00d5ff !default;
+</code></pre>
+<h3>7.3 Mixin</h3>
+<pre><code class="language-scss">/**
+ * [FR] Applique une variante visuelle de bouton.
+ * [EN] Applies a visual button variant.
+ *
+ * @param {Color} $background-color [FR] Couleur de fond du bouton.
+ *                                  [EN] Button background color.
+ * @param {Color} $text-color [FR] Couleur du texte.
+ *                            [EN] Text color.
+ * @param {Color|null} $border-color [FR] Couleur de bordure optionnelle.
+ *                                   [EN] Optional border color.
+ */
+@mixin button-variant($background-color, $text-color, $border-color: null) {
+    background-color: $background-color;
+    color: $text-color;
+}
+</code></pre>
+<h3>7.4 Fonction SCSS</h3>
+<pre><code class="language-scss">/**
+ * [FR] Convertit une valeur en rem selon la base configurée.
+ * [EN] Converts a value to rem based on the configured root size.
+ *
+ * @param {Number} $pixels [FR] Valeur en pixels.
+ *                         [EN] Value in pixels.
+ * @return {Number} [FR] Valeur convertie en rem.
+ *                  [EN] Value converted to rem.
+ */
+@function to-rem($pixels) {
+    @return calc($pixels / 16) * 1rem;
+}
+</code></pre>
+<h3>7.5 Placeholder</h3>
+<pre><code class="language-scss">/**
+ * [FR] Définit le style de base partagé par les cartes interactives.
+ * [EN] Defines the shared base style for interactive cards.
+ */
+%card-base {
+    border-radius: 1rem;
+}
+</code></pre>
+<h3>7.6 Bloc composant</h3>
+<pre><code class="language-scss">/**
+ * [FR] Composant principal de carte utilisateur.
+ * [EN] Main user card component.
+ */
+.gs-user-card {
+    display: flex;
+}
+</code></pre>
+<h3>7.7 Utilitaire ou helper</h3>
+<pre><code class="language-scss">/**
+ * [FR] Utilitaire de troncature sur une ligne.
+ * [EN] Single-line truncation utility.
+ */
+.u-text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</code></pre>
+<hr>
+<h2>8. Règles de style</h2>
+<h3>8.1 Descriptions courtes</h3>
+<p>Toujours préférer une phrase simple et directe.</p>
+<h3>8.2 Ordre fixe</h3>
+<p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
+<h3>8.3 <code>@param</code> et <code>@return</code></h3>
+<p>Utiliser les tags techniques seulement lorsqu’ils apportent une vraie valeur, notamment pour les mixins, fonctions et helpers réutilisables.</p>
+<h3>8.4 Commentaires <code>//</code></h3>
+<p>Les commentaires <code>//</code> peuvent être utilisés pour des notes locales temporaires, mais ne constituent pas la documentation officielle.</p>
+<h3>8.5 Pas de surdocumentation</h3>
+<p>Ne pas commenter chaque règle CSS évidente.</p>
+<hr>
+<h2>9. Types d’éléments à documenter en priorité</h2>
+<p>Documenter en priorité :</p>
+<ul>
+<li>modules SCSS ;</li>
+<li>tokens globaux ;</li>
+<li>variables sémantiques ;</li>
+<li>mixins ;</li>
+<li>fonctions ;</li>
+<li>placeholders ;</li>
+<li>composants réutilisables ;</li>
+<li>utilitaires structurants ;</li>
+<li>blocs complexes ;</li>
+<li>styles exposés comme API front-end.</li>
+</ul>
+<hr>
+<h2>10. Exemple complet recommandé</h2>
+<pre><code class="language-scss">/**
+ * [FR] Définit les styles du composant bouton.
+ * [EN] Defines the button component styles.
+ *
+ * [FR] Ce fichier centralise les styles communs, variantes et tailles.
+ * [EN] This file centralizes shared styles, variants, and sizes.
+ */
+
+$gs-button-radius: 0.75rem !default;
+
+/**
+ * [FR] Applique une variante visuelle de bouton.
+ * [EN] Applies a visual button variant.
+ *
+ * @param {Color} $background-color [FR] Couleur de fond du bouton.
+ *                                  [EN] Button background color.
+ * @param {Color} $text-color [FR] Couleur du texte.
+ *                            [EN] Text color.
+ *
+ * @example [FR] @include button-variant(#111, #fff);
+ *          [EN] @include button-variant(#111, #fff);
+ */
+@mixin button-variant($background-color, $text-color) {
+    background-color: $background-color;
+    color: $text-color;
+    border-radius: $gs-button-radius;
+}
+</code></pre>
+<hr>
+<h2>11. Décision officielle recommandée</h2>
+<p>Standard officiel recommandé pour Galactic-Shrine SCSS :</p>
+<ul>
+<li>utiliser <code>/** ... */</code> ;</li>
+<li>écrire d’abord <code>[FR]</code>, puis <code>[EN]</code> ;</li>
+<li>utiliser <code>@param</code>, <code>@return</code>, <code>@example</code>, <code>@deprecated</code>, <code>@note</code> selon le besoin ;</li>
+<li>documenter les éléments structurants, pas chaque propriété triviale ;</li>
+<li>garder un style court, propre et uniforme.</li>
+</ul>
+<hr>
+<h2>12. Résumé exécutable</h2>
+<p>À appliquer dans tous les projets SCSS Galactic-Shrine :</p>
+<ul>
+<li>utiliser des commentaires de bloc officiels ;</li>
+<li>écrire <code>[FR]</code> puis <code>[EN]</code> ;</li>
+<li>documenter variables exposées, mixins, fonctions, placeholders et composants ;</li>
+<li>réserver <code>//</code> aux notes internes non officielles ;</li>
+<li>documenter ce qui compte, pas l’évidence.</li>
+</ul>
