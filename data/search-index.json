@@ -266,5 +266,56 @@
     "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/TwigCodingStandard.html",
     "rawPath": "/standards/coding/files/TwigCodingStandard.md"
+  },
+  {
+    "title": "About Galactic-Shrine Standards",
+    "summary": "Présentation du portail, de sa philosophie et de la manière dont les standards sont organisés.",
+    "scope": "Portail documentaire / Présentation / Vision / Positionnement",
+    "version": "2.6.0",
+    "tags": [
+      "About",
+      "Portail",
+      "Présentation",
+      "Vision"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Portail",
+    "htmlPath": "/about/index.html",
+    "rawPath": "/about/index.html",
+    "rawLabel": "Page"
+  },
+  {
+    "title": "Changelog du portail Galactic-Shrine Standards",
+    "summary": "Historique visuel des versions et des grandes évolutions déjà livrées sur le portail.",
+    "scope": "Portail documentaire / Historique / Versions / Jalons livrés",
+    "version": "2.6.0",
+    "tags": [
+      "Changelog",
+      "Historique",
+      "Versions",
+      "Jalons"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Portail",
+    "htmlPath": "/changelog/index.html",
+    "rawPath": "/changelog/index.html",
+    "rawLabel": "Page"
+  },
+  {
+    "title": "Roadmap du portail Galactic-Shrine Standards",
+    "summary": "Feuille de route visuelle des prochaines évolutions du portail, assortie au changelog.",
+    "scope": "Portail documentaire / Planification / Priorités / Évolutions à venir",
+    "version": "2.6.0",
+    "tags": [
+      "Roadmap",
+      "Planification",
+      "Priorités",
+      "Évolutions"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Portail",
+    "htmlPath": "/roadmap/index.html",
+    "rawPath": "/roadmap/index.html",
+    "rawLabel": "Page"
   }
 ]

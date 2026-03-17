@@ -80,3 +80,8 @@ Palette dérivée du site visible :
 - Le fichier `CNAME` est prérempli avec `docs.galactic-shrine.com`.
 - Si ton domaine final est différent, remplace simplement le contenu du fichier `CNAME`.
 - Le portail reste 100 % statique.
+
+
+## Page Roadmap
+
+Une page `/roadmap/` a été ajoutée pour compléter le changelog avec une vue des prochaines évolutions du portail.

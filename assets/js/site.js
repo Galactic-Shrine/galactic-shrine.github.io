@@ -111,7 +111,7 @@ async function initGlobalSearch() {
           </div>
           <div class="card-actions" style="margin-top:.9rem;">
             <a class="button small button-primary" href="${item.htmlPath}">Lire</a>
-            <a class="button small" href="${item.rawPath}">Markdown</a>
+            ${item.rawPath ? `<a class="button small" href="${item.rawPath}">${item.rawLabel || 'Markdown'}</a>` : ''}
           </div>
         </article>
       `;

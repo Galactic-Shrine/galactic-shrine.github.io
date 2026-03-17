@@ -47,3 +47,8 @@ Le portail inclut déjà un fichier :
 ## Rappel important
 
 Le fichier `CNAME` dans le dépôt prépare bien le portail, mais le domaine personnalisé doit aussi être configuré dans les paramètres GitHub Pages du dépôt.
+
+
+## Page Roadmap
+
+Une page `/roadmap/` a été ajoutée pour compléter le changelog avec une vue des prochaines évolutions du portail.
