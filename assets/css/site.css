@@ -454,7 +454,7 @@ body {
 .topbar {
   min-height: 40px;
   display: grid;
-  grid-template-columns: auto 1fr auto auto auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 1rem;
   padding-block: 0;
@@ -482,8 +482,7 @@ body {
   image-rendering: auto;
 }
 
-.main-nav,
-.meta-nav {
+.main-nav {
   gap: 0.15rem;
   flex-wrap: nowrap;
 }
@@ -506,11 +505,6 @@ body {
   color: #ffffff;
   background: rgba(255,255,255,0.06);
   border-color: transparent;
-}
-
-.meta-nav a {
-  color: #d3c6ea;
-  font-size: .82rem;
 }
 
 .header-search {
@@ -579,6 +573,15 @@ body {
   min-height: 40px;
 }
 
+.footer-copy {
+  display: grid;
+  gap: .15rem;
+}
+
+.footer-powered {
+  color: var(--muted);
+}
+
 .hero {
   padding-top: 3.4rem;
 }
@@ -606,9 +609,6 @@ body {
 @media (max-width: 1240px) {
   .topbar {
     grid-template-columns: auto 1fr auto;
-  }
-  .meta-nav {
-    display: none;
   }
 }
 
