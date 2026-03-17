@@ -1,11 +1,13 @@
 {
-  "name": "galactic-shrine-standards-site",
+  "name": "galactic-shrine.github.io",
   "private": true,
   "version": "2.7.0",
-  "description": "Portail documentaire Galactic-Shrine migré vers Eleventy.",
+  "description": "Portail documentaire Galactic-Shrine généré avec Eleventy.",
   "engines": {
-    "node": ">=18"
+    "node": ">=22 <23",
+    "npm": ">=10"
   },
+  "packageManager": "npm@10",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy"
