@@ -1,12 +1,12 @@
-# Galactic-Shrine Standards Portal — Premium Starter
+# Galactic-Shrine Standards Portal — Portail premium
 
 Starter premium pour le dépôt GitHub Pages **`galactic-shrine.github.io`**.
 
 ## Contenu
 
 - page d'accueil premium
-- portail **Documentation Standards**
-- portail **Coding Standards**
+- portail **Standards de documentation**
+- portail **Conventions de codage**
 - pages HTML générées pour chaque standard
 - fichiers Markdown sources conservés
 - recherche globale côté client via `data/search-index.json`

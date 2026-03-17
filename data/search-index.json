@@ -132,14 +132,14 @@
     "version": "1.0.0",
     "tags": [
       "C#",
-      "Coding",
+      "Codage",
       "Projets C#",
       ".NET",
       "Class Libraries",
       "SDKs"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/CSharpCodingStandard.html",
     "rawPath": "/standards/coding/files/CSharpCodingStandard.md"
   },
@@ -150,14 +150,14 @@
     "version": "1.0.0",
     "tags": [
       "C++",
-      "Coding",
+      "Codage",
       "Projets C++",
       "Moteurs",
       "Bibliothèques natives",
       "Outils"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/CppCodingStandard.html",
     "rawPath": "/standards/coding/files/CppCodingStandard.md"
   },
@@ -173,7 +173,7 @@
       "SDKs"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/GalacticShrineCodingStandard.html",
     "rawPath": "/standards/coding/files/GalacticShrineCodingStandard.md"
   },
@@ -184,14 +184,14 @@
     "version": "1.0.0",
     "tags": [
       "HTML",
-      "Coding",
+      "Codage",
       "Projets HTML",
       "Templates",
       "Interfaces Web",
       "Emails HTML"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/HtmlCodingStandard.html",
     "rawPath": "/standards/coding/files/HtmlCodingStandard.md"
   },
@@ -202,14 +202,14 @@
     "version": "1.0.0",
     "tags": [
       "JavaScript",
-      "Coding",
+      "Codage",
       "Projets JavaScript",
       "ES Modules",
       "Browser",
       "Node.js"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/JsCodingStandard.html",
     "rawPath": "/standards/coding/files/JsCodingStandard.md"
   },
@@ -220,14 +220,14 @@
     "version": "1.0.0",
     "tags": [
       "PHP",
-      "Coding",
+      "Codage",
       "Projets PHP",
       "Symfony",
       "APIs",
       "CLI"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/PhpCodingStandard.html",
     "rawPath": "/standards/coding/files/PhpCodingStandard.md"
   },
@@ -238,14 +238,14 @@
     "version": "1.0.0",
     "tags": [
       "SCSS",
-      "Coding",
+      "Codage",
       "Projets SCSS",
       "Design Systems",
       "UI Kits",
       "Frameworks CSS"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/ScssCodingStandard.html",
     "rawPath": "/standards/coding/files/ScssCodingStandard.md"
   },
@@ -256,14 +256,14 @@
     "version": "1.0.0",
     "tags": [
       "Twig",
-      "Coding",
+      "Codage",
       "Projets Twig",
       "Symfony",
       "Layouts",
       "Pages"
     ],
     "category": "coding",
-    "categoryLabel": "Coding",
+    "categoryLabel": "Codage",
     "htmlPath": "/standards/coding/docs/TwigCodingStandard.html",
     "rawPath": "/standards/coding/files/TwigCodingStandard.md"
   }
