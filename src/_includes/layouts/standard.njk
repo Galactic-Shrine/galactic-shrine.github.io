@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+<section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">{{ categoryLabel }} · {{ version }}</div>
+        <h1>{{ title }}</h1>
+        {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
+      </div>
+      <div class="card-actions">
+        {% if rawPath %}<a class="button" href="{{ rawPath }}">Markdown source</a>{% endif %}
+        <a class="button button-primary" href="../index.html">Retour à la section</a>
+      </div>
+    </div>
+    {% if tags and tags.length %}
+    <div class="tag-list">
+      {% for tag in tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2 standard-layout-grid">
+    <aside class="aside-card toc-card">
+      <div class="eyebrow">Portée</div>
+      <p>{{ scope }}</p>
+      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
+      <ul class="footer-links">
+        <li><a href="{{ rawPath }}">Markdown brut</a></li>
+        <li><a href="/standards/{{ category }}/index.html">Index {{ categoryLabel | lower }}</a></li>
+        <li><a href="/search/index.html">Recherche globale</a></li>
+      </ul>
+    </aside>
+    <article class="doc-markdown standard-markdown">
+      {{ content | safe }}
+    </article>
+  </div>
+</section>

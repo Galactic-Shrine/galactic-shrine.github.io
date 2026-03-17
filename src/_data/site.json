@@ -1,0 +1,12 @@
+{
+  "name": "Galactic-Shrine Standards",
+  "title": "Portail des standards Galactic-Shrine",
+  "description": "Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.",
+  "url": "https://docs.galactic-shrine.com",
+  "domain": "docs.galactic-shrine.com",
+  "copyrightName": "Galactic-Shrine",
+  "portalVersion": "2.7.0",
+  "docPackVersion": "1.2.0",
+  "codingPackVersion": "1.0.0",
+  "poweredBy": "GitHub Pages et GitHub Actions"
+}

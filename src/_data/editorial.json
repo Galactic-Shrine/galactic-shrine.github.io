@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Portail des standards Galactic-Shrine",
+    "summary": "Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.",
+    "scope": "Accueil / portail / documentation interne et publique",
+    "version": "2.7.0",
+    "tags": [
+      "Accueil",
+      "Portail",
+      "Standards"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Éditorial",
+    "htmlPath": "/index.html",
+    "rawPath": "",
+    "rawLabel": ""
+  },
+  {
+    "title": "À propos de Galactic-Shrine Standards",
+    "summary": "Présentation du portail, de ses principes directeurs et de sa logique documentaire.",
+    "scope": "À propos / éditorial / principes",
+    "version": "2.7.0",
+    "tags": [
+      "À propos",
+      "Éditorial",
+      "Principes"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Éditorial",
+    "htmlPath": "/about/index.html",
+    "rawPath": "",
+    "rawLabel": ""
+  },
+  {
+    "title": "Historique visuel du portail",
+    "summary": "Vue synthétique des itérations du portail et des packs principaux.",
+    "scope": "Changelog / historique / portail",
+    "version": "2.7.0",
+    "tags": [
+      "Changelog",
+      "Historique",
+      "Portail"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Éditorial",
+    "htmlPath": "/changelog/index.html",
+    "rawPath": "",
+    "rawLabel": ""
+  },
+  {
+    "title": "Feuille de route du portail",
+    "summary": "Trajectoire à venir pour le portail Galactic-Shrine Standards.",
+    "scope": "Roadmap / priorités / éditorial",
+    "version": "2.7.0",
+    "tags": [
+      "Roadmap",
+      "Priorités",
+      "Éditorial"
+    ],
+    "category": "editorial",
+    "categoryLabel": "Éditorial",
+    "htmlPath": "/roadmap/index.html",
+    "rawPath": "",
+    "rawLabel": ""
+  }
+]

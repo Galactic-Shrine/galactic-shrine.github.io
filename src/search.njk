@@ -1,0 +1,7 @@
+---
+layout: layouts/base.njk
+title: Recherche globale
+permalink: /search/index.html
+---
+<section class="section page-header compact-header"><div class="container"><div class="section-head"><div><div class="eyebrow">Recherche</div><h1>Recherche globale</h1><p class="lead">Filtre les standards et les pages éditoriales sans backend.</p></div></div></div></section>
+<section class="section"><div class="container" data-search-page data-index-url="/data/search-index.json"><div class="search-controls" style="margin-bottom:1rem;display:grid;grid-template-columns:2fr 1fr;gap:1rem;"><input type="search" data-global-search-input placeholder="Rechercher un standard, un tag ou une portée..." aria-label="Recherche globale"><select data-global-search-category aria-label="Filtrer par catégorie"><option value="all">Toutes les catégories</option><option value="documentation">Documentation</option><option value="coding">Codage</option><option value="editorial">Éditorial</option></select></div><p class="lead"><strong data-global-search-count>0</strong> résultat(s)</p><div data-global-search-results class="grid-2"></div></div></section>

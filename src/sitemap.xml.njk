@@ -1,0 +1,11 @@
+---
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% set pages = editorial.concat(standards) %}
+  {% for page in pages %}
+  <url><loc>{{ site.url }}{{ page.htmlPath }}</loc></url>
+  {% endfor %}
+  <url><loc>{{ site.url }}/search/index.html</loc></url>
+</urlset>
