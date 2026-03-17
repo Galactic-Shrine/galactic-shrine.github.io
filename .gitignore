@@ -1,5 +1,38 @@
-_site/
+# Node.js
 node_modules/
-.nyc_output/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+_site/
+.dist/
 .cache/
+.tmp/
+temp/
+
+# Eleventy cache
+.eleventy-cache/
+.eleventy.js.map
+
+# OS / Editor
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Coverage / reports
+coverage/
+
+# Optional local files
+*.local
