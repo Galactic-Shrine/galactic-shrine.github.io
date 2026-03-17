@@ -20,8 +20,10 @@
 
     <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
       <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
       <a data-nav href="/standards/documentation/index.html">Documentation</a>
       <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
       <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
       <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
     </nav>
@@ -41,8 +43,10 @@
     </form>
     <nav class="nav" aria-label="Navigation mobile">
       <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
       <a data-nav href="/standards/documentation/index.html">Documentation</a>
       <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
       <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
       <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
     </nav>
@@ -59,12 +63,12 @@
         <p>
           Cette version premium transforme ton dépôt <span class="inline-code">galactic-shrine.github.io</span>
           en portail documentaire statique, élégant et directement publiable : navigation claire,
-          pages HTML lisibles pour chaque standard, recherche client et téléchargements intégrés.
+          pages HTML lisibles pour chaque standard, recherche client, changelog visuel, page About et téléchargements intégrés.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="standards/documentation/index.html">Explorer les standards de documentation</a>
           <a class="button button-secondary" href="standards/coding/index.html">Explorer les conventions de codage</a>
-          <a class="button" href="search/index.html">Recherche globale</a>
+          <a class="button" href="about/index.html">À propos</a>
         </div>
         <div class="tag-list">
           <span class="tag">Sans build requis</span>
@@ -72,6 +76,7 @@
           <span class="tag">Design premium</span>
           <span class="tag">Markdown + HTML</span>
           <span class="tag">Recherche côté client</span>
+          <span class="tag">Changelog visuel</span>
         </div>
       </div>
       <aside class="stats-panel glass">
@@ -134,28 +139,26 @@
         <h2>Structure du dépôt</h2>
         <pre class="code-block">galactic-shrine.github.io/
 ├─ index.html
+├─ about/index.html
+├─ changelog/index.html
+├─ search/index.html
 ├─ 404.html
 ├─ .nojekyll
 ├─ README.md
+├─ DEPLOYMENT.md
+├─ CNAME
+├─ sitemap.xml
 ├─ assets/
 │  ├─ css/site.css
 │  ├─ js/site.js
-│  └─ img/favicon.svg
+│  └─ img/
 ├─ data/search-index.json
 ├─ downloads/
 │  ├─ GalacticShrine-DocStandards-Harmonized-v1.2.0.zip
 │  └─ GalacticShrine-CodingStandards-v1.0.0.zip
-├─ standards/
-│  ├─ documentation/
-│  │  ├─ index.html
-│  │  ├─ docs/*.html
-│  │  └─ files/*.md
-│  └─ coding/
-│     ├─ index.html
-│     ├─ docs/*.html
-│     └─ files/*.md
-└─ search/
-   └─ index.html</pre>
+└─ standards/
+   ├─ documentation/
+   └─ coding/</pre>
       </article>
     </div>
   </section>
@@ -208,11 +211,49 @@
     </div>
   </section>
 
+
+  <section class="section">
+    <div class="container grid-2">
+      <article class="aside-card">
+        <div class="eyebrow">Nouveautés du portail</div>
+        <h2>Pages éditoriales ajoutées</h2>
+        <p class="lead">Le portail inclut maintenant un espace de présentation et un historique visuel des évolutions.</p>
+        <div class="grid-2 compact-grid">
+          <div class="feature-card mini-card">
+            <span class="badge badge-accent">About</span>
+            <h3>About Galactic-Shrine Standards</h3>
+            <p>Une page dédiée pour présenter la mission du portail, ses principes et son cycle de publication.</p>
+            <div class="card-actions"><a class="button small button-primary" href="about/index.html">Ouvrir</a></div>
+          </div>
+          <div class="feature-card mini-card">
+            <span class="badge badge-accent">Changelog</span>
+            <h3>Historique visuel</h3>
+            <p>Une chronologie lisible des grandes itérations du portail et des versions de standards publiées.</p>
+            <div class="card-actions"><a class="button small button-primary" href="changelog/index.html">Ouvrir</a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="aside-card">
+        <div class="eyebrow">Domaine personnalisé</div>
+        <h2>Préconfiguré pour <span class="inline-code">docs.galactic-shrine.com</span></h2>
+        <p class="muted">
+          Le dépôt inclut maintenant un fichier <span class="inline-code">CNAME</span>, un <span class="inline-code">robots.txt</span>
+          mis à jour, un <span class="inline-code">sitemap.xml</span> et une documentation de déploiement révisée pour accélérer le passage vers un domaine dédié.
+        </p>
+        <div class="card-actions">
+          <a class="button button-primary" href="DEPLOYMENT.md">Guide de déploiement</a>
+          <a class="button" href="CNAME">Voir le domaine</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
   <section class="section">
     <div class="container">
       <div class="notice">
-        <strong>Conseil :</strong> commence par publier cette version telle quelle, puis ajoute ensuite un domaine dédié
-        comme <span class="inline-code">docs.galactic-shrine.com</span> si tu veux séparer la documentation publique de tes autres plateformes.
+        <strong>Conseil :</strong> la base actuelle est prête pour être publiée telle quelle, puis basculée vers <span class="inline-code">docs.galactic-shrine.com</span> dès que le domaine est configuré côté GitHub Pages et DNS.
       </div>
     </div>
   </section>
@@ -220,13 +261,22 @@
 
 
 <footer class="site-footer">
-  <div class="container footer-row">
+  <div class="container footer-row footer-row-main">
     <div class="small footer-copy">© <span id="currentYear"></span> Galactic-Shrine • Tous droits réservés.<span class="footer-powered">Propulsé par GitHub Pages et GitHub Actions.</span></div>
     <div class="quick-links small">
       <a href="/index.html">Accueil</a>
+      <a href="/about/index.html">À propos</a>
+      <a href="/changelog/index.html">Changelog</a>
       <a href="/search/index.html">Recherche</a>
       <a href="/README.md">README</a>
       <a href="https://github.com/Galactic-Shrine" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+  <div class="container footer-row footer-row-sub">
+    <div class="small footer-copy">Domaine personnalisé préconfiguré : <span class="inline-code">docs.galactic-shrine.com</span></div>
+    <div class="quick-links small">
+      <a href="/CNAME">CNAME</a>
+      <a href="/DEPLOYMENT.md">Déploiement</a>
     </div>
   </div>
 </footer>

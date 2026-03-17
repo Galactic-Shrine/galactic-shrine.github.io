@@ -1,16 +1,23 @@
 # Galactic-Shrine Standards Portal — Portail premium
 
-Starter premium pour le dépôt GitHub Pages **`galactic-shrine.github.io`**.
+Portail GitHub Pages prêt pour **`galactic-shrine.github.io`** avec :
+- home premium
+- portail **Standards de documentation**
+- portail **Conventions de codage**
+- page **À propos**
+- page **Changelog visuel**
+- recherche globale côté client
+- packs ZIP intégrés
+- domaine personnalisé préconfiguré pour **`docs.galactic-shrine.com`**
 
 ## Contenu
 
-- page d'accueil premium
-- portail **Standards de documentation**
-- portail **Conventions de codage**
-- pages HTML générées pour chaque standard
+- pages HTML lisibles pour chaque standard
 - fichiers Markdown sources conservés
-- recherche globale côté client via `data/search-index.json`
-- packs ZIP déjà intégrés dans `downloads/`
+- `data/search-index.json` pour la recherche
+- `downloads/` avec les packs ZIP
+- `CNAME` + `sitemap.xml` + `robots.txt` pour préparer le domaine personnalisé
+- workflow GitHub Pages via GitHub Actions
 
 ## Déploiement rapide
 
@@ -19,71 +26,57 @@ Starter premium pour le dépôt GitHub Pages **`galactic-shrine.github.io`**.
 1. crée le dépôt `galactic-shrine.github.io`
 2. copie le contenu de ce dossier à la racine
 3. pousse sur la branche `main`
-4. dans **Settings → Pages**, choisis **GitHub Actions**
-5. laisse le workflow `.github/workflows/deploy-pages.yml` publier automatiquement le site
-
-### Option simple : branche racine
-
-Le starter reste aussi compatible avec une publication directe depuis `main` + `/ (root)`.
+4. dans **Settings → Pages**, sélectionne **GitHub Actions**
+5. configure ensuite le domaine personnalisé dans GitHub Pages et côté DNS si tu veux publier sur `docs.galactic-shrine.com`
 
 ## Structure
 
 ```text
 galactic-shrine.github.io/
 ├─ index.html
+├─ about/index.html
+├─ changelog/index.html
+├─ search/index.html
 ├─ 404.html
 ├─ .nojekyll
 ├─ robots.txt
-├─ README.md
+├─ sitemap.xml
+├─ CNAME
 ├─ CNAME.example
+├─ README.md
 ├─ DEPLOYMENT.md
-├─ .github/
-│  └─ workflows/
-│     └─ deploy-pages.yml
+├─ .github/workflows/deploy-pages.yml
 ├─ assets/
 │  ├─ css/site.css
 │  ├─ js/site.js
-│  └─ img/favicon.svg
+│  └─ img/
 ├─ data/search-index.json
 ├─ downloads/
 │  ├─ GalacticShrine-DocStandards-Harmonized-v1.2.0.zip
 │  └─ GalacticShrine-CodingStandards-v1.0.0.zip
-├─ standards/
-│  ├─ documentation/
-│  │  ├─ index.html
-│  │  ├─ docs/*.html
-│  │  └─ files/*.md
-│  └─ coding/
-│     ├─ index.html
-│     ├─ docs/*.html
-│     └─ files/*.md
-└─ search/
-   └─ index.html
+└─ standards/
+   ├─ documentation/
+   └─ coding/
 ```
 
 ## Convention déjà mise en avant
 
-Le portail met en évidence ta règle Galactic-Shrine :
+Le portail met en évidence la règle Galactic-Shrine suivante :
 
 - **propriétés** en `PascalCase`
 - **paramètres** en `PascalCase`
 - **méthodes** en `PascalCase`
 
-## Évolutions possibles
+## Palette appliquée
 
-- ajout d’un changelog visuel
-- pages “Guides” et “Examples”
-- intégration d’un domaine personnalisé
-- ajout d’une page “About Galactic-Shrine Standards”
-- migration future vers un générateur statique si nécessaire
+Palette dérivée du site visible :
+- `#22143D` — header / footer
+- `#321E57` — fond principal
+- `#6F42C1` — cartes / panneaux
+- `#198754` — CTA / accents d’action
 
-## Palette Galactic-Shrine appliquée
+## Notes
 
-- **turquoise principal** : `#00D5FF`
-- **rouge accent** : `#E42217`
-- **base sombre GS** : noirs / bleus spatiaux profonds
-
-Le thème a été recoloré pour être plus proche de l'identité Galactic-Shrine.
-
-
-Palette appliquée depuis le screenshot du site : `#22143D` (header/footer), `#321E57` (fond), `#6F42C1` (cartes/panneaux), `#198754` (CTA / accents d’action), avec un accent logo orange `#D4463B → #FF8A3D`.
+- Le fichier `CNAME` est prérempli avec `docs.galactic-shrine.com`.
+- Si ton domaine final est différent, remplace simplement le contenu du fichier `CNAME`.
+- Le portail reste 100 % statique.

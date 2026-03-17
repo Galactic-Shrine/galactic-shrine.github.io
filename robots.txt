@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://docs.galactic-shrine.com/sitemap.xml

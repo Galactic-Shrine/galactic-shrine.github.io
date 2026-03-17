@@ -642,3 +642,100 @@ body {
     max-height: 24px;
   }
 }
+
+
+/* ===== About / Changelog / Domain integration ===== */
+.compact-grid {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  align-items: stretch;
+}
+.mini-card {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+}
+.release-strip {
+  display: grid;
+  gap: 1rem;
+}
+.release-mini {
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.03);
+}
+.release-version {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-bottom: .55rem;
+  padding: .32rem .62rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--text);
+  background: rgba(25,135,84,.16);
+  border: 1px solid rgba(25,135,84,.32);
+}
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(25,135,84,.48), rgba(213,200,237,.16));
+}
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: 8px;
+  top: 1.15rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: 3px solid rgba(34,20,61,.92);
+  box-shadow: 0 0 0 6px rgba(25,135,84,.14);
+}
+.timeline-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(111,66,193,.94), rgba(104,60,182,.92));
+  box-shadow: var(--shadow);
+}
+.timeline-card h3 {
+  margin: .1rem 0 .35rem;
+  font-size: 1.16rem;
+}
+.footer-row-main {
+  padding-bottom: .4rem;
+}
+.footer-row-sub {
+  padding-top: 0;
+  border-top: 1px solid rgba(213, 200, 237, 0.12);
+}
+.site-footer .inline-code {
+  color: var(--text);
+}
+@media (max-width: 960px) {
+  .compact-grid,
+  .grid-3,
+  .grid-2,
+  .doc-grid,
+  .hero-shell,
+  .explorer-layout,
+  .viewer-layout {
+    grid-template-columns: 1fr;
+  }
+}

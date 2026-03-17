@@ -19,8 +19,10 @@
 
     <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
       <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
       <a data-nav href="/standards/documentation/index.html">Documentation</a>
       <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
       <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
       <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
     </nav>
@@ -40,8 +42,10 @@
     </form>
     <nav class="nav" aria-label="Navigation mobile">
       <a data-nav href="/index.html">Accueil</a>
+      <a data-nav href="/about/index.html">À propos</a>
       <a data-nav href="/standards/documentation/index.html">Documentation</a>
       <a data-nav href="/standards/coding/index.html">Codage</a>
+      <a data-nav href="/changelog/index.html">Changelog</a>
       <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
       <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
     </nav>
@@ -351,13 +355,22 @@ public sealed class UserProfileService
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-row">
+  <div class="container footer-row footer-row-main">
     <div class="small footer-copy">© <span id="currentYear"></span> Galactic-Shrine • Tous droits réservés.<span class="footer-powered">Propulsé par GitHub Pages et GitHub Actions.</span></div>
     <div class="quick-links small">
       <a href="/index.html">Accueil</a>
+      <a href="/about/index.html">À propos</a>
+      <a href="/changelog/index.html">Changelog</a>
       <a href="/search/index.html">Recherche</a>
       <a href="/README.md">README</a>
       <a href="https://github.com/Galactic-Shrine" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+  <div class="container footer-row footer-row-sub">
+    <div class="small footer-copy">Domaine personnalisé préconfiguré : <span class="inline-code">docs.galactic-shrine.com</span></div>
+    <div class="quick-links small">
+      <a href="/CNAME">CNAME</a>
+      <a href="/DEPLOYMENT.md">Déploiement</a>
     </div>
   </div>
 </footer>
