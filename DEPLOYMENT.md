@@ -28,13 +28,15 @@ Si tu veux utiliser un domaine comme `docs.galactic-shrine.com` :
 2. mets ton domaine sur une seule ligne dans ce fichier
 3. configure ensuite les DNS côté registrar / hébergeur
 
-## Palette du site appliquée
+## Palette Galactic-Shrine appliquée
 
-Le thème visuel de ce starter utilise maintenant la palette du site :
+Le thème visuel de ce starter utilise maintenant une base GS :
 
-- violet principal : `#6F42C1`
-- violet secondaire : `#6610F2`
-- lilas clair : `#D5C8ED`
-- prune sombre : `#22143D`
+- turquoise principal : `#00D5FF`
+- rouge accent : `#E42217`
+- fond spatial sombre / noir GS
 
-> Note : cette version reprend la palette de ton thème Bootstrap public du projet Symfony-Forum.
+> Note : le turquoise `#00D5FF` est explicitement présent dans ton standard SCSS comme couleur principale de marque.
+
+
+Palette appliquée depuis le screenshot du site : `#22143D` (header/footer), `#321E57` (fond), `#6F42C1` (cartes/panneaux), `#198754` (CTA / accents d’action), avec un accent logo orange `#D4463B → #FF8A3D`.

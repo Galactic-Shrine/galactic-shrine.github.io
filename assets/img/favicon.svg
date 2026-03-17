@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Galactic-Shrine">
-<defs>
-<linearGradient id="gs" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#6f42c1"/><stop offset="100%" stop-color="#6610f2"/>
-</linearGradient>
-</defs>
-<rect width="64" height="64" rx="18" fill="#05070d"/>
-<rect x="6" y="6" width="52" height="52" rx="14" fill="url(#gs)" opacity=".12"/>
-<text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#f6f1ff">GS</text>
+  <defs>
+    <linearGradient id="gs-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4463b"/>
+      <stop offset="100%" stop-color="#ff8a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#22143d"/>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="#321e57"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="url(#gs-logo)">GS</text>
 </svg>

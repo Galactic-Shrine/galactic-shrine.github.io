@@ -77,11 +77,13 @@ Le portail met en évidence ta règle Galactic-Shrine :
 - ajout d’une page “About Galactic-Shrine Standards”
 - migration future vers un générateur statique si nécessaire
 
-## Palette du site appliquée
+## Palette Galactic-Shrine appliquée
 
-- **violet principal** : `#6F42C1`
-- **violet secondaire** : `#6610F2`
-- **lilas clair** : `#D5C8ED`
-- **prune sombre** : `#22143D`
+- **turquoise principal** : `#00D5FF`
+- **rouge accent** : `#E42217`
+- **base sombre GS** : noirs / bleus spatiaux profonds
 
-Le thème a été recoloré à partir de la palette visible dans le thème Bootstrap public du site/projet Symfony-Forum.
+Le thème a été recoloré pour être plus proche de l'identité Galactic-Shrine.
+
+
+Palette appliquée depuis le screenshot du site : `#22143D` (header/footer), `#321E57` (fond), `#6F42C1` (cartes/panneaux), `#198754` (CTA / accents d’action), avec un accent logo orange `#D4463B → #FF8A3D`.
