@@ -3,11 +3,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/downloads": "downloads" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
-  eleventyConfig.addPassthroughCopy({ "src/standards/documentation/files": "standards/documentation/files" });
-  eleventyConfig.addPassthroughCopy({ "src/standards/coding/files": "standards/coding/files" });
+  eleventyConfig.addPassthroughCopy({
+    "src/standards/documentation/files": "standards/documentation/files"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/standards/coding/files": "standards/coding/files"
+  });
 
-  eleventyConfig.addFilter("whereCategory", (items, category) => (items || []).filter(item => item.category === category));
-  eleventyConfig.addFilter("json", value => JSON.stringify(value, null, 2));
+  eleventyConfig.addFilter("whereCategory", (items, category) =>
+    (items || []).filter((item) => item.category === category)
+  );
+
+  eleventyConfig.addFilter("json", (value) =>
+    JSON.stringify(value, null, 2)
+  );
 
   return {
     dir: {
