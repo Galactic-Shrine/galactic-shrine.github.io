@@ -3,124 +3,203 @@ layout: layouts/base.njk
 title: Changelog
 permalink: /changelog/index.html
 ---
----
-layout: layouts/base.njk
-title: Changelog
-permalink: /changelog/index.html
----
 
-Historique
+<section class="section">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">Historique</div>
+      <h1>Historique visuel du portail</h1>
+      <p class="lead">
+        Cette page synthétise les évolutions du portail Galactic-Shrine Standards
+        et des packs principaux. Elle permet de suivre d’un coup d’œil les grandes
+        itérations du site et les versions des standards publiés.
+      </p>
 
-# Historique visuel du portail
+      <div class="tag-list" style="margin-top: 1rem;">
+        <span class="tag">Portail actuel v{{ site.portalVersion }}</span>
+        <span class="tag">Pack Documentation v{{ site.docPackVersion }}</span>
+        <span class="tag">Pack Codage v{{ site.codingPackVersion }}</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-Cette page synthétise les évolutions du portail Galactic-Shrine Standards et des packs principaux. Elle permet de suivre d’un coup d’œil les grandes itérations du site et les versions des standards publiés.
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Chronologie</div>
+    <h2>Évolution du portail</h2>
+    <p class="muted">
+      Une vue plus visuelle que le simple README, pour repérer les jalons majeurs du site.
+    </p>
 
-Portail actuel `v{{ site.portalVersion }}`  
-Pack Documentation harmonisé `v{{ site.docPackVersion }}`  
-Pack Codage harmonisé `v{{ site.codingPackVersion }}`
+    <div class="timeline" style="margin-top: 1.5rem;">
+      <article class="timeline-item">
+        <div class="badge badge-accent">v1.0.0</div>
+        <h3>Starter GitHub Pages</h3>
+        <p>
+          Mise en place du portail statique, de la structure du dépôt, des pages d’accueil
+          et de la publication GitHub Pages.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Starter GitHub Pages</span>
+          <span class="tag">ZIP intégrés</span>
+        </div>
+      </article>
 
-Chronologie
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.0.0</div>
+        <h3>Portail premium</h3>
+        <p>
+          Ajout des pages HTML lisibles pour chaque standard, d’une navigation plus sérieuse
+          et de la recherche côté client.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Pages HTML</span>
+          <span class="tag">Recherche</span>
+          <span class="tag">Navigation</span>
+        </div>
+      </article>
 
-## Évolution du portail
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.1.0</div>
+        <h3>Alignement sur la palette du site</h3>
+        <p>
+          Le thème a été recalé sur l’ambiance visuelle du site réel : fond violet profond,
+          panneaux violets et accents verts d’action.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Palette site</span>
+          <span class="tag">Header/Footer</span>
+          <span class="tag">Contraste</span>
+        </div>
+      </article>
 
-Une vue plus visuelle que le simple README, pour repérer les jalons majeurs du site.
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.2.0</div>
+        <h3>Logo réel et favicon dérivé</h3>
+        <p>
+          Intégration du vrai logo Galactic-Shrine dans le header, puis génération d’un
+          favicon cohérent à partir du visuel GS fourni.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Logo PNG</span>
+          <span class="tag">Favicon</span>
+          <span class="tag">Header</span>
+        </div>
+      </article>
 
-v1.0.0
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.3.0</div>
+        <h3>Nettoyage UX + libellés FR</h3>
+        <p>
+          Suppression des éléments inutiles du header, francisation des libellés visibles
+          et allègement de la navigation.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Français</span>
+          <span class="tag">UX</span>
+          <span class="tag">Navigation</span>
+        </div>
+      </article>
 
-### Starter GitHub Pages
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.5.0</div>
+        <h3>About + changelog + domaine personnalisé</h3>
+        <p>
+          Ajout d’une page About, d’un changelog visuel dédié et de la pré-intégration
+          du domaine personnalisé.
+        </p>
+        <div class="tag-list">
+          <span class="tag">About</span>
+          <span class="tag">Changelog</span>
+          <span class="tag">Domaine personnalisé</span>
+        </div>
+      </article>
 
-Mise en place du portail statique, de la structure du dépôt, des pages d’accueil et de la publication GitHub Pages.
+      <article class="timeline-item">
+        <div class="badge badge-accent">v2.6.0</div>
+        <h3>Roadmap visuelle assortie</h3>
+        <p>
+          Ajout d’une page Roadmap cohérente avec le changelog, intégrée à la navigation,
+          au footer, au sitemap et à l’index du portail.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Roadmap</span>
+          <span class="tag">Navigation</span>
+          <span class="tag">Sitemap</span>
+        </div>
+      </article>
 
-Starter GitHub Pages · ZIP intégrés
+      <article class="timeline-item">
+        <div class="badge badge-accent">v{{ site.portalVersion }}</div>
+        <h3>Migration Eleventy</h3>
+        <p>
+          Passage à un générateur statique avec layouts, données structurées,
+          pages générées et pipeline de build unifié.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Eleventy</span>
+          <span class="tag">Layouts</span>
+          <span class="tag">Build unifié</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-v2.0.0
+<section class="section">
+  <div class="container grid-2">
+    <article class="aside-card">
+      <div class="eyebrow">Packs</div>
+      <h2>Versions des standards intégrés</h2>
 
-### Portail premium
+      <ul class="check-list">
+        <li>
+          <strong>Documentation harmonisée</strong>
+          — Pack <span class="inline-code">v{{ site.docPackVersion }}</span>
+        </li>
+        <li>
+          <strong>Conventions de codage</strong>
+          — Pack <span class="inline-code">v{{ site.codingPackVersion }}</span>
+        </li>
+        <li>
+          <strong>Portail</strong>
+          — Itération courante <span class="inline-code">v{{ site.portalVersion }}</span>
+        </li>
+      </ul>
 
-Ajout des pages HTML lisibles pour chaque standard, d’une navigation plus sérieuse et de la recherche côté client.
+      <div class="card-actions" style="margin-top: 1rem;">
+        <a
+          class="button button-primary"
+          href="/downloads/GalacticShrine-DocStandards-Harmonized-v{{ site.docPackVersion }}.zip">
+          Télécharger Documentation
+        </a>
 
-Pages HTML · Recherche · Navigation
+        <a
+          class="button"
+          href="/downloads/GalacticShrine-CodingStandards-v{{ site.codingPackVersion }}.zip">
+          Télécharger Codage
+        </a>
+      </div>
+    </article>
 
-v2.1.0
+    <article class="aside-card">
+      <div class="eyebrow">Prochaine extension possible</div>
+      <h2>Ce que ce changelog prépare</h2>
 
-### Alignement sur la palette du site
+      <div class="tag-list">
+        <span class="tag">Guides</span>
+        <span class="tag">Exemples</span>
+        <span class="tag">FAQ</span>
+        <span class="tag">Roadmap</span>
+        <span class="tag">Versioning plus fin</span>
+      </div>
 
-Le thème a été recalé sur l’ambiance visuelle du site réel : fond violet profond, panneaux violets et accents verts d’action.
-
-Palette site · Header/Footer · Contraste
-
-v2.2.0
-
-### Logo réel et favicon dérivé
-
-Intégration du vrai logo Galactic-Shrine dans le header, puis génération d’un favicon cohérent à partir du visuel GS fourni.
-
-Logo PNG · Favicon · Header
-
-v2.3.0
-
-### Nettoyage UX + libellés FR
-
-Suppression des éléments inutiles du header, francisation des libellés visibles et allègement de la navigation.
-
-Français · UX · Navigation
-
-v2.5.0
-
-### About + changelog + domaine personnalisé
-
-Ajout d’une page “About Galactic-Shrine Standards”, d’un changelog visuel dédié et de la pré-intégration du domaine personnalisé.
-
-About · Changelog · Domaine personnalisé
-
-v2.6.0
-
-### Roadmap visuelle assortie
-
-Ajout d’une page Roadmap cohérente avec le changelog, intégrée à la navigation, au footer, au sitemap et à l’index du portail.
-
-Roadmap · Navigation · Sitemap
-
-v2.7.0
-
-### Migration Eleventy
-
-Passage à un générateur statique avec layouts, données structurées, pages générées et pipeline de build unifié.
-
-Eleventy · Layouts · Build unifié
-
-Packs
-
-## Versions des standards intégrés
-
-- **Documentation harmonisée** — Pack `v{{ site.docPackVersion }}`
-- **Conventions de codage** — Pack `v{{ site.codingPackVersion }}`
-- **Portail** — Itération courante `v{{ site.portalVersion }}`
-
-<div class="card-actions" style="margin-top: 1rem;">
-  <a
-    class="button button-primary"
-    href="/downloads/GalacticShrine-DocStandards-Harmonized-v{{ site.docPackVersion }}.zip">
-    Télécharger Documentation
-  </a>
-
-  <a
-    class="button"
-    href="/downloads/GalacticShrine-CodingStandards-v{{ site.codingPackVersion }}.zip">
-    Télécharger Codage
-  </a>
-</div>
-
-Prochaine extension possible
-
-## Ce que ce changelog prépare
-
-<div class="tag-list">
-  <span class="tag">Guides</span>
-  <span class="tag">Exemples</span>
-  <span class="tag">FAQ</span>
-  <span class="tag">Roadmap</span>
-  <span class="tag">Versioning plus fin</span>
-</div>
-
-La base accueille maintenant About, Changelog et Roadmap, et reste prête à recevoir d’autres pages éditoriales sans casser la structure du portail ni la simplicité du déploiement statique.
+      <p class="muted" style="margin-top: 1rem;">
+        La base accueille maintenant About, Changelog et Roadmap, et reste prête
+        à recevoir d’autres pages éditoriales sans casser la structure du portail
+        ni la simplicité du déploiement statique.
+      </p>
+    </article>
+  </div>
+</section>
