@@ -23,7 +23,7 @@
   --radius-lg: 20px;
   --radius-md: 16px;
   --radius-sm: 12px;
-  --max: 1280px;
+  --max: 1850px;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -143,7 +143,7 @@ code, pre { font-family: "Cascadia Code", Consolas, "Courier New", monospace; }
 .stat-card strong { display: block; font-size: 1.7rem; margin-bottom: .2rem; }
 .stat-card span { color: var(--muted); }
 
-.section { padding: 1.3rem 0 2rem; }
+.section { padding: 1.3rem 0 1rem; }
 .section-head {
   margin-bottom: 1rem;
   display: flex; justify-content: space-between; align-items: end; gap: 1rem;
@@ -210,8 +210,11 @@ code, pre { font-family: "Cascadia Code", Consolas, "Courier New", monospace; }
 .search-input:focus, .filter-select:focus { border-color: rgba(25,135,84,.62); box-shadow: 0 0 0 4px rgba(25,135,84,.13); }
 .search-results-meta { color: var(--muted); font-size: .95rem; }
 
+.page-simple {
+  padding-top: 1rem;
+}
 .page-hero {
-  padding: 3rem 0 1rem;
+  padding: 1rem 0 1rem;
 }
 .breadcrumbs {
   display: flex; gap: .45rem; flex-wrap: wrap; align-items: center;
@@ -298,7 +301,7 @@ code, pre { font-family: "Cascadia Code", Consolas, "Courier New", monospace; }
   background: rgba(213,200,237,.14); color: var(--text); border-radius: .35rem; padding: 0 .15rem;
 }
 .site-footer {
-  margin-top: 2rem; border-top: 1px solid var(--line); padding: 1.7rem 0 2.2rem;
+  margin-top: 1rem; border-top: 1px solid var(--line); padding: 1.7rem 0 2.2rem;
 }
 .footer-row {
   align-items: center; justify-content: space-between;
@@ -331,7 +334,9 @@ body {
 
 .site-header,
 .site-footer {
-  background: var(--header);
+  background: rgba(34, 20, 61, 0.5) !important;
+  z-index: 2;
+  backdrop-filter: blur(10px) saturate(125%);
 }
 
 .brand-mark {
@@ -564,7 +569,6 @@ body {
 }
 
 .site-footer {
-  background: #22143d;
   border-top: 1px solid rgba(255,255,255,0.04);
   padding: .9rem 0 1.1rem;
 }
@@ -694,7 +698,7 @@ body {
 }
 .timeline-item {
   position: relative;
-  padding-left: 3rem;
+  padding: 1rem 3rem;
 }
 .timeline-dot {
   position: absolute;
@@ -718,6 +722,14 @@ body {
   margin: .1rem 0 .35rem;
   font-size: 1.16rem;
 }
+.timeline-card h3 a {
+  text-decoration: none;
+  color: var(--text);
+}
+.timeline-card h3 a:hover {
+  text-decoration: underline;
+}
+
 .footer-row-main {
   padding-bottom: .4rem;
 }
@@ -785,7 +797,9 @@ body {
 .doc-markdown { min-width: 0; }
 .doc-markdown h1:first-child { margin-top: 0; }
 .timeline { display: grid; gap: 1rem; }
-.timeline-item { background: rgba(111,66,193,.16); border: 1px solid rgba(213,200,237,.12); border-radius: 18px; padding: 1rem 1.1rem; box-shadow: 0 16px 40px rgba(0,0,0,.15); }
 .timeline.compact .timeline-item { padding: .9rem 1rem; }
-.search-controls input, .search-controls select, .header-search input { width: 100%; }
+.search-controls input,
+.search-controls select {
+  width: 100%;
+}
 @media (max-width: 900px) { .search-controls { grid-template-columns: 1fr !important; } .toc-card { position: static; } }

@@ -1,0 +1,51 @@
+{# src/_includes/components/macro.njk #}
+      {% macro item(version, title, text, tags=[]) %}<article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="release-version">v{{ version }}</span>
+              <h3>{{ title | safe }}</h3>
+              <p class="muted">
+                {{ text | safe }}
+              </p>{% if tags and tags.length %}
+              <div class="tag-list">{% for tag in tags %}
+                <span class="tag">{{ tag }}</span>{% endfor %}
+              </div>{% endif %}
+            </div>
+          </article>{% endmacro %}
+
+      {% macro commitItem(Date, Commits=[], Title, Description, Tags=[]) %}<article class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="badge badge-accent">{{ Date }}</div>
+          <h3>
+            {% if Commits and (Commits | length) > 0 %}
+              {% for Sha in Commits %}
+                <a href="{{ site.repoUrl }}/commit/{{ Sha }}" target="_blank" rel="noopener noreferrer">{{ Sha | truncate(7, true, "") }}</a>
+                {% if not loop.last %} / {% endif %}
+              {% endfor %}
+              — {% endif %}
+            {{ Title | safe }}
+          </h3>
+          <p>{{ Description | safe }}</p>{% if Tags and (Tags | length) > 0 %}
+            <div class="tag-list">{% for Tag in Tags %}
+                <span class="tag">{{ Tag }}</span>{% endfor %}
+            </div>{% endif %}
+        </div>
+      </article>{% endmacro %}
+
+      {% macro card(titleCard1, textCard1, titleCard2, textCard2, titleCard3, textCard3) %}<section class="section" style="padding-top:0;">
+      <div class="container grid-3">
+        <article class="stat-card">
+          <strong>{{ titleCard1 | safe }}</strong>
+          <span>{{ textCard1 | safe }}</span>
+        </article>
+        <article class="stat-card">
+          <strong>{{ titleCard2 | safe }}</strong>
+          <span>{{ textCard2 | safe }}</span>
+        </article>
+        <article class="stat-card">
+          <strong>{{ titleCard3 | safe }}</strong>
+          <span>{{ textCard3 | safe }}</span>
+        </article>
+      </div>
+    </section>{% endmacro %}

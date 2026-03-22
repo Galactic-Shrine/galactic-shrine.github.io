@@ -1,0 +1,26 @@
+{# src/_includes/components/hero.njk #}
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a>
+      {% if breadcrumbs and (breadcrumbs | length) > 0 %}
+        {% for item in breadcrumbs %}
+          <span> › </span>
+          {% if item.href %}
+            <a href="{{ item.href }}">{{ item.label }}</a>
+          {% else %}
+            <span>{{ item.label }}</span>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <span> › </span>
+        <span>{{ title }}</span>
+      {% endif %}
+    </div>
+    <div class="kicker">{{ title }}</div>
+    <h1 class="page-title">{{ pageTitle or title }}</h1>
+    {% if pageIntro %}
+      <p class="page-intro">{{ pageIntro }}</p>
+    {% endif %}
+  </div>
+</section>

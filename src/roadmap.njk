@@ -2,7 +2,167 @@
 layout: layouts/base.njk
 title: Roadmap
 permalink: /roadmap/index.html
+pageTitle: "Feuille de route du portail"
+pageIntro: >-
+  Cette roadmap complète le changelog : le changelog explique ce qui a déjà été livré,
+  la roadmap indique ce qui vient ensuite, avec des priorités lisibles, des jalons et
+  une trajectoire cohérente pour faire évoluer Galactic-Shrine Standards.
+breadcrumbs:
+  - label: "Roadmap"
 ---
-<section class="section page-header compact-header"><div class="container"><div class="section-head"><div><div class="eyebrow">Feuille de route</div><h1>Feuille de route du portail</h1><p class="lead">Le changelog explique ce qui a déjà été livré ; la roadmap indique ce qui vient ensuite.</p></div></div></div></section>
-<section class="section"><div class="container grid-3"><article class="feature-card"><span class="badge badge-accent">Maintenant</span><h3>Stabiliser la migration</h3><p>Valider la structure Eleventy, la génération des pages de standards, le workflow GitHub Pages et le domaine personnalisé.</p></article><article class="feature-card"><span class="badge badge-accent">Ensuite</span><h3>Guides et exemples</h3><p>Ajouter des guides d’usage par techno, des cas concrets et des pages d’exemples pour accompagner les standards.</p></article><article class="feature-card"><span class="badge badge-accent">Plus tard</span><h3>Portail documentaire consolidé</h3><p>Release notes plus riches, FAQ, contribution, pages multi-produits et montée en gamme éditoriale.</p></article></div></section>
-<section class="section"><div class="container grid-2"><article class="aside-card"><h2>Ce que la roadmap veut préserver</h2><ul class="check-list"><li>Clarté : garder une lecture simple pour les standards et les pages éditoriales.</li><li>Stabilité : éviter une structure trop complexe pour rester compatible GitHub Pages.</li><li>Cohérence : même identité visuelle, même logique de navigation, même ton sur tout le portail.</li><li>Évolutivité : permettre l’ajout de pages, packs et sections sans devoir tout reconstruire.</li></ul></article><article class="aside-card"><h2>Trajectoire proposée</h2><div class="timeline compact"><article class="timeline-item"><h3>Roadmap visuelle intégrée</h3><p>Déjà livrée, elle sert désormais de point d’appui éditorial.</p></article><article class="timeline-item"><h3>Guides et exemples</h3><p>Ajout de pages transversales pour expliquer comment appliquer les standards dans des cas concrets.</p></article><article class="timeline-item"><h3>Recherche enrichie</h3><p>Meilleure couverture des pages éditoriales et filtres plus utiles.</p></article><article class="timeline-item"><h3>Portail consolidé</h3><p>Release notes plus riches, FAQ, conventions de contribution et socle éditorial renforcé.</p></article></div></article></div></section>
+
+{% from "components/macro.njk" import item, card %}
+{% include "components/hero.njk" %}
+{{ card(
+  "v" + site.portalVersion,
+  "Version actuelle du portail",
+  "3 phases",
+  "Maintenant, Ensuite, Plus tard",
+  "6 axes",
+  "Contenu, UX, recherche, publication, qualité, branding"
+) }}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Vue d’ensemble</div>
+        <h2>Priorités de la prochaine itération</h2>
+        <p class="lead">
+          Une vision simple : enrichir le portail sans perdre la sobriété, la lisibilité
+          et la facilité de déploiement statique.
+        </p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <article class="feature-card roadmap-card">
+        <span class="badge badge-accent">Maintenant</span>
+        <h3>Éditorial & navigation</h3>
+        <ul class="roadmap-list">
+          <li>Stabiliser les pages éditoriales du portail.</li>
+          <li>Rendre la navigation desktop et mobile totalement cohérente.</li>
+          <li>Finaliser les pages système, README, changelog et roadmap.</li>
+        </ul>
+        <div class="progress-wrap">
+          <div class="progress-bar"><span style="width: 82%;"></span></div>
+          <div class="progress-meta">Progression estimée : 82 %</div>
+        </div>
+      </article>
+      <article class="feature-card roadmap-card">
+        <span class="badge badge-accent">Ensuite</span>
+        <h3>Guides & découverte</h3>
+        <ul class="roadmap-list">
+          <li>Ajouter des guides d’usage par techno ou par équipe.</li>
+          <li>Introduire des pages d’exemples et des cas concrets.</li>
+          <li>Améliorer la recherche avec plus de pages éditoriales indexées.</li>
+        </ul>
+        <div class="progress-wrap">
+          <div class="progress-bar"><span style="width: 44%;"></span></div>
+          <div class="progress-meta">Progression estimée : 44 %</div>
+        </div>
+      </article>
+      <article class="feature-card roadmap-card">
+        <span class="badge badge-accent">Plus tard</span>
+        <h3>Industrialisation</h3>
+        <ul class="roadmap-list">
+          <li>Versioning plus visible du portail et des packs.</li>
+          <li>Pages de release notes, FAQ, bonnes pratiques de contribution.</li>
+          <li>Éventuelle déclinaison multi-projets ou multi-produits Galactic-Shrine.</li>
+        </ul>
+        <div class="progress-wrap">
+          <div class="progress-bar"><span style="width: 18%;"></span></div>
+          <div class="progress-meta">Progression estimée : 18 %</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2">
+    <article class="aside-card">
+      <div class="eyebrow">Objectif produit</div>
+      <h2>Ce que la roadmap veut préserver</h2>
+      <ul class="check-list">
+        <li><strong>Clarté</strong> : garder une lecture simple pour les standards et les pages éditoriales.</li>
+        <li><strong>Stabilité</strong> : éviter une structure trop complexe pour rester compatible GitHub Pages.</li>
+        <li><strong>Cohérence</strong> : même identité visuelle, même logique de navigation, même ton sur tout le portail.</li>
+        <li><strong>Évolutivité</strong> : permettre l’ajout de pages, packs et sections sans devoir tout reconstruire.</li>
+      </ul>
+    </article>
+    <article class="aside-card">
+      <div class="eyebrow">Liaison avec le changelog</div>
+      <h2>Deux pages complémentaires</h2>
+      <p class="muted">
+        Le <strong>changelog</strong> retrace les versions déjà livrées. La <strong>roadmap</strong>
+        donne la suite logique. Les deux pages utilisent volontairement les mêmes codes
+        visuels pour créer une lecture cohérente du passé, du présent et des prochaines étapes.
+      </p>
+      <div class="card-actions" style="margin-top: 1rem;">
+        <a class="button button-primary" href="/changelog/index.html">Voir le changelog</a>
+        <a class="button" href="/about/index.html">Voir la page About</a>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Jalons</div>
+        <h2>Trajectoire proposée</h2>
+        <p class="lead">
+          Une lecture par jalons, dans le même esprit visuel que le changelog.
+        </p>
+      </div>
+    </div>
+    <div class="timeline">
+      {{
+        item(
+          "2.8.0",
+          "Guides et exemples",
+          "Ajout de pages transversales pour expliquer comment appliquer les standards dans des cas concrets, par techno ou par type de projet.",
+          ["Guides", "Exemples", "Éditorial"]
+        )
+      }}
+      {{
+        item(
+          "2.9.0",
+          "Recherche enrichie",
+          "Meilleure couverture des pages éditoriales dans l’index global, filtres plus utiles et découverte plus rapide des contenus importants.",
+          ["Recherche", "Index JSON", "Exploration"]
+        )
+      }}
+      {{
+        item(
+          "3.0.0",
+          "Portail documentaire consolidé",
+          "Version plus mature avec release notes plus riches, pages d’aide, conventions de contribution et socle éditorial renforcé.",
+          ["v3", "Release notes", "Contribution"]
+        )
+      }}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid-2">
+    <article class="aside-card mini-card">
+      <div class="eyebrow">Court terme</div>
+      <h2>Ce qui peut être ajouté juste après</h2>
+      <div class="tag-list">
+        <span class="tag">Guides Symfony</span>
+        <span class="tag">Guides .NET</span>
+        <span class="tag">Guides C++</span>
+        <span class="tag">FAQ</span>
+      </div>
+    </article>
+    <article class="aside-card mini-card">
+      <div class="eyebrow">Moyen terme</div>
+      <h2>Ce qui renforcera le portail</h2>
+      <div class="tag-list">
+        <span class="tag">Release pages</span>
+        <span class="tag">Versioning</span>
+        <span class="tag">Contrib</span>
+        <span class="tag">Plus d’indexation</span>
+      </div>
+    </article>
+  </div>
+</section>

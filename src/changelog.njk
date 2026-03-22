@@ -2,204 +2,209 @@
 layout: layouts/base.njk
 title: Changelog
 permalink: /changelog/index.html
+pageTitle: "Historique du portail"
+pageIntro: >-
+  Cette page synthétise les évolutions du portail Galactic-Shrine Standards et des packs principaux.
+  Elle permet de suivre d’un coup d’œil les grandes itérations du site et les versions des standards publiés.
+breadcrumbs:
+  - label: "Changelog"
 ---
-
+{% from "components/macro.njk" import item, commitItem, card %}
+{% include "components/hero.njk" %}
+{{ card(
+  "v" + site.portalVersion,
+  "Version actuelle du portail",
+  "v" + site.docPackVersion,
+  "Pack Documentation harmonisé",
+  "v" + site.codingPackVersion,
+  "Pack Codage harmonisé"
+) }}
 <section class="section">
   <div class="container">
-    <div class="hero-copy">
-      <div class="eyebrow">Historique</div>
-      <h1>Historique visuel du portail</h1>
-      <p class="lead">
-        Cette page synthétise les évolutions du portail Galactic-Shrine Standards
-        et des packs principaux. Elle permet de suivre d’un coup d’œil les grandes
-        itérations du site et les versions des standards publiés.
-      </p>
-
-      <div class="tag-list" style="margin-top: 1rem;">
-        <span class="tag">Portail actuel v{{ site.portalVersion }}</span>
-        <span class="tag">Pack Documentation v{{ site.docPackVersion }}</span>
-        <span class="tag">Pack Codage v{{ site.codingPackVersion }}</span>
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Chronologie</div>
+        <h2>Évolution du portail</h2>
+        <p class="lead">
+          Une vue plus visuelle que le simple README, pour repérer les jalons majeurs du site.
+        </p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="eyebrow">Chronologie</div>
-    <h2>Évolution du portail</h2>
-    <p class="muted">
-      Une vue plus visuelle que le simple README, pour repérer les jalons majeurs du site.
-    </p>
-
-    <div class="timeline" style="margin-top: 1.5rem;">
-      <article class="timeline-item">
-        <div class="badge badge-accent">v1.0.0</div>
-        <h3>Starter GitHub Pages</h3>
-        <p>
-          Mise en place du portail statique, de la structure du dépôt, des pages d’accueil
-          et de la publication GitHub Pages.
+    {# Ajouter un nouvel item :
+       {{ item("Version", "Titre", "Message", ["Tag0", "Tag1"]) }}
+    #}
+    <div class="timeline">
+      {{
+        item(
+          "2.7.1",
+          "Raffinements structurels et éditoriaux",
+          "Nettoyage des pages système et éditoriales, enrichissement du changelog, harmonisation du layout, ajout de macros réutilisables et mise à jour des assets d’icônes.",
+          ["Refactor", "README", "Changelog", "Roadmap", "Favicons"]
+        )
+      }}
+      {{
+        item(
+          "2.7.0",
+          "Migration Eleventy",
+          "Passage à un générateur statique avec layouts, données structurées, pages générées et pipeline de build unifié.",
+          ["Eleventy", "Layouts", "Build unifié"]
+        )
+      }}
+      {{
+        item(
+          "2.6.0",
+          "Roadmap visuelle assortie",
+          "Ajout d’une page Roadmap cohérente avec le changelog, intégrée à la navigation, au footer, au sitemap et à l’index du portail.",
+          ["Roadmap", "Navigation", "Sitemap"]
+        )
+      }}
+      {{
+        item(
+          "2.5.0",
+          "About + changelog + domaine personnalisé",
+          "Ajout d’une page “About Galactic-Shrine Standards”, d’un changelog visuel dédié et de la pré-intégration du domaine personnalisé.",
+          ["About", "Changelog", "Custom domain"]
+        )
+      }}
+      {{
+        item(
+          "2.3.0",
+          "Nettoyage UX + libellés FR",
+          "Suppression des éléments inutiles du header, francisation des libellés visibles et allègement de la navigation.",
+          ["Français", "UX", "Navigation"]
+        )
+      }}
+      {{
+        item(
+          "2.2.0",
+          "Logo réel et favicon dérivé",
+          "Intégration du vrai logo Galactic-Shrine dans le header, puis génération d’un favicon cohérent à partir du visuel GS fourni.",
+          ["Logo PNG", "Favicon", "Header"]
+        )
+      }}
+      {{
+        item(
+          "2.1.0",
+          "Alignement sur la palette du site",
+          "Le thème a été recalé sur l’ambiance visuelle du site réel : fond violet profond, panneaux violets et accents verts d’action.",
+          ["Palette site", "Header/Footer", "Contraste"]
+        )
+      }}
+      {{
+        item(
+          "2.0.0",
+          "Portail premium",
+          "Ajout des pages HTML lisibles pour chaque standard, d’une navigation plus sérieuse et de la recherche côté client.",
+          ["Pages HTML", "Recherche", "Navigation"]
+        )
+      }}
+      {{
+        item(
+          "1.0.0",
+          "Starter GitHub Pages",
+          "Mise en place du portail statique, de la structure du dépôt, des pages d’accueil et de la publication GitHub Pages.",
+          ["Starter", "GitHub Pages", "ZIP intégrés"]
+        )
+      }}
+      <div style="margin-left: 2rem;">
+        <div class="eyebrow">Historique technique récent</div>
+        <h2>Post-migration Eleventy</h2>
+        <p class="lead">
+          Cette section suit les commits récents du dépôt après la bascule vers Eleventy,
+          afin de conserver une trace plus fidèle de l’évolution réelle du repo.
         </p>
-        <div class="tag-list">
-          <span class="tag">Starter GitHub Pages</span>
-          <span class="tag">ZIP intégrés</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.0.0</div>
-        <h3>Portail premium</h3>
-        <p>
-          Ajout des pages HTML lisibles pour chaque standard, d’une navigation plus sérieuse
-          et de la recherche côté client.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Pages HTML</span>
-          <span class="tag">Recherche</span>
-          <span class="tag">Navigation</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.1.0</div>
-        <h3>Alignement sur la palette du site</h3>
-        <p>
-          Le thème a été recalé sur l’ambiance visuelle du site réel : fond violet profond,
-          panneaux violets et accents verts d’action.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Palette site</span>
-          <span class="tag">Header/Footer</span>
-          <span class="tag">Contraste</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.2.0</div>
-        <h3>Logo réel et favicon dérivé</h3>
-        <p>
-          Intégration du vrai logo Galactic-Shrine dans le header, puis génération d’un
-          favicon cohérent à partir du visuel GS fourni.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Logo PNG</span>
-          <span class="tag">Favicon</span>
-          <span class="tag">Header</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.3.0</div>
-        <h3>Nettoyage UX + libellés FR</h3>
-        <p>
-          Suppression des éléments inutiles du header, francisation des libellés visibles
-          et allègement de la navigation.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Français</span>
-          <span class="tag">UX</span>
-          <span class="tag">Navigation</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.5.0</div>
-        <h3>About + changelog + domaine personnalisé</h3>
-        <p>
-          Ajout d’une page About, d’un changelog visuel dédié et de la pré-intégration
-          du domaine personnalisé.
-        </p>
-        <div class="tag-list">
-          <span class="tag">About</span>
-          <span class="tag">Changelog</span>
-          <span class="tag">Domaine personnalisé</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v2.6.0</div>
-        <h3>Roadmap visuelle assortie</h3>
-        <p>
-          Ajout d’une page Roadmap cohérente avec le changelog, intégrée à la navigation,
-          au footer, au sitemap et à l’index du portail.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Roadmap</span>
-          <span class="tag">Navigation</span>
-          <span class="tag">Sitemap</span>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="badge badge-accent">v{{ site.portalVersion }}</div>
-        <h3>Migration Eleventy</h3>
-        <p>
-          Passage à un générateur statique avec layouts, données structurées,
-          pages générées et pipeline de build unifié.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Eleventy</span>
-          <span class="tag">Layouts</span>
-          <span class="tag">Build unifié</span>
-        </div>
-      </article>
+      </div>
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["1a5d9c9329b5f727942f15eda08354f9b455c702"],
+          Title="Migration du site vers Eleventy",
+          Description="Refonte structurelle du portail avec source <span class=\"inline-code\">src/</span>, layouts partagés, assets réorganisés et génération du site vers <span class=\"inline-code\">_site/</span>.",
+          Tags=["Eleventy", "Layouts", "Build"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["ae2598548b4fd10a3b7593f884e9d59838b61c8d"],
+          Title="Configuration Eleventy et workflow GitHub Pages",
+          Description="Mise en place de la configuration de build et de la chaîne de publication adaptée au portail généré.",
+          Tags=["Eleventy", "Workflow", "GitHub Pages"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["64580b85cbaef7f313c02ec0db5cb2a4ddc9f2b8"],
+          Title="Extension du <span class=\"inline-code\">.gitignore</span>",
+          Description="Nettoyage du dépôt avec l’ajout d’ignorés courants pour éviter de versionner des fichiers parasites liés au build ou à l’environnement local.",
+          Tags=[".gitignore", "Nettoyage", "Build"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["9853999a25b95ddf8ef866507f0da73ce57d7f55"],
+          Title="Refonte du README pour le portail Eleventy",
+          Description="Mise à jour de la documentation du dépôt pour refléter la nouvelle architecture, le pipeline de build et le mode de déploiement.",
+          Tags=["README", "Documentation", "Eleventy"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["2376ac2d6c256de16b8366b8bc1ae955b788b0eb"],
+          Title="Désactivation du moteur Markdown",
+          Description="Ajustement de la configuration pour éviter les rendus incorrects et mieux contrôler la génération des pages dans le contexte Eleventy.",
+          Tags=["Markdown", "Configuration", "Rendu"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=["6675ef4d83ae330c9099c59fdd45a4ddfa7c5ee3"],
+          Title="Nettoyage de la configuration Eleventy",
+          Description="Réduction du nombre de tags affichés et simplification de la configuration pour améliorer la lisibilité et la cohérence du rendu.",
+          Tags=["Eleventy", "Tags", "Configuration"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=[
+            "be4491bc9bccedcb84b9f206315c50f70f90c2b0",
+            "f69f952dfa019faf222ae2f8fb9069f7fedceeb8",
+            "0d3a8a03fe51ab859f6fae6c1b49c2074e0a0102"
+          ],
+          Title="Itérations sur le déploiement",
+          Description="Corrections de workflow, refactor du déploiement GitHub Actions pour Pages et ajustements mineurs sur le fichier <span class=\"inline-code\">deploy-pages.yml</span>.",
+          Tags=["Workflow", "GitHub Actions", "Déploiement"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="17 mars 2026",
+          Commits=[
+            "4875aaa42535ca21a0fc2f3adfa89f04fcbec46d",
+            "2a53c98045585df448560cfcc0dabf9734c6d23d"
+          ],
+          Title="Itérations sur <span class=\"inline-code\">CNAME</span>",
+          Description="Création puis suppression du fichier <span class=\"inline-code\">CNAME</span> dans le cadre des ajustements autour du domaine personnalisé et du mode de publication GitHub Pages.",
+          Tags=["CNAME", "Domaine personnalisé", "GitHub Pages"]
+        )
+      }}
+      {{
+        commitItem(
+          Date="19 mars 2026",
+          Commits=[
+            "bd32cab2caafaa25127fe91e6d1697115707f7bc",
+            "8676222f560a2bd74be33eb4352c508de24d17d7"
+          ],
+          Title="Réécriture puis refactor du changelog",
+          Description="Le changelog a d’abord été réécrit dans un style proche du Markdown, puis restructuré en HTML afin de mieux s’intégrer au layout et au rendu du portail Eleventy.",
+          Tags=["Changelog", "HTML", "Refactor"]
+        )
+      }}
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container grid-2">
-    <article class="aside-card">
-      <div class="eyebrow">Packs</div>
-      <h2>Versions des standards intégrés</h2>
-
-      <ul class="check-list">
-        <li>
-          <strong>Documentation harmonisée</strong>
-          — Pack <span class="inline-code">v{{ site.docPackVersion }}</span>
-        </li>
-        <li>
-          <strong>Conventions de codage</strong>
-          — Pack <span class="inline-code">v{{ site.codingPackVersion }}</span>
-        </li>
-        <li>
-          <strong>Portail</strong>
-          — Itération courante <span class="inline-code">v{{ site.portalVersion }}</span>
-        </li>
-      </ul>
-
-      <div class="card-actions" style="margin-top: 1rem;">
-        <a
-          class="button button-primary"
-          href="/downloads/GalacticShrine-DocStandards-Harmonized-v{{ site.docPackVersion }}.zip">
-          Télécharger Documentation
-        </a>
-
-        <a
-          class="button"
-          href="/downloads/GalacticShrine-CodingStandards-v{{ site.codingPackVersion }}.zip">
-          Télécharger Codage
-        </a>
-      </div>
-    </article>
-
-    <article class="aside-card">
-      <div class="eyebrow">Prochaine extension possible</div>
-      <h2>Ce que ce changelog prépare</h2>
-
-      <div class="tag-list">
-        <span class="tag">Guides</span>
-        <span class="tag">Exemples</span>
-        <span class="tag">FAQ</span>
-        <span class="tag">Roadmap</span>
-        <span class="tag">Versioning plus fin</span>
-      </div>
-
-      <p class="muted" style="margin-top: 1rem;">
-        La base accueille maintenant About, Changelog et Roadmap, et reste prête
-        à recevoir d’autres pages éditoriales sans casser la structure du portail
-        ni la simplicité du déploiement statique.
-      </p>
-    </article>
   </div>
 </section>

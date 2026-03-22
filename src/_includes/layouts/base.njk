@@ -5,79 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ description or site.description }}">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-<header class="site-header site-header-login">
-  <div class="container topbar">
-    <a class="brand" href="/index.html" aria-label="{{ site.title }}">
-      <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
-      <span class="sr-only">{{ site.title }}</span>
-    </a>
-    <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
-      <a data-nav href="/index.html">Accueil</a>
-      <a data-nav href="/about/index.html">À propos</a>
-      <a data-nav href="/standards/documentation/index.html">Documentation</a>
-      <a data-nav href="/standards/coding/index.html">Codage</a>
-      <a data-nav href="/changelog/index.html">Changelog</a>
-      <a data-nav href="/roadmap/index.html">Roadmap</a>
-      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
-      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
-    </nav>
-    <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
-      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
-      <button type="submit">Rechercher</button>
-    </form>
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
-  </div>
-  <div class="container mobile-nav" data-mobile-nav>
-    <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
-      <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
-      <button type="submit">Rechercher</button>
-    </form>
-    <nav class="nav" aria-label="Navigation mobile">
-      <a data-nav href="/index.html">Accueil</a>
-      <a data-nav href="/about/index.html">À propos</a>
-      <a data-nav href="/standards/documentation/index.html">Documentation</a>
-      <a data-nav href="/standards/coding/index.html">Codage</a>
-      <a data-nav href="/changelog/index.html">Changelog</a>
-      <a data-nav href="/roadmap/index.html">Roadmap</a>
-      <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
-      <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
-    </nav>
-  </div>
-</header>
-<main>{{ content | safe }}</main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>© <span id="currentYear"></span> {{ site.copyrightName }}</strong>
-      <p>{{ site.copyrightName }} • Tous droits réservés.<br>Propulsé par {{ site.poweredBy }}.</p>
+  <header class="site-header site-header-login">
+    <div class="container topbar">
+      <a class="brand" href="/index.html" aria-label="{{ site.title }}">
+        <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+        <span class="sr-only">{{ site.title }}</span>
+      </a>
+      <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v{{ site.docPackVersion }}.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v{{ site.codingPackVersion }}.zip">ZIP Codage</a>
+      </nav>
+      <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
     </div>
-    <div>
-      <strong>Navigation</strong>
-      <ul class="footer-links">
-        <li><a href="/index.html">Accueil</a></li>
-        <li><a href="/about/index.html">À propos</a></li>
-        <li><a href="/changelog/index.html">Changelog</a></li>
-        <li><a href="/roadmap/index.html">Roadmap</a></li>
-        <li><a href="/search/index.html">Recherche</a></li>
-      </ul>
+    <div class="container mobile-nav" data-mobile-nav>
+      <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <nav class="nav" aria-label="Navigation mobile">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/about/index.html">À propos</a>
+        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/changelog/index.html">Changelog</a>
+        <a data-nav href="/roadmap/index.html">Roadmap</a>
+        <a data-nav href="/readme/index.html">README</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v{{ site.docPackVersion }}.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v{{ site.codingPackVersion }}.zip">ZIP Codage</a>
+      </nav>
     </div>
-    <div>
-      <strong>Projet</strong>
-      <ul class="footer-links">
-        <li><a href="/README.html">README</a></li>
-        <li><a href="https://github.com/Galactic-Shrine" rel="noopener noreferrer">GitHub</a></li>
-        <li>Domaine personnalisé préconfiguré : <code>{{ site.domain }}</code></li>
-        <li><a href="/CNAME">CNAME</a></li>
-        <li><a href="/DEPLOYMENT.html">Déploiement</a></li>
-      </ul>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-row footer-row-main">
+      <div class="small footer-copy">
+        <strong>© <span id="currentYear"></span> {{ site.copyrightName }} • Tous droits réservés.</strong>
+        <span class="footer-powered">Propulsé par {{ site.poweredBy }}.</span>
+      </div>
+      <div class="quick-links small">
+        <a href="/about/index.html">À propos</a>
+        <a href="/changelog/index.html">Changelog</a>
+        <a href="/roadmap/index.html">Roadmap</a>
+        <a href="/readme/index.html">README</a>
+        <a href="{{ site.repoUrl }}" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
     </div>
-  </div>
-</footer>
-<script src="/assets/js/site.js"></script>
+  </footer>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
