@@ -9,7 +9,7 @@ pageIntro: >-
 breadcrumbs:
   - label: "Changelog"
 ---
-{% from "components/macro.njk" import item, commitItem, card %}
+{% from "components/macro.njk" import item, commitItem, card with context %}
 {% include "components/hero.njk" %}
 {{ card(
   "v" + site.portalVersion,
@@ -204,6 +204,16 @@ breadcrumbs:
           Description="Le changelog a d’abord été réécrit dans un style proche du Markdown, puis restructuré en HTML afin de mieux s’intégrer au layout et au rendu du portail Eleventy.",
           Tags=["Changelog", "HTML", "Refactor"]
         )
+      }}
+      {{ 
+        commitItem(
+          Date="22 mars 2026",
+          Commits=[
+          ],
+          Title="Correction du contexte des macros du changelog",
+          Description="Import des macros avec <span class=\"inline-code\">with context</span> afin de permettre à <span class=\"inline-code\">commitItem</span> d’accéder correctement à <span class=\"inline-code\">site.repoUrl</span> et de générer des liens GitHub valides.",
+          Tags=["Nunjucks", "Macros", "Changelog", "Bugfix"]
+        ) 
       }}
     </div>
   </div>
