@@ -1,7 +1,7 @@
 {
   "name": "galactic-shrine.github.io",
   "private": true,
-  "version": "2.7.0",
+  "version": "2.7.2",
   "description": "Portail documentaire Galactic-Shrine généré avec Eleventy.",
   "engines": {
     "node": ">=22 <23",

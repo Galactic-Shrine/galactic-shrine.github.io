@@ -120,6 +120,20 @@ Le portail rappelle la règle Galactic-Shrine suivante :
 - paramètres en `PascalCase`
 - méthodes en `PascalCase`
 
-## Licence
+## License
 
-À définir selon la politique du dépôt Galactic-Shrine.
+This repository uses a dual-license model:
+
+### Source code
+
+The portal source code, templates, stylesheets, scripts, configuration files, and technical implementation files are licensed under the **MIT License**.  
+See [`LICENSE`](./LICENSE).
+
+### Documentation content
+
+The documentation content, editorial pages, standards, roadmap, changelog texts, and related written materials are licensed under **CC BY-NC-SA 4.0**.  
+See [`CONTENT-LICENSE.md`](./CONTENT-LICENSE.md).
+
+### Brand assets
+
+The **⋞Galactic-Shrine⋟** name, logos, visual identity, and other brand assets are **not** licensed for reuse unless prior written permission is granted.
