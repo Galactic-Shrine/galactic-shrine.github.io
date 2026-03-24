@@ -122,4 +122,75 @@ async function initGlobalSearch() {
   category.addEventListener('change', render);
   render();
 }
+
 initGlobalSearch();
+
+(() => {
+  const StorageKey = "gs-theme";
+  const Root = document.documentElement;
+  const ThemeButtons = document.querySelectorAll("[data-theme-toggle]");
+  const ThemeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  const GetStoredTheme = () => {
+    try {
+      return localStorage.getItem(StorageKey);
+    } catch {
+      return null;
+    }
+  };
+
+  const StoreTheme = (Theme) => {
+    try {
+      localStorage.setItem(StorageKey, Theme);
+    } catch {
+      // Ignore localStorage failures
+    }
+  };
+
+  const GetButtonLabel = (Theme) => Theme === "light" ? "Lumineux" : "Sombre";
+  const GetActionLabel = (Theme) => Theme === "light"
+    ? "Activer le thème sombre"
+    : "Activer le thème lumineux";
+
+  const ApplyTheme = (Theme, Persist = true) => {
+    Root.setAttribute("data-theme", Theme);
+
+    if (Persist) {
+      StoreTheme(Theme);
+    }
+
+    if (ThemeColorMeta) {
+      ThemeColorMeta.setAttribute("content", Theme === "light" ? "#ffffff" : "#22143d");
+    }
+
+    ThemeButtons.forEach((Button) => {
+      Button.setAttribute("aria-pressed", String(Theme === "light"));
+      Button.setAttribute("aria-label", GetActionLabel(Theme));
+
+      const Label = Button.querySelector("[data-theme-label]");
+      if (Label) {
+        Label.textContent = GetButtonLabel(Theme);
+      }
+    });
+  };
+
+  const InitialTheme = (() => {
+    const StoredTheme = GetStoredTheme();
+    if (StoredTheme === "light" || StoredTheme === "dark") {
+      return StoredTheme;
+    }
+
+    return Root.getAttribute("data-theme") || "dark";
+  })();
+
+  ApplyTheme(InitialTheme, false);
+
+  ThemeButtons.forEach((Button) => {
+    Button.addEventListener("click", () => {
+      const CurrentTheme = Root.getAttribute("data-theme") || "dark";
+      const NextTheme = CurrentTheme === "dark" ? "light" : "dark";
+
+      ApplyTheme(NextTheme, true);
+    });
+  });
+})();
