@@ -1,10 +1,26 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galactic-Shrine Twig Coding Standard · Portail ⋞Galactic-Shrine⋟</title>
   <meta name="description" content="Ce standard définit la manière d’écrire le code **Twig** dans les projets Galactic-Shrine.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#22143d">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("gs-theme");
+        const theme = savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : "dark";
+
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -28,21 +44,29 @@
         <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
         <button type="submit">Rechercher</button>
       </form>
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>☰</button>
+      <button class="theme-toggle desktop-only" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-label" data-theme-label>Sombre</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
+        ☰
+      </button>
     </div>
     <div class="container mobile-nav" data-mobile-nav>
       <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
         <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
         <button type="submit">Rechercher</button>
       </form>
+      <div class="card-actions" style="margin: 0 0 .8rem;">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label" data-theme-label>Sombre</span>
+        </button>
+      </div>
       <nav class="nav" aria-label="Navigation mobile">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/about/index.html">À propos</a>
         <a data-nav href="/standards/documentation/index.html">Documentation</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
-        <a data-nav href="/changelog/index.html">Changelog</a>
-        <a data-nav href="/roadmap/index.html">Roadmap</a>
-        <a data-nav href="/readme/index.html">README</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>

@@ -1,0 +1,194 @@
+// ==========================================================================
+// _variables.scss
+// ==========================================================================
+
+// ==========================================================================
+// 1) Couleurs brutes
+// ==========================================================================
+
+$white: #ffffff;
+$black: #000000;
+
+$violet-950: #201833;
+$violet-900: #22143d;
+$violet-850: #2a1650;
+$violet-800: #321e57;
+$violet-700: #6f42c1;
+$violet-600: #8f65da;
+$violet-500: #645a7d;
+$violet-400: #80759b;
+$violet-300: #b9a7da;
+$violet-200: #d5c8ed;
+$violet-100: #efe9f8;
+$violet-050: #f6f3fb;
+$violet-000: #f7f2ff;
+
+$green-700: #105c39;
+$green-600: #157347;
+$green-500: #198754;
+$green-400: #2bb673;
+$green-300: #39d98a;
+$green-200: #66efad;
+$green-050: #d8ffe8;
+
+$amber-500: #c58b00;
+$amber-300: #ffd779;
+
+$brand-warm-1: #ffb15b;
+$brand-warm-2: #ff8a3d;
+$brand-warm-3: #d4463b;
+$brand-cold-1: #62d8ff;
+$brand-cold-2: #2a9cf7;
+
+$rose-050: #f1e7ff;
+$blue-050: #ddf6ff;
+$code-light-bg: #f2edf9;
+
+$placeholder-dark: #a992d4;
+$placeholder-light: #82779b;
+
+$purple-search-bg: #3e1f70;
+$green-button-dark-bg: #09120e;
+$timeline-card-secondary: #683cb6;
+$light-card-gradient-bottom: #f7f3fc;
+
+// ==========================================================================
+// 2) Rayons / dimensions
+// ==========================================================================
+
+$radius-xl: 28px;
+$radius-lg: 20px;
+$radius-md: 16px;
+$radius-sm: 12px;
+
+$max-width: 1850px;
+
+// ==========================================================================
+// 3) Thèmes
+// ==========================================================================
+
+$theme-dark: (
+  bg: $violet-800,
+  bg-2: $violet-800,
+  header: $violet-900,
+  panel: rgba($violet-700, 0.96),
+  panel-strong: rgba($violet-700, 0.98),
+  panel-soft: rgba($white, 0.05),
+
+  text: $violet-000,
+  muted: $violet-200,
+  muted-2: $violet-300,
+
+  line: rgba($violet-200, 0.18),
+  line-strong: rgba($violet-200, 0.30),
+
+  accent: $green-500,
+  accent-2: $green-400,
+  accent-3: $violet-700,
+  accent-soft: $violet-600,
+
+  ok: $green-400,
+  warning: $amber-300,
+
+  shadow: 0 24px 70px rgba($violet-950, 0.32),
+
+  header-2: $violet-850,
+  brand-warm-1: $brand-warm-1,
+  brand-warm-2: $brand-warm-2,
+  brand-warm-3: $brand-warm-3,
+  brand-cold-1: $brand-cold-1,
+  brand-cold-2: $brand-cold-2
+);
+
+$theme-light: (
+  bg: $violet-050,
+  bg-2: $violet-100,
+  header: $white,
+  panel: rgba($white, 0.96),
+  panel-strong: rgba($white, 0.985),
+  panel-soft: rgba($violet-800, 0.04),
+
+  text: $violet-950,
+  muted: $violet-500,
+  muted-2: $violet-400,
+
+  line: rgba($violet-800, 0.12),
+  line-strong: rgba($violet-800, 0.20),
+
+  accent: $green-600,
+  accent-2: $green-500,
+  accent-3: $violet-700,
+  accent-soft: $violet-600,
+
+  ok: $green-500,
+  warning: $amber-500,
+
+  shadow: 0 18px 45px rgba($violet-950, 0.12),
+
+  header-2: $violet-850,
+  brand-warm-1: $brand-warm-1,
+  brand-warm-2: $brand-warm-2,
+  brand-warm-3: $brand-warm-3,
+  brand-cold-1: $brand-cold-1,
+  brand-cold-2: $brand-cold-2
+);
+
+// ==========================================================================
+// 4) Mixins
+// ==========================================================================
+
+@mixin apply-theme($theme) {
+  --bg: #{map-get($theme, bg)};
+  --bg-2: #{map-get($theme, bg-2)};
+  --header: #{map-get($theme, header)};
+  --panel: #{map-get($theme, panel)};
+  --panel-strong: #{map-get($theme, panel-strong)};
+  --panel-soft: #{map-get($theme, panel-soft)};
+
+  --text: #{map-get($theme, text)};
+  --muted: #{map-get($theme, muted)};
+  --muted-2: #{map-get($theme, muted-2)};
+
+  --line: #{map-get($theme, line)};
+  --line-strong: #{map-get($theme, line-strong)};
+
+  --accent: #{map-get($theme, accent)};
+  --accent-2: #{map-get($theme, accent-2)};
+  --accent-3: #{map-get($theme, accent-3)};
+  --accent-soft: #{map-get($theme, accent-soft)};
+
+  --ok: #{map-get($theme, ok)};
+  --warning: #{map-get($theme, warning)};
+
+  --shadow: #{map-get($theme, shadow)};
+
+  --header-2: #{map-get($theme, header-2)};
+  --brand-warm-1: #{map-get($theme, brand-warm-1)};
+  --brand-warm-2: #{map-get($theme, brand-warm-2)};
+  --brand-warm-3: #{map-get($theme, brand-warm-3)};
+  --brand-cold-1: #{map-get($theme, brand-cold-1)};
+  --brand-cold-2: #{map-get($theme, brand-cold-2)};
+}
+
+// ==========================================================================
+// 5) Variables CSS runtime
+// ==========================================================================
+
+:root {
+  @include apply-theme($theme-dark);
+
+  --radius-xl: #{$radius-xl};
+  --radius-lg: #{$radius-lg};
+  --radius-md: #{$radius-md};
+  --radius-sm: #{$radius-sm};
+  --max: #{$max-width};
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  @include apply-theme($theme-light);
+}
