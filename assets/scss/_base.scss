@@ -175,6 +175,26 @@ pre {
   }
 }
 
+.doc-markdown pre,
+.standard-markdown pre,
+.viewer-body pre {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.doc-markdown pre code.hljs,
+.standard-markdown pre code.hljs,
+.viewer-body pre code.hljs,
+.code-block.hljs {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba($violet-200, 0.16);
+  background: $violet-900;
+  color: $violet-000;
+  overflow-x: auto;
+}
+
 /* ==========================================================================
    Light theme
    ========================================================================== */

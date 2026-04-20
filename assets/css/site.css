@@ -937,6 +937,26 @@ html[data-theme=light] .main-nav a.active {
   color: #f7f2ff;
 }
 
+.doc-markdown pre,
+.standard-markdown pre,
+.viewer-body pre {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.doc-markdown pre code.hljs,
+.standard-markdown pre code.hljs,
+.viewer-body pre code.hljs,
+.code-block.hljs {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(213, 200, 237, 0.16);
+  background: #22143d;
+  color: #f7f2ff;
+  overflow-x: auto;
+}
+
 .inline-code {
   font-family: "Cascadia Code", Consolas, monospace;
   background: rgba(34, 20, 61, 0.24);
