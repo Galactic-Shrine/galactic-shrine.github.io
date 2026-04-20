@@ -60,6 +60,26 @@ document.querySelectorAll('[data-filter-search], [data-filter-category]').forEac
 });
 filterCards();
 
+function updateHighlightTheme(theme) {
+  const darkTheme = document.getElementById("hljs-theme-dark");
+  const lightTheme = document.getElementById("hljs-theme-light");
+  if (!darkTheme || !lightTheme) return;
+
+  const useLight = theme === "light";
+  darkTheme.disabled = useLight;
+  lightTheme.disabled = !useLight;
+}
+
+function initCodeHighlighting() {
+  if (!window.hljs) return;
+
+  document.querySelectorAll("pre code").forEach((block) => {
+    if (block.dataset.hljsDone === "true") return;
+    window.hljs.highlightElement(block);
+    block.dataset.hljsDone = "true";
+  });
+}
+
 async function initGlobalSearch() {
   const root = document.querySelector('[data-search-page]');
   if (!root) return;
@@ -163,6 +183,8 @@ initGlobalSearch();
       ThemeColorMeta.setAttribute("content", Theme === "light" ? "#ffffff" : "#22143d");
     }
 
+    updateHighlightTheme(Theme);
+
     ThemeButtons.forEach((Button) => {
       Button.setAttribute("aria-pressed", String(Theme === "light"));
       Button.setAttribute("aria-label", GetActionLabel(Theme));
@@ -193,4 +215,6 @@ initGlobalSearch();
       ApplyTheme(NextTheme, true);
     });
   });
+
+  initCodeHighlighting();
 })();
