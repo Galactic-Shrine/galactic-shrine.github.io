@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine C++ Documentation Standard</h1>
+<h1 id="galactic-shrine-c-documentation-standard">Galactic-Shrine C++ Documentation Standard</h1>
 <p><strong>Version:</strong> 1.2.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets C++ / Bibliothèques / Moteurs / Outils / Applications Desktop / Jeux / Composants natifs</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière de documenter le code <strong>C++</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -14,7 +14,7 @@
 <li>de documenter proprement les types, fonctions et points d’extension importants.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>La documentation C++ Galactic-Shrine doit être :</p>
 <ul>
 <li>claire ;</li>
@@ -31,7 +31,7 @@
 <li>une logique simple, sans surdocumentation.</li>
 </ul>
 <hr>
-<h2>3. Format obligatoire des blocs</h2>
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
 <p>Toujours utiliser le format suivant :</p>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
@@ -42,7 +42,7 @@
 </code></pre>
 <p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine C++.</p>
 <hr>
-<h2>4. Convention bilingue</h2>
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
 <p>Chaque balise descriptive doit suivre l’ordre suivant :</p>
 <ol>
 <li>ligne française <code>[FR]</code></li>
@@ -57,7 +57,7 @@
  **/
 </code></pre>
 <hr>
-<h2>5. Éléments autorisés</h2>
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
 <p>Éléments autorisés dans les commentaires C++ Galactic-Shrine :</p>
 <ul>
 <li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
@@ -78,7 +78,7 @@
 <li>les commentaires sur du code trivial sans enjeu de maintenance.</li>
 </ul>
 <hr>
-<h2>6. Structure recommandée d’un commentaire</h2>
+<h2 id="6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li><code>&lt;summary&gt;</code></li>
@@ -107,8 +107,8 @@
  **/
 </code></pre>
 <hr>
-<h2>7. Standard par type d’élément</h2>
-<h3>7.1 Classe</h3>
+<h2 id="7-standard-par-type-d-element">7. Standard par type d’élément</h2>
+<h3 id="7-1-classe">7.1 Classe</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente un générateur de traductions YAML.
@@ -125,7 +125,7 @@ class TranslationGenerator final
 {
 };
 </code></pre>
-<h3>7.2 Struct</h3>
+<h3 id="7-2-struct">7.2 Struct</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente le résultat d’une génération.
@@ -137,7 +137,7 @@ struct GenerationResult
     bool Success = false;
 };
 </code></pre>
-<h3>7.3 Enum</h3>
+<h3 id="7-3-enum">7.3 Enum</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente le niveau de journalisation.
@@ -163,7 +163,7 @@ enum class LogLevel
     Warning
 };
 </code></pre>
-<h3>7.4 Constructeur</h3>
+<h3 id="7-4-constructeur">7.4 Constructeur</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Initialise une nouvelle instance de la classe TranslationGenerator.
@@ -176,7 +176,7 @@ enum class LogLevel
  **/
 TranslationGenerator(const std::string&amp; ProjectDirectory);
 </code></pre>
-<h3>7.5 Fonction ou méthode</h3>
+<h3 id="7-5-fonction-ou-methode">7.5 Fonction ou méthode</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Normalise une liste de locales.
@@ -193,7 +193,7 @@ TranslationGenerator(const std::string&amp; ProjectDirectory);
  **/
 std::vector&lt;std::string&gt; NormalizeLocales(const std::vector&lt;std::string&gt;&amp; Locales) const;
 </code></pre>
-<h3>7.6 Fonction template</h3>
+<h3 id="7-6-fonction-template">7.6 Fonction template</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Convertit une valeur vers un type cible.
@@ -215,7 +215,7 @@ std::vector&lt;std::string&gt; NormalizeLocales(const std::vector&lt;std::string
 template &lt;typename T&gt;
 T ConvertTo(const std::string&amp; Value);
 </code></pre>
-<h3>7.7 Fonction avec exception</h3>
+<h3 id="7-7-fonction-avec-exception">7.7 Fonction avec exception</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Charge le contenu d’un fichier YAML.
@@ -236,7 +236,7 @@ T ConvertTo(const std::string&amp; Value);
  **/
 std::string LoadFile(const std::string&amp; FilePath);
 </code></pre>
-<h3>7.8 Constante exposée</h3>
+<h3 id="7-8-constante-exposee">7.8 Constante exposée</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente la locale par défaut.
@@ -250,23 +250,23 @@ std::string LoadFile(const std::string&amp; FilePath);
 inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 </code></pre>
 <hr>
-<h2>8. Règles de style</h2>
-<h3>8.1 Descriptions courtes</h3>
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="8-1-descriptions-courtes">8.1 Descriptions courtes</h3>
 <p>Toujours préférer une phrase simple et directe.</p>
-<h3>8.2 Ordre fixe</h3>
+<h3 id="8-2-ordre-fixe">8.2 Ordre fixe</h3>
 <p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
-<h3>8.3 Indentation recommandée</h3>
+<h3 id="8-3-indentation-recommandee">8.3 Indentation recommandée</h3>
 <p>Conserver exactement l’indentation du modèle officiel.</p>
-<h3>8.4 <code>&lt;remarks&gt;</code></h3>
+<h3 id="8-4-remarks">8.4 <code>&lt;remarks&gt;</code></h3>
 <p>Utiliser <code>&lt;remarks&gt;</code> uniquement si un complément utile existe.</p>
-<h3>8.5 <code>&lt;returns&gt;</code></h3>
+<h3 id="8-5-returns">8.5 <code>&lt;returns&gt;</code></h3>
 <p>Toujours documenter <code>&lt;returns&gt;</code> lorsqu’une fonction retourne une valeur. Pour <code>void</code>, omettre <code>&lt;returns&gt;</code> sauf besoin exceptionnel.</p>
-<h3>8.6 <code>&lt;exception&gt;</code></h3>
+<h3 id="8-6-exception">8.6 <code>&lt;exception&gt;</code></h3>
 <p>N’ajouter <code>&lt;exception&gt;</code> que si l’exception est réellement importante dans le contrat de la fonction.</p>
-<h3>8.7 Pas de surdocumentation</h3>
+<h3 id="8-7-pas-de-surdocumentation">8.7 Pas de surdocumentation</h3>
 <p>Ne pas commenter l’évidence.</p>
 <hr>
-<h2>9. Types d’éléments à documenter en priorité</h2>
+<h2 id="9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
 <p>Documenter en priorité :</p>
 <ul>
 <li>classes publiques ;</li>
@@ -281,7 +281,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 <li>API internes complexes.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-cpp">namespace GalacticShrine::Localization
 {
     /**
@@ -330,7 +330,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine C++ :</p>
 <ul>
 <li>utiliser le bloc <code>/** ... **/</code> ;</li>
@@ -341,7 +341,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 <li>conserver une mise en forme stricte et homogène.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets C++ Galactic-Shrine :</p>
 <ul>
 <li>utiliser le format XML documentaire Galactic-Shrine ;</li>

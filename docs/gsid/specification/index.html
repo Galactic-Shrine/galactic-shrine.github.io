@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Specification GsId · Portail ⋞Galactic-Shrine⋟</title>
+  <meta name="description" content="Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#22143d">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("gs-theme");
+        const theme = savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : "dark";
+
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link id="hljs-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link id="hljs-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" disabled>
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header site-header-login">
+    <div class="container topbar">
+      <a class="brand" href="/index.html" aria-label="Portail ⋞Galactic-Shrine⋟">
+        <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+        <span class="sr-only">Portail ⋞Galactic-Shrine⋟</span>
+      </a>
+      <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+      </nav>
+      <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <button class="theme-toggle desktop-only" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-label" data-theme-label>Sombre</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
+        ☰
+      </button>
+    </div>
+    <div class="container mobile-nav" data-mobile-nav>
+      <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <div class="card-actions" style="margin: 0 0 .8rem;">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label" data-theme-label>Sombre</span>
+        </button>
+      </div>
+      <nav class="nav" aria-label="Navigation mobile">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+
+
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a><span>›</span>
+      <a href="/docs/index.html">Projets</a><span>›</span>
+      <a href="/docs/gsid/">⋞Galactic-Shrine⋟ GsId</a><span>›</span>
+      
+      <span>Specification GsId</span>
+    </div>
+
+    <div class="kicker">Documentation projet • project</div>
+    <h1 class="page-title">Specification GsId</h1>
+    <p class="page-intro">Regles communes de representation, parsing, validation et interoperabilite du GsId 256 bits.</p>
+
+    <div class="tag-list">
+      
+      
+      <span class="tag">Documentation centralisée</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container viewer-layout">
+    <aside class="sidebar-card" aria-label="Navigation de la documentation">
+      
+      
+        <div class="eyebrow">Sommaire</div>
+        <ul class="toc-list">
+          
+            <li class="lvl-2"><a href="#taille-et-representation">Taille et representation</a></li>
+          
+            <li class="lvl-2"><a href="#formats-texte">Formats texte</a></li>
+          
+            <li class="lvl-3"><a href="#format-n">Format N</a></li>
+          
+            <li class="lvl-3"><a href="#format-d">Format D</a></li>
+          
+            <li class="lvl-2"><a href="#casse">Casse</a></li>
+          
+            <li class="lvl-2"><a href="#parsing-et-normalisation">Parsing et normalisation</a></li>
+          
+            <li class="lvl-2"><a href="#valeur-vide">Valeur vide</a></li>
+          
+            <li class="lvl-2"><a href="#interoperabilite">Interoperabilite</a></li>
+          
+        </ul>
+      
+
+      <div class="eyebrow" style="margin-top:1rem;">Dans ce projet</div>
+      <nav>
+        
+          
+            <a href="/docs/gsid/">Vue d’ensemble</a>
+          
+        
+          
+            <a class="active" aria-current="page" href="/docs/gsid/specification/">Specification</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        
+          
+            
+            <div class="project-nav-group" data-project-nav-group>
+              <button
+                class="project-nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="project-nav-cpp"
+                data-project-nav-toggle
+              >
+                <span>C++</span>
+                <span class="project-nav-chevron" aria-hidden="true">›</span>
+              </button>
+
+              <div
+                class="project-nav-panel"
+                id="project-nav-cpp"
+                inert
+                data-project-nav-panel
+              >
+                <div class="project-nav-panel-inner">
+                  
+                    
+                  
+                    
+                  
+                    
+                      <a href="/docs/gsid/cpp/">Installation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/cpp/configuration/">Configuration</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/cpp/usage/">Utilisation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/cpp/api/">API</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/cpp/examples/">Exemples</a>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+            
+            <div class="project-nav-group" data-project-nav-group>
+              <button
+                class="project-nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="project-nav-csharp"
+                data-project-nav-toggle
+              >
+                <span>C#</span>
+                <span class="project-nav-chevron" aria-hidden="true">›</span>
+              </button>
+
+              <div
+                class="project-nav-panel"
+                id="project-nav-csharp"
+                inert
+                data-project-nav-panel
+              >
+                <div class="project-nav-panel-inner">
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <a href="/docs/gsid/csharp/">Installation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/csharp/configuration/">Configuration</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/csharp/usage/">Utilisation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/csharp/api/">API</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/csharp/examples/">Exemples</a>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+            
+            <div class="project-nav-group" data-project-nav-group>
+              <button
+                class="project-nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="project-nav-php"
+                data-project-nav-toggle
+              >
+                <span>PHP</span>
+                <span class="project-nav-chevron" aria-hidden="true">›</span>
+              </button>
+
+              <div
+                class="project-nav-panel"
+                id="project-nav-php"
+                inert
+                data-project-nav-panel
+              >
+                <div class="project-nav-panel-inner">
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/">Installation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/configuration/">Configuration</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/usage/">Utilisation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/api/">API</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/examples/">Exemples</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/php/symfony-doctrine/">Symfony &amp; Doctrine</a>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+            
+            <div class="project-nav-group" data-project-nav-group>
+              <button
+                class="project-nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="project-nav-unreal"
+                data-project-nav-toggle
+              >
+                <span>Unreal Engine</span>
+                <span class="project-nav-chevron" aria-hidden="true">›</span>
+              </button>
+
+              <div
+                class="project-nav-panel"
+                id="project-nav-unreal"
+                inert
+                data-project-nav-panel
+              >
+                <div class="project-nav-panel-inner">
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/">Installation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/configuration/">Configuration</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/usage/">Utilisation</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/api/">API</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/examples/">Exemples</a>
+                    
+                  
+                    
+                      <a href="/docs/gsid/unreal/cpp-blueprint/">C++ &amp; Blueprint</a>
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+        
+      </nav>
+    </aside>
+
+    <article class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <div class="eyebrow">Source documentaire</div>
+          <div class="quick-links">
+            <a class="button small" href="/search/index.html">Recherche globale</a>
+            
+          </div>
+        </div>
+        <div class="tag-list">
+          <span class="tag">⋞Galactic-Shrine⋟ GsId</span>
+          
+          
+        </div>
+      </div>
+
+      <div class="viewer-body">
+        <h2 id="taille-et-representation">Taille et representation</h2>
+<p>Un <strong>GsId</strong> contient exactement <strong>256 bits</strong>, soit <strong>32 octets</strong>. Les implementations officielles conservent les octets dans le meme ordre afin de permettre des echanges interlangages sans conversion structurelle.</p>
+<table>
+<thead>
+<tr>
+<th>Constante</th>
+<th style="text-align:right">Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taille binaire</td>
+<td style="text-align:right">32 octets</td>
+</tr>
+<tr>
+<td>Format <code>N</code></td>
+<td style="text-align:right">64 caracteres hexadecimaux</td>
+</tr>
+<tr>
+<td>Format <code>D</code></td>
+<td style="text-align:right">69 caracteres</td>
+</tr>
+<tr>
+<td>Nombre de tirets en <code>D</code></td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>Groupement <code>D</code></td>
+<td style="text-align:right"><code>16-8-8-8-8-16</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="formats-texte">Formats texte</h2>
+<h3 id="format-n">Format N</h3>
+<p>Le format <code>N</code> est la representation normalisee sans separateur :</p>
+<pre><code class="language-text">0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+</code></pre>
+<h3 id="format-d">Format D</h3>
+<p>Le format <code>D</code> utilise cinq tirets aux positions officielles :</p>
+<pre><code class="language-text">0123456789abcdef-01234567-89abcdef-01234567-89abcdef-0123456789abcdef
+</code></pre>
+<h2 id="casse">Casse</h2>
+<p>Les APIs communes proposent les variantes <strong>Upper</strong> et <strong>Lower</strong>. Les raccourcis de format <code>N</code> / <code>D</code> utilisent la majuscule, tandis que <code>n</code> / <code>d</code> utilisent la minuscule dans les implementations qui exposent une API de formatage par caractere.</p>
+<h2 id="parsing-et-normalisation">Parsing et normalisation</h2>
+<p>Le parsing accepte les formats <code>N</code> et <code>D</code>, avec espaces exterieurs ignores par les parseurs officiels. Le format <code>D</code> doit utiliser exactement les positions de tirets definies par le standard. Une valeur non hexadecimale ou de mauvaise longueur est rejetee.</p>
+<h2 id="valeur-vide">Valeur vide</h2>
+<p>La valeur vide est composee de <strong>32 octets a zero</strong>, soit 64 caracteres <code>0</code> au format <code>N</code>.</p>
+<h2 id="interoperabilite">Interoperabilite</h2>
+<p>Un GsId produit en C++, C#, PHP ou Unreal Engine doit conserver :</p>
+<ul>
+<li>les memes 32 octets bruts ;</li>
+<li>la meme representation <code>N</code> ;</li>
+<li>la meme representation <code>D</code> ;</li>
+<li>les memes regles de casse et de validation.</li>
+</ul>
+<p>Cette compatibilite permet de stocker un GsId dans un service .NET, de le transmettre a une API PHP et de le consommer dans une application native ou Unreal Engine sans remappage des octets.</p>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-row footer-row-main">
+      <div class="small footer-copy">
+        <strong>© <span id="currentYear"></span> ⋞Galactic-Shrine⋟ • Tous droits réservés.</strong>
+        <span class="footer-powered">Propulsé par GitHub Pages et GitHub Actions.</span>
+      </div>
+      <div class="quick-links small">
+        <a href="/about/index.html">À propos</a>
+        <a href="/changelog/index.html">Changelog</a>
+        <a href="/roadmap/index.html">Roadmap</a>
+        <a href="/readme/index.html">README</a>
+        <a href="https://github.com/Galactic-Shrine/galactic-shrine.github.io" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+[
+
+  
+  {
+    "id": "galactic-shrine-docs",
+    "name": "Portail Galactic-Shrine",
+    "type": "portal",
+    "description": "Portail central de documentation et de standards Galactic-Shrine.",
+    "docs": "/docs/portal/",
+    "repository": null,
+    "defaultBranch": null,
+    "latestRelease": null,
+    "metadataRefreshedAt": null,
+    "implementations": [
+      
+    ]
+  },
+
+  
+  {
+    "id": "gsid",
+    "name": "⋞Galactic-Shrine⋟ GsId",
+    "type": "project",
+    "description": "Identifiant Galactic-Shrine de 256 bits avec plusieurs implémentations compatibles entre elles.",
+    "docs": "/docs/gsid/",
+    "repository": null,
+    "defaultBranch": null,
+    "latestRelease": null,
+    "metadataRefreshedAt": null,
+    "implementations": [
+      
+        
+          
+          {
+            "id": "cpp",
+            "name": "C++",
+            "description": "Implémentation C++20 native.",
+            "docs": "/docs/gsid/cpp/",
+            "repository": null,
+            "defaultBranch": null,
+            "latestRelease": null,
+            "metadataRefreshedAt": null
+          },
+        
+          
+          {
+            "id": "csharp",
+            "name": "C#",
+            "description": "Implémentation .NET 8.",
+            "docs": "/docs/gsid/csharp/",
+            "repository": null,
+            "defaultBranch": null,
+            "latestRelease": null,
+            "metadataRefreshedAt": null
+          },
+        
+          
+          {
+            "id": "php",
+            "name": "PHP",
+            "description": "Implémentation PHP 8.1+ avec Symfony et Doctrine.",
+            "docs": "/docs/gsid/php/",
+            "repository": null,
+            "defaultBranch": null,
+            "latestRelease": null,
+            "metadataRefreshedAt": null
+          },
+        
+          
+          {
+            "id": "unreal",
+            "name": "Unreal Engine",
+            "description": "Plugin Unreal Engine avec C++ et Blueprint.",
+            "docs": "/docs/gsid/unreal/",
+            "repository": null,
+            "defaultBranch": null,
+            "latestRelease": null,
+            "metadataRefreshedAt": null
+          }
+        
+      
+    ]
+  }
+
+]

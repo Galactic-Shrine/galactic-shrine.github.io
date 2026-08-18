@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine PHP Coding Standard</h1>
+<h1 id="galactic-shrine-php-coding-standard">Galactic-Shrine PHP Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets PHP / Symfony / APIs / CLI / Services / Domain Models / Back-office / Applications Web</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière d’écrire le code <strong>PHP</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -13,7 +13,7 @@
 <li>d’améliorer la lisibilité du code applicatif et des services.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>Le code PHP Galactic-Shrine doit être :</p>
 <ul>
 <li>strict ;</li>
@@ -31,7 +31,7 @@
 <li>une logique de contrôleur légère.</li>
 </ul>
 <hr>
-<h2>3. Décisions officielles Galactic-Shrine pour PHP</h2>
+<h2 id="3-decisions-officielles-galactic-shrine-pour-php">3. Décisions officielles Galactic-Shrine pour PHP</h2>
 <p>Décisions officielles :</p>
 <ul>
 <li>utiliser <code>declare(strict_types=1);</code> lorsque compatible avec le projet ;</li>
@@ -66,7 +66,7 @@ final class UserProfileService
 }
 </code></pre>
 <hr>
-<h2>4. Convention de nommage</h2>
+<h2 id="4-convention-de-nommage">4. Convention de nommage</h2>
 <ul>
 <li>namespace : hiérarchique et orienté domaine ;</li>
 <li>classe / interface / trait / enum : <code>PascalCase</code> ;</li>
@@ -83,7 +83,7 @@ final class UserProfileService
 <p>Les noms imposés par Symfony, Serializer, API Platform, Doctrine, JSON, Twig ou une API externe peuvent conserver leur convention native lorsque l’interopérabilité l’exige.</p>
 </blockquote>
 <hr>
-<h2>5. Structure recommandée d’un fichier PHP</h2>
+<h2 id="5-structure-recommandee-d-un-fichier-php">5. Structure recommandée d’un fichier PHP</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>ouverture PHP ;</li>
@@ -107,29 +107,29 @@ final class UserProfileService
 <li>les méthodes “utilitaires globales” sans périmètre clair.</li>
 </ul>
 <hr>
-<h2>6. Style d’écriture</h2>
-<h3>6.1 Types</h3>
+<h2 id="6-style-d-ecriture">6. Style d’écriture</h2>
+<h3 id="6-1-types">6.1 Types</h3>
 <p>Toujours typer les paramètres et les retours dès que raisonnable.</p>
-<h3>6.2 Contrôleurs</h3>
+<h3 id="6-2-controleurs">6.2 Contrôleurs</h3>
 <ul>
 <li>rester minces ;</li>
 <li>déléguer la logique métier aux services ;</li>
 <li>éviter les transformations complexes inline.</li>
 </ul>
-<h3>6.3 Méthodes</h3>
+<h3 id="6-3-methodes">6.3 Méthodes</h3>
 <ul>
 <li>une méthode doit avoir une responsabilité identifiable ;</li>
 <li>préférer les retours précoces ;</li>
 <li>éviter les tableaux polymorphes sans contrat.</li>
 </ul>
-<h3>6.4 Collections et tableaux</h3>
+<h3 id="6-4-collections-et-tableaux">6.4 Collections et tableaux</h3>
 <ul>
 <li>préférer des structures explicites lorsqu’un tableau devient contractuel ;</li>
 <li>documenter la forme attendue si nécessaire ;</li>
 <li>éviter les clés “magiques” dispersées.</li>
 </ul>
 <hr>
-<h2>7. Règles spécifiques PHP / Symfony</h2>
+<h2 id="7-regles-specifiques-php-symfony">7. Règles spécifiques PHP / Symfony</h2>
 <ul>
 <li>ne pas injecter le conteneur complet ;</li>
 <li>préférer l’autowiring sur des dépendances précises ;</li>
@@ -140,7 +140,7 @@ final class UserProfileService
 <li>rester cohérent avec les conventions Symfony lorsqu’elles sont structurelles.</li>
 </ul>
 <hr>
-<h2>8. Gestion des erreurs et robustesse</h2>
+<h2 id="8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</h2>
 <ul>
 <li>distinguer validation utilisateur, erreur métier et erreur technique ;</li>
 <li>ne pas retourner <code>null</code> si un résultat dédié serait plus clair ;</li>
@@ -149,7 +149,7 @@ final class UserProfileService
 <li>ne pas masquer une erreur silencieusement dans un <code>catch</code> vide.</li>
 </ul>
 <hr>
-<h2>9. Types d’éléments à revoir en priorité</h2>
+<h2 id="9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</h2>
 <p>Relire en priorité :</p>
 <ul>
 <li>services métier ;</li>
@@ -162,7 +162,7 @@ final class UserProfileService
 <li>intégrations externes.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-php">&lt;?php
 
 declare(strict_types=1);
@@ -201,7 +201,7 @@ final class UserProfileService
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine PHP :</p>
 <ul>
 <li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
@@ -211,7 +211,7 @@ final class UserProfileService
 <li>interopérabilité framework gérée par exception ciblée, pas par dérive générale.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets PHP Galactic-Shrine :</p>
 <ul>
 <li><code>declare(strict_types=1);</code> quand possible ;</li>

@@ -99,6 +99,11 @@ async function initGlobalSearch() {
   }
 
   function render() {
+    const params = new URLSearchParams(window.location.search);
+    if (!input.dataset.queryInitialized) {
+      input.value = params.get('q') || input.value;
+      input.dataset.queryInitialized = 'true';
+    }
     const q = normalizeText(input.value);
     const categoryValue = category.value;
     let matches = items.filter(item => {
@@ -143,7 +148,32 @@ async function initGlobalSearch() {
   render();
 }
 
+
+function initProjectNavAccordion() {
+  document.querySelectorAll("[data-project-nav-group]").forEach((group) => {
+    const toggle = group.querySelector("[data-project-nav-toggle]");
+    const panel = group.querySelector("[data-project-nav-panel]");
+    if (!toggle || !panel) return;
+
+    const setOpen = (open) => {
+      group.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+
+      if (open) {
+        panel.removeAttribute("inert");
+      } else {
+        panel.setAttribute("inert", "");
+      }
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+  });
+}
+
 initGlobalSearch();
+initProjectNavAccordion();
 
 (() => {
   const StorageKey = "gs-theme";

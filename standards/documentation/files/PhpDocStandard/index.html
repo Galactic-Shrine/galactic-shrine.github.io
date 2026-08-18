@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine PHP Documentation Standard</h1>
+<h1 id="galactic-shrine-php-documentation-standard">Galactic-Shrine PHP Documentation Standard</h1>
 <p><strong>Version:</strong> 1.2.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets PHP / Symfony / API / CLI / Bibliothèques internes</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière de documenter le code <strong>PHP</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -14,7 +14,7 @@
 <li>d’éviter les conventions C# non adaptées à PHP.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>La documentation PHP Galactic-Shrine doit être :</p>
 <ul>
 <li>claire ;</li>
@@ -31,7 +31,7 @@
 <li>les types précis lorsqu’ils apportent une vraie valeur.</li>
 </ul>
 <hr>
-<h2>3. Format obligatoire des blocs</h2>
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
 <p>Toujours utiliser le format suivant :</p>
 <pre><code class="language-php">/**
  * [FR] Génère les fichiers de traduction YAML.
@@ -42,7 +42,7 @@
 <pre><code class="language-php">/** ... **/
 </code></pre>
 <hr>
-<h2>4. Convention bilingue</h2>
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
 <p>Chaque description doit suivre l’ordre suivant :</p>
 <ol>
 <li>ligne française <code>[FR]</code></li>
@@ -55,7 +55,7 @@
  */
 </code></pre>
 <hr>
-<h2>5. Éléments autorisés</h2>
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
 <p>Éléments autorisés dans les commentaires PHPDoc Galactic-Shrine :</p>
 <ul>
 <li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
@@ -80,7 +80,7 @@
 </ul>
 <p>Ces balises sont réservées aux conventions XML de type C# / C++ et ne doivent pas être utilisées en PHP.</p>
 <hr>
-<h2>6. Structure recommandée d’un commentaire</h2>
+<h2 id="6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>description courte <code>[FR]</code></li>
@@ -108,8 +108,8 @@
  */
 </code></pre>
 <hr>
-<h2>7. Standard par type d’élément</h2>
-<h3>7.1 Classe</h3>
+<h2 id="7-standard-par-type-d-element">7. Standard par type d’élément</h2>
+<h3 id="7-1-classe">7.1 Classe</h3>
 <pre><code class="language-php">/**
  * [FR] Commande Symfony permettant de générer les fichiers de traduction YAML.
  * [EN] Symfony command used to generate YAML translation files.
@@ -123,14 +123,14 @@ final class GenerateLangCommand extends Command
 {
 }
 </code></pre>
-<h3>7.2 Propriété</h3>
+<h3 id="7-2-propriete">7.2 Propriété</h3>
 <pre><code class="language-php">/**
  * @var array&lt;int, string&gt;|string [FR] Locales configurées.
  *                                [EN] Configured locales.
  */
 private readonly array|string $appLocales;
 </code></pre>
-<h3>7.3 Constructeur</h3>
+<h3 id="7-3-constructeur">7.3 Constructeur</h3>
 <pre><code class="language-php">/**
  * [FR] Initialise une nouvelle instance de la classe.
  * [EN] Initializes a new instance of the class.
@@ -144,7 +144,7 @@ public function __construct(string $projectDir, array|string $appLocales)
 {
 }
 </code></pre>
-<h3>7.4 Méthode simple</h3>
+<h3 id="7-4-methode-simple">7.4 Méthode simple</h3>
 <pre><code class="language-php">/**
  * [FR] Normalise une liste de valeurs.
  * [EN] Normalizes a list of values.
@@ -158,7 +158,7 @@ private function normalizeValues(array|string|null $values): array
 {
 }
 </code></pre>
-<h3>7.5 Méthode métier</h3>
+<h3 id="7-5-methode-metier">7.5 Méthode métier</h3>
 <pre><code class="language-php">/**
  * [FR] Exécute le traitement principal de la commande.
  * [EN] Executes the main command processing.
@@ -179,7 +179,7 @@ protected function execute(InputInterface $input, OutputInterface $output): int
 {
 }
 </code></pre>
-<h3>7.6 Méthode avec exception</h3>
+<h3 id="7-6-methode-avec-exception">7.6 Méthode avec exception</h3>
 <pre><code class="language-php">/**
  * [FR] Écrit les données dans un fichier YAML.
  * [EN] Writes data into a YAML file.
@@ -195,7 +195,7 @@ private function writeYamlFile(string $filePath, array $data): void
 {
 }
 </code></pre>
-<h3>7.7 Méthode récursive ou technique</h3>
+<h3 id="7-7-methode-recursive-ou-technique">7.7 Méthode récursive ou technique</h3>
 <pre><code class="language-php">/**
  * [FR] Parcourt récursivement un tableau pour collecter les entrées terminales.
  * [EN] Recursively walks an array to collect terminal entries.
@@ -212,21 +212,21 @@ private function collectEntries(array $data, array $path = []): array
 }
 </code></pre>
 <hr>
-<h2>8. Règles de style</h2>
-<h3>8.1 Descriptions courtes</h3>
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="8-1-descriptions-courtes">8.1 Descriptions courtes</h3>
 <p>Toujours préférer une phrase simple et directe.</p>
-<h3>8.2 Ordre fixe</h3>
+<h3 id="8-2-ordre-fixe">8.2 Ordre fixe</h3>
 <p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
-<h3>8.3 Tags techniques compacts</h3>
+<h3 id="8-3-tags-techniques-compacts">8.3 Tags techniques compacts</h3>
 <p>Écrire les tags sur une seule ligne lorsque c’est lisible. Utiliser plusieurs lignes si cela améliore la lisibilité.</p>
-<h3>8.4 <code>@return</code></h3>
+<h3 id="8-4-return">8.4 <code>@return</code></h3>
 <p>Documenter <code>@return</code> lorsqu’il existe une vraie valeur de retour. Ne pas écrire <code>@return void</code> sauf besoin particulier d’uniformité stricte.</p>
-<h3>8.5 <code>@throws</code></h3>
+<h3 id="8-5-throws">8.5 <code>@throws</code></h3>
 <p>N’ajouter <code>@throws</code> que si l’information est importante pour l’appelant.</p>
-<h3>8.6 Pas de surdocumentation</h3>
+<h3 id="8-6-pas-de-surdocumentation">8.6 Pas de surdocumentation</h3>
 <p>Ne pas commenter l’évidence.</p>
 <hr>
-<h2>9. Types d’éléments à documenter en priorité</h2>
+<h2 id="9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
 <p>Documenter en priorité :</p>
 <ul>
 <li>classes de service ;</li>
@@ -239,7 +239,7 @@ private function collectEntries(array $data, array $path = []): array
 <li>API internes importantes.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-php">&lt;?php
 
 declare(strict_types=1);
@@ -302,7 +302,7 @@ final class GenerateLangCommand extends Command
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine PHP :</p>
 <ul>
 <li>utiliser <code>/** ... */</code> ;</li>
@@ -313,7 +313,7 @@ final class GenerateLangCommand extends Command
 <li>documenter ce qui compte, pas l’évidence.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets PHP Galactic-Shrine :</p>
 <ul>
 <li>utiliser PHPDoc natif ;</li>

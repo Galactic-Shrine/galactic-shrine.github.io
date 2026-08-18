@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine SCSS Coding Standard</h1>
+<h1 id="galactic-shrine-scss-coding-standard">Galactic-Shrine SCSS Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets SCSS / Design Systems / UI Kits / Frameworks CSS / Applications Web / Interfaces d’administration / Sites et produits front-end</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière d’écrire le code <strong>SCSS</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -13,7 +13,7 @@
 <li>d’aligner le nommage applicatif avec Galactic-Shrine.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>Le code SCSS Galactic-Shrine doit être :</p>
 <ul>
 <li>structuré ;</li>
@@ -31,7 +31,7 @@
 <li>une séparation claire entre base, layout, composants, utilitaires et thèmes.</li>
 </ul>
 <hr>
-<h2>3. Décisions officielles Galactic-Shrine pour SCSS</h2>
+<h2 id="3-decisions-officielles-galactic-shrine-pour-scss">3. Décisions officielles Galactic-Shrine pour SCSS</h2>
 <p>Décisions officielles :</p>
 <ul>
 <li>variables, mixins et fonctions SCSS : <code>PascalCase</code> ;</li>
@@ -51,7 +51,7 @@ $DangerColor: #e42217;
 }
 </code></pre>
 <hr>
-<h2>4. Convention de nommage</h2>
+<h2 id="4-convention-de-nommage">4. Convention de nommage</h2>
 <ul>
 <li>variables SCSS : <code>$PascalCase</code> ;</li>
 <li>mixins : <code>PascalCase</code> ;</li>
@@ -63,7 +63,7 @@ $DangerColor: #e42217;
 <li>fichiers partiels : <code>_Button.scss</code>, <code>_Form.scss</code>, <code>_Spacing.scss</code>, etc.</li>
 </ul>
 <hr>
-<h2>5. Structure recommandée d’un fichier SCSS</h2>
+<h2 id="5-structure-recommandee-d-un-fichier-scss">5. Structure recommandée d’un fichier SCSS</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li><code>@use</code> / <code>@forward</code> ;</li>
@@ -81,33 +81,33 @@ $DangerColor: #e42217;
 <li>éviter les dépendances circulaires entre partiels.</li>
 </ul>
 <hr>
-<h2>6. Style d’écriture</h2>
-<h3>6.1 Nesting</h3>
+<h2 id="6-style-d-ecriture">6. Style d’écriture</h2>
+<h3 id="6-1-nesting">6.1 Nesting</h3>
 <ul>
 <li>limiter la profondeur de nesting ;</li>
 <li>éviter les sélecteurs difficiles à surcharger ;</li>
 <li>ne pas reproduire toute la structure DOM dans le SCSS.</li>
 </ul>
-<h3>6.2 Spécificité</h3>
+<h3 id="6-2-specificite">6.2 Spécificité</h3>
 <ul>
 <li>garder une spécificité faible autant que possible ;</li>
 <li>éviter <code>!important</code> hors cas justifiés ;</li>
 <li>préférer la composition à l’escalade de sélecteurs.</li>
 </ul>
-<h3>6.3 Tokens</h3>
+<h3 id="6-3-tokens">6.3 Tokens</h3>
 <ul>
 <li>utiliser des variables de design plutôt que des valeurs dupliquées ;</li>
 <li>centraliser couleurs, espacements, rayons, tailles et z-index critiques ;</li>
 <li>éviter les “magic numbers” répétées.</li>
 </ul>
-<h3>6.4 Mixins et fonctions</h3>
+<h3 id="6-4-mixins-et-fonctions">6.4 Mixins et fonctions</h3>
 <ul>
 <li>créer un mixin ou une fonction seulement si le gain réel existe ;</li>
 <li>éviter les API SCSS trop abstraites ;</li>
 <li>garder des signatures courtes et compréhensibles.</li>
 </ul>
 <hr>
-<h2>7. Règles spécifiques SCSS</h2>
+<h2 id="7-regles-specifiques-scss">7. Règles spécifiques SCSS</h2>
 <ul>
 <li>séparer base, layout, components, utilities, themes quand le projet le justifie ;</li>
 <li>documenter les tokens structurants ;</li>
@@ -116,7 +116,7 @@ $DangerColor: #e42217;
 <li>rester prudent avec les placeholders complexes et les <code>@extend</code>.</li>
 </ul>
 <hr>
-<h2>8. Gestion des erreurs et robustesse</h2>
+<h2 id="8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</h2>
 <ul>
 <li>valider les entrées de fonctions ou mixins critiques lorsque possible ;</li>
 <li>fournir des valeurs par défaut raisonnables ;</li>
@@ -125,7 +125,7 @@ $DangerColor: #e42217;
 <li>faire apparaître clairement les dépendances à des tokens externes.</li>
 </ul>
 <hr>
-<h2>9. Types d’éléments à revoir en priorité</h2>
+<h2 id="9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</h2>
 <p>Relire en priorité :</p>
 <ul>
 <li>tokens globaux ;</li>
@@ -137,7 +137,7 @@ $DangerColor: #e42217;
 <li>surcharges spécifiques produit.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-scss">@use &quot;../Tokens/Colors&quot; as *;
 @use &quot;../Tokens/Spacing&quot; as *;
 
@@ -160,7 +160,7 @@ $CardRadius: 0.75rem;
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine SCSS :</p>
 <ul>
 <li>utiliser <code>$PascalCase</code> pour variables et paramètres ;</li>
@@ -170,7 +170,7 @@ $CardRadius: 0.75rem;
 <li>garder des composants lisibles et peu spécifiques.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets SCSS Galactic-Shrine :</p>
 <ul>
 <li><code>$PascalCase</code> pour variables et paramètres ;</li>

@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine C# Coding Standard</h1>
+<h1 id="galactic-shrine-c-coding-standard">Galactic-Shrine C# Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière d’écrire le code <strong>C#</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -13,7 +13,7 @@
 <li>de garder un code compatible avec un usage industriel et maintenable.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>Le code C# Galactic-Shrine doit être :</p>
 <ul>
 <li>lisible ;</li>
@@ -31,7 +31,7 @@
 <li>des exceptions réservées aux erreurs réellement exceptionnelles ou contractuelles.</li>
 </ul>
 <hr>
-<h2>3. Décisions officielles Galactic-Shrine pour C#</h2>
+<h2 id="3-decisions-officielles-galactic-shrine-pour-c">3. Décisions officielles Galactic-Shrine pour C#</h2>
 <p>Décisions officielles :</p>
 <ul>
 <li><strong>propriétés</strong> en <code>PascalCase</code> ;</li>
@@ -64,7 +64,7 @@
 }
 </code></pre>
 <hr>
-<h2>4. Convention de nommage</h2>
+<h2 id="4-convention-de-nommage">4. Convention de nommage</h2>
 <ul>
 <li>namespace : stable, hiérarchique, orienté domaine ou couche ;</li>
 <li>classe / record / struct / enum : <code>PascalCase</code> ;</li>
@@ -84,7 +84,7 @@
 <li>des suffixes artificiels partout.</li>
 </ul>
 <hr>
-<h2>5. Structure recommandée d’un fichier C#</h2>
+<h2 id="5-structure-recommandee-d-un-fichier-c">5. Structure recommandée d’un fichier C#</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>en-tête légal si requis ;</li>
@@ -112,18 +112,18 @@
 <li>des méthodes privées éparpillées sans ordre.</li>
 </ul>
 <hr>
-<h2>6. Style d’écriture</h2>
-<h3>6.1 Accolades et blocs</h3>
+<h2 id="6-style-d-ecriture">6. Style d’écriture</h2>
+<h3 id="6-1-accolades-et-blocs">6.1 Accolades et blocs</h3>
 <p>Toujours utiliser des blocs explicites pour <code>if</code>, <code>else</code>, <code>for</code>, <code>foreach</code>, <code>while</code>, <code>using</code>, sauf cas ultra-triviaux validés par le projet.</p>
-<h3>6.2 Retours anticipés</h3>
+<h3 id="6-2-retours-anticipes">6.2 Retours anticipés</h3>
 <p>Préférer un retour anticipé lorsqu’il réduit l’imbrication et clarifie le contrat.</p>
-<h3>6.3 LINQ</h3>
+<h3 id="6-3-linq">6.3 LINQ</h3>
 <p>Utiliser LINQ lorsqu’il améliore clairement la lecture.<br>
 Éviter les chaînes LINQ trop denses ou difficiles à déboguer.</p>
-<h3>6.4 <code>var</code></h3>
+<h3 id="6-4-var">6.4 <code>var</code></h3>
 <p>Utiliser <code>var</code> lorsque le type est évident à la lecture immédiate.<br>
 Sinon, préférer le type explicite.</p>
-<h3>6.5 <code>async/await</code></h3>
+<h3 id="6-5-async-await">6.5 <code>async/await</code></h3>
 <ul>
 <li>suffixer les méthodes asynchrones par <code>Async</code> ;</li>
 <li>propager <code>CancellationToken</code> lorsque pertinent ;</li>
@@ -131,7 +131,7 @@ Sinon, préférer le type explicite.</p>
 <li>ne pas bloquer artificiellement sur du code asynchrone.</li>
 </ul>
 <hr>
-<h2>7. Règles spécifiques C#</h2>
+<h2 id="7-regles-specifiques-c">7. Règles spécifiques C#</h2>
 <ul>
 <li>utiliser <code>ArgumentNullException.ThrowIfNull(...)</code> aux frontières appropriées ;</li>
 <li>marquer <code>sealed</code> lorsqu’un type n’a pas vocation à être hérité ;</li>
@@ -143,7 +143,7 @@ Sinon, préférer le type explicite.</p>
 <li>rester prudent avec la réflexion, le <code>dynamic</code> et les conversions implicites coûteuses.</li>
 </ul>
 <hr>
-<h2>8. Gestion des erreurs et robustesse</h2>
+<h2 id="8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</h2>
 <ul>
 <li>lancer des exceptions avec un message exploitable ;</li>
 <li>ne pas avaler une exception sans traitement ou journalisation pertinente ;</li>
@@ -152,7 +152,7 @@ Sinon, préférer le type explicite.</p>
 <li>séparer les validations d’entrée, les erreurs métier et les erreurs d’infrastructure.</li>
 </ul>
 <hr>
-<h2>9. Types d’éléments à revoir en priorité</h2>
+<h2 id="9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</h2>
 <p>Relire en priorité :</p>
 <ul>
 <li>services applicatifs ;</li>
@@ -165,7 +165,7 @@ Sinon, préférer le type explicite.</p>
 <li>utilitaires partagés.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-csharp">namespace GalacticShrine.Users;
 
 public sealed class UserProfileService
@@ -212,7 +212,7 @@ public sealed class UserProfileService
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine C# :</p>
 <ul>
 <li>utiliser <code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
@@ -223,7 +223,7 @@ public sealed class UserProfileService
 <li>utiliser <code>Async</code> pour les méthodes asynchrones.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets C# Galactic-Shrine :</p>
 <ul>
 <li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>

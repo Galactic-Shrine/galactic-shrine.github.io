@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation des projets · Portail ⋞Galactic-Shrine⋟</title>
+  <meta name="description" content="Portail documentaire statique pour les standards de documentation et de codage Galactic-Shrine.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#22143d">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("gs-theme");
+        const theme = savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : "dark";
+
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link id="hljs-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link id="hljs-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" disabled>
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header site-header-login">
+    <div class="container topbar">
+      <a class="brand" href="/index.html" aria-label="Portail ⋞Galactic-Shrine⋟">
+        <img class="brand-logo" src="/assets/img/gs-logo.png" alt="Galactic-Shrine">
+        <span class="sr-only">Portail ⋞Galactic-Shrine⋟</span>
+      </a>
+      <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+      </nav>
+      <form class="header-search desktop-only" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <button class="theme-toggle desktop-only" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-label" data-theme-label>Sombre</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
+        ☰
+      </button>
+    </div>
+    <div class="container mobile-nav" data-mobile-nav>
+      <form class="header-search mobile-search" action="/search/index.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Rechercher" aria-label="Rechercher dans le portail">
+        <button type="submit">Rechercher</button>
+      </form>
+      <div class="card-actions" style="margin: 0 0 .8rem;">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activer le thème lumineux" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label" data-theme-label>Sombre</span>
+        </button>
+      </div>
+      <nav class="nav" aria-label="Navigation mobile">
+        <a data-nav href="/index.html">Accueil</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
+        <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
+        <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
+        <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Hub documentaire</div>
+        <h1>Documentation des projets</h1>
+        <p class="lead">La documentation reste centralisée dans ce portail. Les APIs externes servent uniquement à enrichir les métadonnées des projets et de leurs implémentations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      
+        
+        
+          <article class="doc-card">
+            <div class="doc-meta">
+              <span class="badge badge-accent">portal</span>
+              
+            </div>
+            <h3><a href="/docs/portal/">Portail Galactic-Shrine</a></h3>
+            <p class="summary">Portail central de documentation et de standards Galactic-Shrine.</p>
+            <div class="tag-list">
+              <span class="tag">Docs locales</span>
+              
+                <span class="tag">Métadonnées github</span>
+              
+            </div>
+            <div class="card-actions">
+              <a class="button small button-primary" href="/docs/portal/">Lire</a>
+              
+            </div>
+          </article>
+        
+      
+        
+        
+          <article class="doc-card">
+            <div class="doc-meta">
+              <span class="badge badge-accent">project</span>
+              
+            </div>
+            <h3><a href="/docs/gsid/">⋞Galactic-Shrine⋟ GsId</a></h3>
+            <p class="summary">Identifiant Galactic-Shrine de 256 bits avec plusieurs implémentations compatibles entre elles.</p>
+            <div class="tag-list">
+              <span class="tag">Docs locales</span>
+              
+                <span class="tag">C++</span><span class="tag">C#</span><span class="tag">PHP</span><span class="tag">Unreal Engine</span>
+              
+            </div>
+            <div class="card-actions">
+              <a class="button small button-primary" href="/docs/gsid/">Lire</a>
+              
+            </div>
+          </article>
+        
+      
+    </div>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-row footer-row-main">
+      <div class="small footer-copy">
+        <strong>© <span id="currentYear"></span> ⋞Galactic-Shrine⋟ • Tous droits réservés.</strong>
+        <span class="footer-powered">Propulsé par GitHub Pages et GitHub Actions.</span>
+      </div>
+      <div class="quick-links small">
+        <a href="/about/index.html">À propos</a>
+        <a href="/changelog/index.html">Changelog</a>
+        <a href="/roadmap/index.html">Roadmap</a>
+        <a href="/readme/index.html">README</a>
+        <a href="https://github.com/Galactic-Shrine/galactic-shrine.github.io" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

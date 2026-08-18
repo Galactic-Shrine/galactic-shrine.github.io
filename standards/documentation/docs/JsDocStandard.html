@@ -37,8 +37,9 @@
       </a>
       <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
@@ -67,53 +68,154 @@
       </div>
       <nav class="nav" aria-label="Navigation mobile">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
     </div>
   </header>
   <main>
-    <section class="section page-header compact-header">
+    <section class="page-hero">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Documentation · 1.2.0</div>
-        <h1>Galactic-Shrine JavaScript Documentation Standard</h1>
-        <p class="lead">Ce standard définit la manière de documenter le code **JavaScript** dans les projets Galactic-Shrine.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button" href="/standards/documentation/files/JsDocStandard.md">Markdown source</a>
-        <a class="button button-primary" href="../index.html">Retour à la section</a>
-      </div>
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a>
+      <span>›</span>
+      <a href="/standards/documentation/index.html">Standards de documentation</a>
+      <span>›</span>
+      <span>Galactic-Shrine JavaScript Documentation Standard</span>
     </div>
-    
+
+    <div class="kicker">Documentation • JsDocStandard.md</div>
+    <h1 class="page-title">Galactic-Shrine JavaScript Documentation Standard</h1>
+    <p class="page-intro">Ce standard définit la manière de documenter le code **JavaScript** dans les projets Galactic-Shrine.</p>
+
     <div class="tag-list">
-      <span class="tag">JavaScript</span><span class="tag">Documentation</span><span class="tag">Projets JavaScript</span><span class="tag">ES Modules</span><span class="tag">Node.js</span><span class="tag">Browser</span>
+      <span class="tag">Version 1.2.0</span>
+      
+        
+          <span class="tag">JavaScript</span>
+        
+          <span class="tag">Documentation</span>
+        
+          <span class="tag">Projets JavaScript</span>
+        
+          <span class="tag">ES Modules</span>
+        
+          <span class="tag">Node.js</span>
+        
+          
+        
+      
     </div>
-    
   </div>
 </section>
-<section class="section">
-  <div class="container grid-2 standard-layout-grid">
-    <aside class="aside-card toc-card">
-      <div class="eyebrow">Portée</div>
-      <p>Projets JavaScript / ES Modules / Node.js / Browser / Front-end / Back-end / Scripts / Tooling / Components / Utilities</p>
-      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
-      <ul class="footer-links">
-        <li><a href="/standards/documentation/files/JsDocStandard.md">Markdown brut</a></li>
-        <li><a href="/standards/documentation/index.html">Index documentation</a></li>
-        <li><a href="/search/index.html">Recherche globale</a></li>
-      </ul>
+
+<section class="section" style="padding-top:0;">
+  <div class="container viewer-layout">
+    <aside class="sidebar-card" aria-label="Navigation du standard">
+      
+      
+        <div class="eyebrow">Sommaire</div>
+        <ul class="toc-list">
+          
+            <li class="lvl-2"><a href="#1-objectif">1. Objectif</a></li>
+          
+            <li class="lvl-2"><a href="#2-principes-generaux">2. Principes généraux</a></li>
+          
+            <li class="lvl-2"><a href="#3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</a></li>
+          
+            <li class="lvl-2"><a href="#4-convention-bilingue">4. Convention bilingue</a></li>
+          
+            <li class="lvl-2"><a href="#5-elements-autorises">5. Éléments autorisés</a></li>
+          
+            <li class="lvl-2"><a href="#6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</a></li>
+          
+            <li class="lvl-2"><a href="#7-standard-par-type-d-element">7. Standard par type d’élément</a></li>
+          
+            <li class="lvl-3"><a href="#7-1-fichier-ou-module-javascript">7.1 Fichier ou module JavaScript</a></li>
+          
+            <li class="lvl-3"><a href="#7-2-constante-exposee">7.2 Constante exposée</a></li>
+          
+            <li class="lvl-3"><a href="#7-3-fonction">7.3 Fonction</a></li>
+          
+            <li class="lvl-3"><a href="#7-4-fonction-asynchrone">7.4 Fonction asynchrone</a></li>
+          
+            <li class="lvl-3"><a href="#7-5-classe">7.5 Classe</a></li>
+          
+            <li class="lvl-3"><a href="#7-6-methode">7.6 Méthode</a></li>
+          
+            <li class="lvl-3"><a href="#7-7-type-documentaire">7.7 Type documentaire</a></li>
+          
+            <li class="lvl-2"><a href="#8-regles-de-style">8. Règles de style</a></li>
+          
+            <li class="lvl-3"><a href="#8-1-descriptions-courtes">8.1 Descriptions courtes</a></li>
+          
+            <li class="lvl-3"><a href="#8-2-ordre-fixe">8.2 Ordre fixe</a></li>
+          
+            <li class="lvl-3"><a href="#8-3-param-returns-throws">8.3 @param, @returns, @throws</a></li>
+          
+            <li class="lvl-3"><a href="#8-4-returns-void">8.4 @returns {void}</a></li>
+          
+            <li class="lvl-3"><a href="#8-5-commentaires">8.5 Commentaires //</a></li>
+          
+            <li class="lvl-3"><a href="#8-6-pas-de-surdocumentation">8.6 Pas de surdocumentation</a></li>
+          
+            <li class="lvl-2"><a href="#9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</a></li>
+          
+            <li class="lvl-2"><a href="#10-exemple-complet-recommande">10. Exemple complet recommandé</a></li>
+          
+            <li class="lvl-2"><a href="#11-decision-officielle-recommandee">11. Décision officielle recommandée</a></li>
+          
+            <li class="lvl-2"><a href="#12-resume-executable">12. Résumé exécutable</a></li>
+          
+        </ul>
+      
+
+      <div class="eyebrow" style="margin-top:1rem;">Dans cette section</div>
+      <nav>
+        
+        
+          <a href="/standards/documentation/docs/CSharpDocStandard.html">Galactic-Shrine C# Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/CppDocStandard.html">Galactic-Shrine C++ Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/HtmlDocStandard.html">Galactic-Shrine HTML Documentation Standard</a>
+        
+          <a class="active" aria-current="page" href="/standards/documentation/docs/JsDocStandard.html">Galactic-Shrine JavaScript Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/PhpDocStandard.html">Galactic-Shrine PHP Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/ScssDocStandard.html">Galactic-Shrine SCSS Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/TwigDocStandard.html">Galactic-Shrine Twig Documentation Standard</a>
+        
+      </nav>
     </aside>
-    <article class="doc-markdown standard-markdown">
-      <h1>Galactic-Shrine JavaScript Documentation Standard</h1>
+
+    <article class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <div class="eyebrow">Fichier source</div>
+          <div class="quick-links">
+            <a class="button small button-primary" href="/standards/documentation/files/JsDocStandard.md">Télécharger le Markdown</a>
+            <a class="button small" href="/search/index.html">Recherche globale</a>
+          </div>
+        </div>
+        <div class="tag-list">
+          <span class="tag">Standards de documentation</span>
+          <span class="tag">Projets JavaScript / ES Modules / Node.js / Browser / Front-end / Back-end / Scripts / Tooling / Components / Utilities</span>
+        </div>
+      </div>
+
+      <div class="viewer-body">
+        <h1 id="galactic-shrine-javascript-documentation-standard">Galactic-Shrine JavaScript Documentation Standard</h1>
 <p><strong>Version:</strong> 1.2.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets JavaScript / ES Modules / Node.js / Browser / Front-end / Back-end / Scripts / Tooling / Components / Utilities</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière de documenter le code <strong>JavaScript</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -124,7 +226,7 @@
 <li>de garder une documentation lisible et cohérente avec JSDoc.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>La documentation JavaScript Galactic-Shrine doit être :</p>
 <ul>
 <li>claire ;</li>
@@ -142,7 +244,7 @@
 <li>une approche simple, sans surdocumentation.</li>
 </ul>
 <hr>
-<h2>3. Format obligatoire des blocs</h2>
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
 <p>Toujours utiliser le format suivant :</p>
 <pre><code class="language-js">/**
  * [FR] Retourne le nom complet de l’utilisateur.
@@ -151,7 +253,7 @@
 </code></pre>
 <p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine JavaScript.</p>
 <hr>
-<h2>4. Convention bilingue</h2>
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
 <p>Chaque bloc descriptif doit suivre l’ordre suivant :</p>
 <ol>
 <li>ligne française <code>[FR]</code></li>
@@ -164,7 +266,7 @@
  */
 </code></pre>
 <hr>
-<h2>5. Éléments autorisés</h2>
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
 <p>Éléments autorisés dans les commentaires JavaScript Galactic-Shrine :</p>
 <ul>
 <li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
@@ -188,7 +290,7 @@
 <li>les commentaires redondants avec le nom de l’élément sans contexte supplémentaire.</li>
 </ul>
 <hr>
-<h2>6. Structure recommandée d’un commentaire</h2>
+<h2 id="6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>description courte <code>[FR]</code></li>
@@ -212,8 +314,8 @@
  */
 </code></pre>
 <hr>
-<h2>7. Standard par type d’élément</h2>
-<h3>7.1 Fichier ou module JavaScript</h3>
+<h2 id="7-standard-par-type-d-element">7. Standard par type d’élément</h2>
+<h3 id="7-1-fichier-ou-module-javascript">7.1 Fichier ou module JavaScript</h3>
 <pre><code class="language-js">/**
  * [FR] Fournit les helpers de normalisation d’URL.
  * [EN] Provides URL normalization helpers.
@@ -222,7 +324,7 @@
  * [EN] This module centralizes common client-side transformations.
  */
 </code></pre>
-<h3>7.2 Constante exposée</h3>
+<h3 id="7-2-constante-exposee">7.2 Constante exposée</h3>
 <pre><code class="language-js">/**
  * [FR] Délai standard de temporisation réseau en millisecondes.
  * [EN] Standard network timeout in milliseconds.
@@ -231,7 +333,7 @@
  */
 export const DEFAULT_TIMEOUT_MS = 5000;
 </code></pre>
-<h3>7.3 Fonction</h3>
+<h3 id="7-3-fonction">7.3 Fonction</h3>
 <pre><code class="language-js">/**
  * [FR] Retourne le nom complet formaté.
  * [EN] Returns the formatted full name.
@@ -247,7 +349,7 @@ export function getFullName(firstName, lastName) {
     return `${firstName} ${lastName}`.trim();
 }
 </code></pre>
-<h3>7.4 Fonction asynchrone</h3>
+<h3 id="7-4-fonction-asynchrone">7.4 Fonction asynchrone</h3>
 <pre><code class="language-js">/**
  * [FR] Charge le profil utilisateur depuis l’API.
  * [EN] Loads the user profile from the API.
@@ -265,7 +367,7 @@ export async function fetchUserProfile(userId) {
     return response.json();
 }
 </code></pre>
-<h3>7.5 Classe</h3>
+<h3 id="7-5-classe">7.5 Classe</h3>
 <pre><code class="language-js">/**
  * [FR] Représente un gestionnaire de session côté client.
  * [EN] Represents a client-side session manager.
@@ -283,7 +385,7 @@ export class SessionManager {
     }
 }
 </code></pre>
-<h3>7.6 Méthode</h3>
+<h3 id="7-6-methode">7.6 Méthode</h3>
 <pre><code class="language-js">/**
  * [FR] Enregistre le jeton de session courant.
  * [EN] Saves the current session token.
@@ -296,7 +398,7 @@ saveToken(token) {
     this.storage.setItem('session_token', token);
 }
 </code></pre>
-<h3>7.7 Type documentaire</h3>
+<h3 id="7-7-type-documentaire">7.7 Type documentaire</h3>
 <pre><code class="language-js">/**
  * @typedef {object} UserProfile
  * @property {string} id [FR] Identifiant unique.
@@ -308,21 +410,21 @@ saveToken(token) {
  */
 </code></pre>
 <hr>
-<h2>8. Règles de style</h2>
-<h3>8.1 Descriptions courtes</h3>
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="8-1-descriptions-courtes">8.1 Descriptions courtes</h3>
 <p>Toujours préférer une phrase simple et directe.</p>
-<h3>8.2 Ordre fixe</h3>
+<h3 id="8-2-ordre-fixe">8.2 Ordre fixe</h3>
 <p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
-<h3>8.3 <code>@param</code>, <code>@returns</code>, <code>@throws</code></h3>
+<h3 id="8-3-param-returns-throws">8.3 <code>@param</code>, <code>@returns</code>, <code>@throws</code></h3>
 <p>Utiliser les tags techniques lorsque l’élément est public, réutilisable, complexe ou contractuel.</p>
-<h3>8.4 <code>@returns {void}</code></h3>
+<h3 id="8-4-returns-void">8.4 <code>@returns {void}</code></h3>
 <p>Peut être conservé pour homogénéité lorsque cela améliore la lecture du contrat.</p>
-<h3>8.5 Commentaires <code>//</code></h3>
+<h3 id="8-5-commentaires">8.5 Commentaires <code>//</code></h3>
 <p>Les commentaires <code>//</code> servent à des notes locales temporaires, mais ne remplacent pas la documentation officielle.</p>
-<h3>8.6 Pas de surdocumentation</h3>
+<h3 id="8-6-pas-de-surdocumentation">8.6 Pas de surdocumentation</h3>
 <p>Ne pas commenter chaque variable locale triviale ou chaque affectation évidente.</p>
 <hr>
-<h2>9. Types d’éléments à documenter en priorité</h2>
+<h2 id="9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
 <p>Documenter en priorité :</p>
 <ul>
 <li>modules ;</li>
@@ -337,7 +439,7 @@ saveToken(token) {
 <li>logique métier non triviale.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-js">/**
  * [FR] Fournit les helpers de gestion de session côté navigateur.
  * [EN] Provides browser-side session management helpers.
@@ -365,7 +467,7 @@ export function getSessionToken(storage) {
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine JavaScript :</p>
 <ul>
 <li>utiliser <code>/** ... */</code> ;</li>
@@ -376,7 +478,7 @@ export function getSessionToken(storage) {
 <li>ne pas importer de balises XML dans le code JavaScript.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets JavaScript Galactic-Shrine :</p>
 <ul>
 <li>utiliser JSDoc ;</li>
@@ -386,6 +488,7 @@ export function getSessionToken(storage) {
 <li>documenter ce qui compte, pas l’évidence.</li>
 </ul>
 
+      </div>
     </article>
   </div>
 </section>

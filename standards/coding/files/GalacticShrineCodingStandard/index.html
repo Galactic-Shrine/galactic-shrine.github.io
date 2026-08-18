@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine Coding Standard</h1>
+<h1 id="galactic-shrine-coding-standard">Galactic-Shrine Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Standards transversaux / Bibliothèques / Frameworks / SDKs / Applications / Services / APIs / Outils internes / Produits Galactic-Shrine</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit les <strong>conventions de codage transversales</strong> applicables dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -14,7 +14,7 @@
 <li>de fournir une base commune avant les standards spécifiques par langage.</li>
 </ul>
 <hr>
-<h2>2. Principes fondamentaux</h2>
+<h2 id="2-principes-fondamentaux">2. Principes fondamentaux</h2>
 <p>Le code Galactic-Shrine doit être :</p>
 <ul>
 <li>clair ;</li>
@@ -34,7 +34,7 @@
 <li>des structures simples à relire.</li>
 </ul>
 <hr>
-<h2>3. Décisions transversales officielles</h2>
+<h2 id="3-decisions-transversales-officielles">3. Décisions transversales officielles</h2>
 <p>Décisions officielles Galactic-Shrine applicables par défaut :</p>
 <ul>
 <li>les <strong>propriétés</strong> doivent être en <code>PascalCase</code> ;</li>
@@ -51,8 +51,8 @@
 Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement justifiée.</p>
 </blockquote>
 <hr>
-<h2>4. Convention de nommage globale</h2>
-<h3>4.1 Types</h3>
+<h2 id="4-convention-de-nommage-globale">4. Convention de nommage globale</h2>
+<h3 id="4-1-types">4.1 Types</h3>
 <ul>
 <li>classes : <code>PascalCase</code></li>
 <li>interfaces : préfixe propre au langage si nécessaire, sinon <code>PascalCase</code></li>
@@ -60,7 +60,7 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 <li>enums : <code>PascalCase</code></li>
 <li>namespaces / packages / modules : selon les usages du langage, mais de manière stable et prévisible</li>
 </ul>
-<h3>4.2 Membres</h3>
+<h3 id="4-2-membres">4.2 Membres</h3>
 <ul>
 <li>propriétés : <code>PascalCase</code></li>
 <li>méthodes : <code>PascalCase</code></li>
@@ -69,14 +69,14 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 <li>champs privés : convention locale du langage, mais cohérente dans tout le projet</li>
 <li>variables locales : convention locale du langage, mais éviter les formes ambiguës ou cryptiques</li>
 </ul>
-<h3>4.3 Fichiers et dossiers</h3>
+<h3 id="4-3-fichiers-et-dossiers">4.3 Fichiers et dossiers</h3>
 <ul>
 <li>un nom de fichier doit refléter clairement le contenu principal ;</li>
 <li>éviter les noms vagues comme <code>Helper</code>, <code>Utils</code>, <code>Common</code>, <code>Misc</code> sans qualification ;</li>
 <li>préférer des regroupements fonctionnels clairs plutôt qu’un rangement opportuniste.</li>
 </ul>
 <hr>
-<h2>5. Structure des fichiers</h2>
+<h2 id="5-structure-des-fichiers">5. Structure des fichiers</h2>
 <p>Chaque fichier doit tendre vers une structure simple et prévisible.</p>
 <p>Ordre recommandé lorsque le langage le permet :</p>
 <ol>
@@ -93,35 +93,35 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 <li>éviter les fichiers “fourre-tout”.</li>
 </ul>
 <hr>
-<h2>6. Règles de style</h2>
-<h3>6.1 Lisibilité</h3>
+<h2 id="6-regles-de-style">6. Règles de style</h2>
+<h3 id="6-1-lisibilite">6.1 Lisibilité</h3>
 <ul>
 <li>préférer des blocs courts ;</li>
 <li>réduire l’imbrication quand un retour anticipé améliore la lecture ;</li>
 <li>éviter les expressions trop compactes si elles nuisent à la compréhension ;</li>
 <li>garder un style stable sur tout le projet.</li>
 </ul>
-<h3>6.2 Conditions</h3>
+<h3 id="6-2-conditions">6.2 Conditions</h3>
 <ul>
 <li>une condition doit exprimer une intention claire ;</li>
 <li>éviter les doubles négations ;</li>
 <li>extraire une variable nommée lorsque l’expression devient difficile à lire ;</li>
 <li>documenter les cas métier non évidents.</li>
 </ul>
-<h3>6.3 Commentaires</h3>
+<h3 id="6-3-commentaires">6.3 Commentaires</h3>
 <ul>
 <li>commenter le <strong>pourquoi</strong> et le <strong>contrat</strong>, pas chaque ligne évidente ;</li>
 <li>éviter les commentaires qui répètent exactement le nom de la méthode ;</li>
 <li>conserver une cohérence avec les standards de documentation Galactic-Shrine.</li>
 </ul>
-<h3>6.4 Données temporaires</h3>
+<h3 id="6-4-donnees-temporaires">6.4 Données temporaires</h3>
 <ul>
 <li>limiter la durée de vie des variables locales ;</li>
 <li>éviter les mutations inutiles ;</li>
 <li>rapprocher la déclaration de l’usage réel.</li>
 </ul>
 <hr>
-<h2>7. Architecture locale</h2>
+<h2 id="7-architecture-locale">7. Architecture locale</h2>
 <p>Le code Galactic-Shrine doit éviter :</p>
 <ul>
 <li>les classes ou modules “dieu” ;</li>
@@ -138,7 +138,7 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 <li>des noms de types orientés intention (<code>Service</code>, <code>Provider</code>, <code>Factory</code>, <code>Builder</code>, <code>Repository</code>, <code>Mapper</code>, <code>Validator</code>, <code>Options</code>, <code>Result</code>, selon le langage et le besoin réel).</li>
 </ul>
 <hr>
-<h2>8. Validation, erreurs et nullabilité</h2>
+<h2 id="8-validation-erreurs-et-nullabilite">8. Validation, erreurs et nullabilité</h2>
 <p>Règles générales :</p>
 <ul>
 <li>valider les entrées aux frontières importantes ;</li>
@@ -154,7 +154,7 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 <li>documenter les cas optionnels.</li>
 </ul>
 <hr>
-<h2>9. Sécurité, performance et compatibilité</h2>
+<h2 id="9-securite-performance-et-compatibilite">9. Sécurité, performance et compatibilité</h2>
 <p>Le code doit :</p>
 <ul>
 <li>éviter les concaténations non sûres pour les requêtes, chemins, commandes ou expressions évaluées ;</li>
@@ -169,7 +169,7 @@ Dans ce cas, la dérogation doit rester ciblée, explicite et techniquement just
 Optimiser les zones identifiées comme coûteuses, mesurées ou critiques.</p>
 </blockquote>
 <hr>
-<h2>10. Exceptions au standard</h2>
+<h2 id="10-exceptions-au-standard">10. Exceptions au standard</h2>
 <p>Une exception au standard est acceptable si :</p>
 <ul>
 <li>elle répond à une contrainte réelle du langage ou du framework ;</li>
@@ -185,7 +185,7 @@ Optimiser les zones identifiées comme coûteuses, mesurées ou critiques.</p>
 <li>elle affaiblit le contrat de code.</li>
 </ul>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine Coding :</p>
 <ul>
 <li>imposer <code>PascalCase</code> pour <strong>propriétés</strong>, <strong>paramètres</strong> et <strong>méthodes</strong> ;</li>
@@ -197,7 +197,7 @@ Optimiser les zones identifiées comme coûteuses, mesurées ou critiques.</p>
 <li>conserver une cohérence stricte à l’échelle du dépôt.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets Galactic-Shrine :</p>
 <ul>
 <li>écrire un code clair, stable et relisible ;</li>

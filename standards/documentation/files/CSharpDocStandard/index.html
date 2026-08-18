@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine C# Documentation Standard</h1>
+<h1 id="galactic-shrine-c-documentation-standard">Galactic-Shrine C# Documentation Standard</h1>
 <p><strong>Version:</strong> 1.2.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
-<strong>Portée / Scope:</strong> Projets C# / .NET / Bibliothèques / Applications Console / WinForms / WPF / ASP.NET / Outils internes</p>
+<strong>Portée / Scope:</strong> Projets C# / .NET / Bibliothèques / Applications Console / WinForms / WPF / <a href="http://ASP.NET">ASP.NET</a> / Outils internes</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière de documenter le code <strong>C#</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -14,7 +14,7 @@
 <li>de documenter proprement les types et membres importants.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>La documentation C# Galactic-Shrine doit être :</p>
 <ul>
 <li>claire ;</li>
@@ -31,7 +31,7 @@
 <li>les explications techniques réelles, sans surdocumentation.</li>
 </ul>
 <hr>
-<h2>3. Format obligatoire des blocs</h2>
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
 <p>Toujours utiliser le format suivant :</p>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
@@ -42,7 +42,7 @@
 </code></pre>
 <p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine C#.</p>
 <hr>
-<h2>4. Convention bilingue</h2>
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
 <p>Chaque balise descriptive doit suivre l’ordre suivant :</p>
 <ol>
 <li>ligne française <code>[FR]</code></li>
@@ -57,7 +57,7 @@
  **/
 </code></pre>
 <hr>
-<h2>5. Éléments autorisés</h2>
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
 <p>Éléments autorisés dans les commentaires C# Galactic-Shrine :</p>
 <ul>
 <li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
@@ -78,7 +78,7 @@
 <li>les commentaires redondants avec le nom du membre sans contexte supplémentaire.</li>
 </ul>
 <hr>
-<h2>6. Structure recommandée d’un commentaire</h2>
+<h2 id="6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li><code>&lt;summary&gt;</code></li>
@@ -107,8 +107,8 @@
  **/
 </code></pre>
 <hr>
-<h2>7. Standard par type d’élément</h2>
-<h3>7.1 Classe</h3>
+<h2 id="7-standard-par-type-d-element">7. Standard par type d’élément</h2>
+<h3 id="7-1-classe">7.1 Classe</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Représente un générateur de traductions YAML.
@@ -125,7 +125,7 @@ public sealed class TranslationGenerator
 {
 }
 </code></pre>
-<h3>7.2 Interface</h3>
+<h3 id="7-2-interface">7.2 Interface</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Définit le contrat d’un générateur de traductions.
@@ -136,7 +136,7 @@ public interface ITranslationGenerator
 {
 }
 </code></pre>
-<h3>7.3 Enum</h3>
+<h3 id="7-3-enum">7.3 Enum</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Représente le niveau de journalisation.
@@ -162,7 +162,7 @@ public enum LogLevel
     Warning
 }
 </code></pre>
-<h3>7.4 Propriété</h3>
+<h3 id="7-4-propriete">7.4 Propriété</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Obtient ou définit la locale active.
@@ -175,7 +175,7 @@ public enum LogLevel
  **/
 public string Locale { get; set; } = &quot;fr&quot;;
 </code></pre>
-<h3>7.5 Constructeur</h3>
+<h3 id="7-5-constructeur">7.5 Constructeur</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Initialise une nouvelle instance de la classe &lt;see cref=&quot;TranslationGenerator&quot;/&gt;.
@@ -190,7 +190,7 @@ public TranslationGenerator(string projectDirectory)
 {
 }
 </code></pre>
-<h3>7.6 Méthode</h3>
+<h3 id="7-6-methode">7.6 Méthode</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Normalise une liste de locales.
@@ -209,7 +209,7 @@ public IReadOnlyList&lt;string&gt; NormalizeLocales(IEnumerable&lt;string&gt;? l
 {
 }
 </code></pre>
-<h3>7.7 Méthode générique</h3>
+<h3 id="7-7-methode-generique">7.7 Méthode générique</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Convertit une valeur vers un type cible.
@@ -232,7 +232,7 @@ public static T ConvertTo&lt;T&gt;(object? value)
 {
 }
 </code></pre>
-<h3>7.8 Méthode avec exception</h3>
+<h3 id="7-8-methode-avec-exception">7.8 Méthode avec exception</h3>
 <pre><code class="language-csharp">/**
  * &lt;summary&gt;
  *   [FR] Charge le contenu d’un fichier YAML.
@@ -256,23 +256,23 @@ public string LoadFile(string filePath)
 }
 </code></pre>
 <hr>
-<h2>8. Règles de style</h2>
-<h3>8.1 Descriptions courtes</h3>
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="8-1-descriptions-courtes">8.1 Descriptions courtes</h3>
 <p>Toujours préférer une phrase simple et directe.</p>
-<h3>8.2 Ordre fixe</h3>
+<h3 id="8-2-ordre-fixe">8.2 Ordre fixe</h3>
 <p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
-<h3>8.3 Indentation recommandée</h3>
+<h3 id="8-3-indentation-recommandee">8.3 Indentation recommandée</h3>
 <p>Conserver exactement l’indentation du modèle officiel.</p>
-<h3>8.4 <code>&lt;remarks&gt;</code></h3>
+<h3 id="8-4-remarks">8.4 <code>&lt;remarks&gt;</code></h3>
 <p>Utiliser <code>&lt;remarks&gt;</code> uniquement si un complément utile existe.</p>
-<h3>8.5 <code>&lt;returns&gt;</code></h3>
+<h3 id="8-5-returns">8.5 <code>&lt;returns&gt;</code></h3>
 <p>Toujours documenter <code>&lt;returns&gt;</code> lorsqu’une méthode retourne une valeur.</p>
-<h3>8.6 <code>&lt;exception&gt;</code></h3>
+<h3 id="8-6-exception">8.6 <code>&lt;exception&gt;</code></h3>
 <p>N’ajouter <code>&lt;exception&gt;</code> que si l’exception est réellement importante dans le contrat de la méthode.</p>
-<h3>8.7 Pas de surdocumentation</h3>
+<h3 id="8-7-pas-de-surdocumentation">8.7 Pas de surdocumentation</h3>
 <p>Ne pas commenter l’évidence.</p>
 <hr>
-<h2>9. Types d’éléments à documenter en priorité</h2>
+<h2 id="9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
 <p>Documenter en priorité :</p>
 <ul>
 <li>classes publiques ;</li>
@@ -287,7 +287,7 @@ public string LoadFile(string filePath)
 <li>API internes complexes.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-csharp">namespace GalacticShrine.Localization;
 
 /**
@@ -348,7 +348,7 @@ public sealed class TranslationGenerator
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine C# :</p>
 <ul>
 <li>utiliser le bloc <code>/** ... **/</code> ;</li>
@@ -359,7 +359,7 @@ public sealed class TranslationGenerator
 <li>conserver une mise en forme stricte et homogène.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets C# Galactic-Shrine :</p>
 <ul>
 <li>utiliser le format XML documentaire Galactic-Shrine ;</li>

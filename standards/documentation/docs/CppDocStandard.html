@@ -37,8 +37,9 @@
       </a>
       <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
@@ -67,53 +68,158 @@
       </div>
       <nav class="nav" aria-label="Navigation mobile">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
     </div>
   </header>
   <main>
-    <section class="section page-header compact-header">
+    <section class="page-hero">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Documentation · 1.2.0</div>
-        <h1>Galactic-Shrine C++ Documentation Standard</h1>
-        <p class="lead">Ce standard définit la manière de documenter le code **C++** dans les projets Galactic-Shrine.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button" href="/standards/documentation/files/CppDocStandard.md">Markdown source</a>
-        <a class="button button-primary" href="../index.html">Retour à la section</a>
-      </div>
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a>
+      <span>›</span>
+      <a href="/standards/documentation/index.html">Standards de documentation</a>
+      <span>›</span>
+      <span>Galactic-Shrine C++ Documentation Standard</span>
     </div>
-    
+
+    <div class="kicker">Documentation • CppDocStandard.md</div>
+    <h1 class="page-title">Galactic-Shrine C++ Documentation Standard</h1>
+    <p class="page-intro">Ce standard définit la manière de documenter le code **C++** dans les projets Galactic-Shrine.</p>
+
     <div class="tag-list">
-      <span class="tag">C++</span><span class="tag">Documentation</span><span class="tag">Projets C++</span><span class="tag">Bibliothèques</span><span class="tag">Moteurs</span><span class="tag">Outils</span>
+      <span class="tag">Version 1.2.0</span>
+      
+        
+          <span class="tag">C++</span>
+        
+          <span class="tag">Documentation</span>
+        
+          <span class="tag">Projets C++</span>
+        
+          <span class="tag">Bibliothèques</span>
+        
+          <span class="tag">Moteurs</span>
+        
+          
+        
+      
     </div>
-    
   </div>
 </section>
-<section class="section">
-  <div class="container grid-2 standard-layout-grid">
-    <aside class="aside-card toc-card">
-      <div class="eyebrow">Portée</div>
-      <p>Projets C++ / Bibliothèques / Moteurs / Outils / Applications Desktop / Jeux / Composants natifs</p>
-      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
-      <ul class="footer-links">
-        <li><a href="/standards/documentation/files/CppDocStandard.md">Markdown brut</a></li>
-        <li><a href="/standards/documentation/index.html">Index documentation</a></li>
-        <li><a href="/search/index.html">Recherche globale</a></li>
-      </ul>
+
+<section class="section" style="padding-top:0;">
+  <div class="container viewer-layout">
+    <aside class="sidebar-card" aria-label="Navigation du standard">
+      
+      
+        <div class="eyebrow">Sommaire</div>
+        <ul class="toc-list">
+          
+            <li class="lvl-2"><a href="#1-objectif">1. Objectif</a></li>
+          
+            <li class="lvl-2"><a href="#2-principes-generaux">2. Principes généraux</a></li>
+          
+            <li class="lvl-2"><a href="#3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</a></li>
+          
+            <li class="lvl-2"><a href="#4-convention-bilingue">4. Convention bilingue</a></li>
+          
+            <li class="lvl-2"><a href="#5-elements-autorises">5. Éléments autorisés</a></li>
+          
+            <li class="lvl-2"><a href="#6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</a></li>
+          
+            <li class="lvl-2"><a href="#7-standard-par-type-d-element">7. Standard par type d’élément</a></li>
+          
+            <li class="lvl-3"><a href="#7-1-classe">7.1 Classe</a></li>
+          
+            <li class="lvl-3"><a href="#7-2-struct">7.2 Struct</a></li>
+          
+            <li class="lvl-3"><a href="#7-3-enum">7.3 Enum</a></li>
+          
+            <li class="lvl-3"><a href="#7-4-constructeur">7.4 Constructeur</a></li>
+          
+            <li class="lvl-3"><a href="#7-5-fonction-ou-methode">7.5 Fonction ou méthode</a></li>
+          
+            <li class="lvl-3"><a href="#7-6-fonction-template">7.6 Fonction template</a></li>
+          
+            <li class="lvl-3"><a href="#7-7-fonction-avec-exception">7.7 Fonction avec exception</a></li>
+          
+            <li class="lvl-3"><a href="#7-8-constante-exposee">7.8 Constante exposée</a></li>
+          
+            <li class="lvl-2"><a href="#8-regles-de-style">8. Règles de style</a></li>
+          
+            <li class="lvl-3"><a href="#8-1-descriptions-courtes">8.1 Descriptions courtes</a></li>
+          
+            <li class="lvl-3"><a href="#8-2-ordre-fixe">8.2 Ordre fixe</a></li>
+          
+            <li class="lvl-3"><a href="#8-3-indentation-recommandee">8.3 Indentation recommandée</a></li>
+          
+            <li class="lvl-3"><a href="#8-4-remarks">8.4 &lt;remarks&gt;</a></li>
+          
+            <li class="lvl-3"><a href="#8-5-returns">8.5 &lt;returns&gt;</a></li>
+          
+            <li class="lvl-3"><a href="#8-6-exception">8.6 &lt;exception&gt;</a></li>
+          
+            <li class="lvl-3"><a href="#8-7-pas-de-surdocumentation">8.7 Pas de surdocumentation</a></li>
+          
+            <li class="lvl-2"><a href="#9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</a></li>
+          
+            <li class="lvl-2"><a href="#10-exemple-complet-recommande">10. Exemple complet recommandé</a></li>
+          
+            <li class="lvl-2"><a href="#11-decision-officielle-recommandee">11. Décision officielle recommandée</a></li>
+          
+            <li class="lvl-2"><a href="#12-resume-executable">12. Résumé exécutable</a></li>
+          
+        </ul>
+      
+
+      <div class="eyebrow" style="margin-top:1rem;">Dans cette section</div>
+      <nav>
+        
+        
+          <a href="/standards/documentation/docs/CSharpDocStandard.html">Galactic-Shrine C# Documentation Standard</a>
+        
+          <a class="active" aria-current="page" href="/standards/documentation/docs/CppDocStandard.html">Galactic-Shrine C++ Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/HtmlDocStandard.html">Galactic-Shrine HTML Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/JsDocStandard.html">Galactic-Shrine JavaScript Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/PhpDocStandard.html">Galactic-Shrine PHP Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/ScssDocStandard.html">Galactic-Shrine SCSS Documentation Standard</a>
+        
+          <a href="/standards/documentation/docs/TwigDocStandard.html">Galactic-Shrine Twig Documentation Standard</a>
+        
+      </nav>
     </aside>
-    <article class="doc-markdown standard-markdown">
-      <h1>Galactic-Shrine C++ Documentation Standard</h1>
+
+    <article class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <div class="eyebrow">Fichier source</div>
+          <div class="quick-links">
+            <a class="button small button-primary" href="/standards/documentation/files/CppDocStandard.md">Télécharger le Markdown</a>
+            <a class="button small" href="/search/index.html">Recherche globale</a>
+          </div>
+        </div>
+        <div class="tag-list">
+          <span class="tag">Standards de documentation</span>
+          <span class="tag">Projets C++ / Bibliothèques / Moteurs / Outils / Applications Desktop / Jeux / Composants natifs</span>
+        </div>
+      </div>
+
+      <div class="viewer-body">
+        <h1 id="galactic-shrine-c-documentation-standard">Galactic-Shrine C++ Documentation Standard</h1>
 <p><strong>Version:</strong> 1.2.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets C++ / Bibliothèques / Moteurs / Outils / Applications Desktop / Jeux / Composants natifs</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière de documenter le code <strong>C++</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -124,7 +230,7 @@
 <li>de documenter proprement les types, fonctions et points d’extension importants.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>La documentation C++ Galactic-Shrine doit être :</p>
 <ul>
 <li>claire ;</li>
@@ -141,7 +247,7 @@
 <li>une logique simple, sans surdocumentation.</li>
 </ul>
 <hr>
-<h2>3. Format obligatoire des blocs</h2>
+<h2 id="3-format-obligatoire-des-blocs">3. Format obligatoire des blocs</h2>
 <p>Toujours utiliser le format suivant :</p>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
@@ -152,7 +258,7 @@
 </code></pre>
 <p>Ce format constitue le standard officiel recommandé pour Galactic-Shrine C++.</p>
 <hr>
-<h2>4. Convention bilingue</h2>
+<h2 id="4-convention-bilingue">4. Convention bilingue</h2>
 <p>Chaque balise descriptive doit suivre l’ordre suivant :</p>
 <ol>
 <li>ligne française <code>[FR]</code></li>
@@ -167,7 +273,7 @@
  **/
 </code></pre>
 <hr>
-<h2>5. Éléments autorisés</h2>
+<h2 id="5-elements-autorises">5. Éléments autorisés</h2>
 <p>Éléments autorisés dans les commentaires C++ Galactic-Shrine :</p>
 <ul>
 <li>texte libre avec <code>[FR]</code> et <code>[EN]</code></li>
@@ -188,7 +294,7 @@
 <li>les commentaires sur du code trivial sans enjeu de maintenance.</li>
 </ul>
 <hr>
-<h2>6. Structure recommandée d’un commentaire</h2>
+<h2 id="6-structure-recommandee-d-un-commentaire">6. Structure recommandée d’un commentaire</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li><code>&lt;summary&gt;</code></li>
@@ -217,8 +323,8 @@
  **/
 </code></pre>
 <hr>
-<h2>7. Standard par type d’élément</h2>
-<h3>7.1 Classe</h3>
+<h2 id="7-standard-par-type-d-element">7. Standard par type d’élément</h2>
+<h3 id="7-1-classe">7.1 Classe</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente un générateur de traductions YAML.
@@ -235,7 +341,7 @@ class TranslationGenerator final
 {
 };
 </code></pre>
-<h3>7.2 Struct</h3>
+<h3 id="7-2-struct">7.2 Struct</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente le résultat d’une génération.
@@ -247,7 +353,7 @@ struct GenerationResult
     bool Success = false;
 };
 </code></pre>
-<h3>7.3 Enum</h3>
+<h3 id="7-3-enum">7.3 Enum</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente le niveau de journalisation.
@@ -273,7 +379,7 @@ enum class LogLevel
     Warning
 };
 </code></pre>
-<h3>7.4 Constructeur</h3>
+<h3 id="7-4-constructeur">7.4 Constructeur</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Initialise une nouvelle instance de la classe TranslationGenerator.
@@ -286,7 +392,7 @@ enum class LogLevel
  **/
 TranslationGenerator(const std::string&amp; ProjectDirectory);
 </code></pre>
-<h3>7.5 Fonction ou méthode</h3>
+<h3 id="7-5-fonction-ou-methode">7.5 Fonction ou méthode</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Normalise une liste de locales.
@@ -303,7 +409,7 @@ TranslationGenerator(const std::string&amp; ProjectDirectory);
  **/
 std::vector&lt;std::string&gt; NormalizeLocales(const std::vector&lt;std::string&gt;&amp; Locales) const;
 </code></pre>
-<h3>7.6 Fonction template</h3>
+<h3 id="7-6-fonction-template">7.6 Fonction template</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Convertit une valeur vers un type cible.
@@ -325,7 +431,7 @@ std::vector&lt;std::string&gt; NormalizeLocales(const std::vector&lt;std::string
 template &lt;typename T&gt;
 T ConvertTo(const std::string&amp; Value);
 </code></pre>
-<h3>7.7 Fonction avec exception</h3>
+<h3 id="7-7-fonction-avec-exception">7.7 Fonction avec exception</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Charge le contenu d’un fichier YAML.
@@ -346,7 +452,7 @@ T ConvertTo(const std::string&amp; Value);
  **/
 std::string LoadFile(const std::string&amp; FilePath);
 </code></pre>
-<h3>7.8 Constante exposée</h3>
+<h3 id="7-8-constante-exposee">7.8 Constante exposée</h3>
 <pre><code class="language-cpp">/**
  * &lt;summary&gt;
  *   [FR] Représente la locale par défaut.
@@ -360,23 +466,23 @@ std::string LoadFile(const std::string&amp; FilePath);
 inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 </code></pre>
 <hr>
-<h2>8. Règles de style</h2>
-<h3>8.1 Descriptions courtes</h3>
+<h2 id="8-regles-de-style">8. Règles de style</h2>
+<h3 id="8-1-descriptions-courtes">8.1 Descriptions courtes</h3>
 <p>Toujours préférer une phrase simple et directe.</p>
-<h3>8.2 Ordre fixe</h3>
+<h3 id="8-2-ordre-fixe">8.2 Ordre fixe</h3>
 <p>Toujours écrire <code>[FR]</code> avant <code>[EN]</code>.</p>
-<h3>8.3 Indentation recommandée</h3>
+<h3 id="8-3-indentation-recommandee">8.3 Indentation recommandée</h3>
 <p>Conserver exactement l’indentation du modèle officiel.</p>
-<h3>8.4 <code>&lt;remarks&gt;</code></h3>
+<h3 id="8-4-remarks">8.4 <code>&lt;remarks&gt;</code></h3>
 <p>Utiliser <code>&lt;remarks&gt;</code> uniquement si un complément utile existe.</p>
-<h3>8.5 <code>&lt;returns&gt;</code></h3>
+<h3 id="8-5-returns">8.5 <code>&lt;returns&gt;</code></h3>
 <p>Toujours documenter <code>&lt;returns&gt;</code> lorsqu’une fonction retourne une valeur. Pour <code>void</code>, omettre <code>&lt;returns&gt;</code> sauf besoin exceptionnel.</p>
-<h3>8.6 <code>&lt;exception&gt;</code></h3>
+<h3 id="8-6-exception">8.6 <code>&lt;exception&gt;</code></h3>
 <p>N’ajouter <code>&lt;exception&gt;</code> que si l’exception est réellement importante dans le contrat de la fonction.</p>
-<h3>8.7 Pas de surdocumentation</h3>
+<h3 id="8-7-pas-de-surdocumentation">8.7 Pas de surdocumentation</h3>
 <p>Ne pas commenter l’évidence.</p>
 <hr>
-<h2>9. Types d’éléments à documenter en priorité</h2>
+<h2 id="9-types-d-elements-a-documenter-en-priorite">9. Types d’éléments à documenter en priorité</h2>
 <p>Documenter en priorité :</p>
 <ul>
 <li>classes publiques ;</li>
@@ -391,7 +497,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 <li>API internes complexes.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-cpp">namespace GalacticShrine::Localization
 {
     /**
@@ -440,7 +546,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine C++ :</p>
 <ul>
 <li>utiliser le bloc <code>/** ... **/</code> ;</li>
@@ -451,7 +557,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 <li>conserver une mise en forme stricte et homogène.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets C++ Galactic-Shrine :</p>
 <ul>
 <li>utiliser le format XML documentaire Galactic-Shrine ;</li>
@@ -461,6 +567,7 @@ inline constexpr const char* DefaultLocale = &quot;fr&quot;;
 <li>éviter les commentaires inutiles sur le code trivial.</li>
 </ul>
 
+      </div>
     </article>
   </div>
 </section>

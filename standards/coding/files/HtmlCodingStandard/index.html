@@ -1,9 +1,9 @@
-<h1>Galactic-Shrine HTML Coding Standard</h1>
+<h1 id="galactic-shrine-html-coding-standard">Galactic-Shrine HTML Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets HTML / Templates / Interfaces Web / Emails HTML / Back-office / Composants UI / Fragments de vues</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière d’écrire le code <strong>HTML</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -13,7 +13,7 @@
 <li>de réduire les structures confuses ou trop couplées au style.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>Le HTML Galactic-Shrine doit être :</p>
 <ul>
 <li>sémantique ;</li>
@@ -31,7 +31,7 @@
 <li>la cohérence entre structure, accessibilité et comportement.</li>
 </ul>
 <hr>
-<h2>3. Décisions officielles Galactic-Shrine pour HTML</h2>
+<h2 id="3-decisions-officielles-galactic-shrine-pour-html">3. Décisions officielles Galactic-Shrine pour HTML</h2>
 <p>Décisions officielles :</p>
 <ul>
 <li>utiliser d’abord les balises sémantiques natives ;</li>
@@ -42,7 +42,7 @@
 <li>préserver les attributs d’accessibilité nécessaires.</li>
 </ul>
 <hr>
-<h2>4. Convention de nommage</h2>
+<h2 id="4-convention-de-nommage">4. Convention de nommage</h2>
 <ul>
 <li>classes CSS : convention projet stable ;</li>
 <li>identifiants <code>id</code> : rares, explicites et réellement nécessaires ;</li>
@@ -54,7 +54,7 @@
 <pre><code class="language-html">&lt;section class=&quot;GsProfileCard&quot; data-controller=&quot;profile-card&quot;&gt;
 </code></pre>
 <hr>
-<h2>5. Structure recommandée d’un template HTML</h2>
+<h2 id="5-structure-recommandee-d-un-template-html">5. Structure recommandée d’un template HTML</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>structure principale de page ;</li>
@@ -71,26 +71,26 @@
 <li>limiter les wrappers inutiles.</li>
 </ul>
 <hr>
-<h2>6. Style d’écriture</h2>
-<h3>6.1 Sémantique</h3>
+<h2 id="6-style-d-ecriture">6. Style d’écriture</h2>
+<h3 id="6-1-semantique">6.1 Sémantique</h3>
 <ul>
 <li>choisir <code>header</code>, <code>main</code>, <code>nav</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code> si approprié ;</li>
 <li>réserver <code>div</code> et <code>span</code> aux cas génériques réels.</li>
 </ul>
-<h3>6.2 Accessibilité</h3>
+<h3 id="6-2-accessibilite">6.2 Accessibilité</h3>
 <ul>
 <li>conserver les labels, rôles et attributs ARIA utiles ;</li>
 <li>ne pas masquer une information essentielle uniquement par la couleur ;</li>
 <li>vérifier les intitulés des actions.</li>
 </ul>
-<h3>6.3 Attributs</h3>
+<h3 id="6-3-attributs">6.3 Attributs</h3>
 <ul>
 <li>garder un ordre stable des attributs dans le projet ;</li>
 <li>éviter les attributs inutiles ou redondants ;</li>
 <li>distinguer clairement hooks JS, classes CSS et accessibilité.</li>
 </ul>
 <hr>
-<h2>7. Règles spécifiques HTML</h2>
+<h2 id="7-regles-specifiques-html">7. Règles spécifiques HTML</h2>
 <ul>
 <li>éviter le markup généré inutilement complexe ;</li>
 <li>garder des formulaires structurés et compréhensibles ;</li>
@@ -99,7 +99,7 @@
 <li>rester compatible avec le moteur de template utilisé au-dessus si présent.</li>
 </ul>
 <hr>
-<h2>8. Gestion des erreurs et robustesse</h2>
+<h2 id="8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</h2>
 <ul>
 <li>prévoir des structures qui restent compréhensibles même si certaines données sont absentes ;</li>
 <li>ne pas casser la sémantique pour un besoin purement visuel ;</li>
@@ -107,7 +107,7 @@
 <li>ne pas dépendre d’une structure fragile pour le comportement JS.</li>
 </ul>
 <hr>
-<h2>9. Types d’éléments à revoir en priorité</h2>
+<h2 id="9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</h2>
 <p>Relire en priorité :</p>
 <ul>
 <li>formulaires ;</li>
@@ -119,7 +119,7 @@
 <li>zones enrichies par JavaScript.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-html">&lt;main class=&quot;GsProfilePage&quot;&gt;
     &lt;section class=&quot;GsProfileHeader&quot; aria-labelledby=&quot;profile-title&quot;&gt;
         &lt;h1 id=&quot;profile-title&quot;&gt;Profile&lt;/h1&gt;
@@ -131,7 +131,7 @@
 &lt;/main&gt;
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine HTML :</p>
 <ul>
 <li>HTML sémantique d’abord ;</li>
@@ -141,7 +141,7 @@
 <li>wrappers inutiles évités.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets HTML Galactic-Shrine :</p>
 <ul>
 <li>utiliser la bonne balise pour le bon rôle ;</li>

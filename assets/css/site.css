@@ -69,6 +69,7 @@ html[data-theme=light] {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
 }
 
 body {
@@ -93,10 +94,6 @@ svg {
 code,
 pre {
   font-family: "Cascadia Code", Consolas, "Courier New", monospace;
-}
-
-::-moz-selection {
-  background: rgba(213, 200, 237, 0.26);
 }
 
 ::selection {
@@ -234,6 +231,26 @@ pre {
   margin-top: 0;
 }
 
+.doc-markdown pre,
+.standard-markdown pre,
+.viewer-body pre {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.doc-markdown pre code.hljs,
+.standard-markdown pre code.hljs,
+.viewer-body pre code.hljs,
+.code-block.hljs {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(213, 200, 237, 0.16);
+  background: #22143d;
+  color: #f7f2ff;
+  overflow-x: auto;
+}
+
 /* ==========================================================================
    Light theme
    ========================================================================== */
@@ -315,8 +332,7 @@ html[data-theme=light] .small {
   width: 290px;
   height: auto;
   max-height: 32px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.45));
   image-rendering: auto;
 }
@@ -673,9 +689,6 @@ html[data-theme=light] .main-nav a.active {
   outline: none;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
-.header-search input::-moz-placeholder {
-  color: #a992d4;
-}
 .header-search input::placeholder {
   color: #a992d4;
 }
@@ -908,6 +921,11 @@ html[data-theme=light] .main-nav a.active {
   gap: 0.75rem;
 }
 
+/* Sommaire plus compact que les autres listes. */
+.toc-list {
+  gap: 0.25rem;
+}
+
 .check-list li,
 .link-list li,
 .plain-list li {
@@ -935,26 +953,6 @@ html[data-theme=light] .main-nav a.active {
   padding: 1rem 1.1rem;
   overflow-x: auto;
   color: #f7f2ff;
-}
-
-.doc-markdown pre,
-.standard-markdown pre,
-.viewer-body pre {
-  margin: 1rem 0;
-  overflow-x: auto;
-}
-
-.doc-markdown pre code.hljs,
-.standard-markdown pre code.hljs,
-.viewer-body pre code.hljs,
-.code-block.hljs {
-  display: block;
-  padding: 1rem 1.1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(213, 200, 237, 0.16);
-  background: #22143d;
-  color: #f7f2ff;
-  overflow-x: auto;
 }
 
 .inline-code {
@@ -989,10 +987,6 @@ html[data-theme=light] .main-nav a.active {
 .filter-select:focus {
   border-color: rgba(25, 135, 84, 0.62);
   box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.13);
-}
-
-.search-input::-moz-placeholder {
-  color: #a992d4;
 }
 
 .search-input::placeholder {
@@ -1132,12 +1126,18 @@ html[data-theme=light] .main-nav a.active {
 .toc-list a {
   color: var(--muted);
   display: block;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.35;
 }
 .toc-list a:hover {
   color: var(--text);
 }
 .toc-list .lvl-3 {
   padding-left: 0.7rem;
+}
+.toc-list .lvl-3 a {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
 }
 .toc-list .lvl-4 {
   padding-left: 1.4rem;
@@ -1324,9 +1324,6 @@ html[data-theme=light] .header-search input {
   color: var(--text);
   border-color: rgba(50, 30, 87, 0.16);
 }
-html[data-theme=light] .header-search input::-moz-placeholder, html[data-theme=light] .search-input::-moz-placeholder {
-  color: #82779b;
-}
 html[data-theme=light] .header-search input::placeholder,
 html[data-theme=light] .search-input::placeholder {
   color: #82779b;
@@ -1413,4 +1410,167 @@ html[data-theme=light] .code-block {
   .viewer-shell {
     padding: 1rem;
   }
-}/*# sourceMappingURL=site.css.map */
+}
+/* Compact documentation table of contents */
+.sidebar-card .toc-list {
+  gap: 0.1rem;
+}
+
+.sidebar-card .toc-list li {
+  margin: 0;
+}
+
+.sidebar-card .toc-list a {
+  padding-top: 0.12rem;
+  padding-bottom: 0.12rem;
+  line-height: 1.25;
+}
+
+.sidebar-card .toc-list .lvl-3 a {
+  padding-top: 0.08rem;
+  padding-bottom: 0.08rem;
+}
+
+/* GitHub repository links */
+.github-button {
+  inline-size: 38px;
+  block-size: 38px;
+  min-inline-size: 38px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+.github-button svg.github-icon {
+  display: block;
+  inline-size: 20px !important;
+  block-size: 20px !important;
+  min-inline-size: 20px;
+  min-block-size: 20px;
+  max-inline-size: 20px;
+  max-block-size: 20px;
+  flex: 0 0 20px;
+  overflow: visible;
+}
+
+.github-table-link {
+  inline-size: 36px;
+  block-size: 36px;
+  min-inline-size: 36px;
+  min-block-size: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.github-table-link svg.github-icon {
+  display: block;
+  inline-size: 20px !important;
+  block-size: 20px !important;
+  min-inline-size: 20px;
+  min-block-size: 20px;
+  max-inline-size: 20px;
+  max-block-size: 20px;
+  flex: 0 0 20px;
+  overflow: visible;
+}
+.github-table-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+/* Project documentation sidebar accordion */
+.project-nav-group {
+  margin-top: 0.7rem;
+}
+.project-nav-group + .project-nav-group {
+  margin-top: 0.45rem;
+}
+
+.project-nav-toggle {
+  width: 100%;
+  min-height: 34px;
+  padding: 0.35rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted-2);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+.project-nav-toggle:hover, .project-nav-toggle:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+}
+.project-nav-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-nav-chevron {
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.project-nav-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows 220ms ease, opacity 180ms ease, visibility 0s linear 220ms;
+}
+.project-nav-panel .project-nav-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.project-nav-panel a {
+  display: block;
+  width: 100%;
+  margin-top: 0.12rem;
+}
+
+.project-nav-group.is-open .project-nav-toggle {
+  color: var(--text);
+}
+.project-nav-group.is-open .project-nav-chevron {
+  transform: rotate(90deg);
+}
+.project-nav-group.is-open .project-nav-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition: grid-template-rows 220ms ease, opacity 180ms ease, visibility 0s linear 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-nav-toggle,
+  .project-nav-chevron,
+  .project-nav-panel {
+    transition: none;
+  }
+}

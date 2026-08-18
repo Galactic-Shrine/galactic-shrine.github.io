@@ -1,0 +1,247 @@
+[
+
+
+  {
+    "projectId": "gsid",
+    "implementationId": null,
+    "title": "⋞Galactic-Shrine⋟ GsId",
+    "summary": "Identifiant Galactic-Shrine 256 bits et ses implémentations officielles.",
+    "url": "/docs/gsid/",
+    "order": 1
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": null,
+    "title": "Specification GsId",
+    "summary": "Regles communes de representation, parsing, validation et interoperabilite du GsId 256 bits.",
+    "url": "/docs/gsid/specification/",
+    "order": 2
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "cpp",
+    "title": "Installation C++",
+    "summary": "Compiler, tester et installer GalacticShrine.GsId.Cpp avec CMake.",
+    "url": "/docs/gsid/cpp/",
+    "order": 10
+  },
+
+  {
+    "projectId": "galactic-shrine-docs",
+    "implementationId": null,
+    "title": "Portail Galactic-Shrine",
+    "summary": "Fonctionnement du portail documentaire centralisé Galactic-Shrine.",
+    "url": "/docs/portal/",
+    "order": 10
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "cpp",
+    "title": "Configuration C++",
+    "summary": "",
+    "url": "/docs/gsid/cpp/configuration/",
+    "order": 11
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "cpp",
+    "title": "Utilisation C++",
+    "summary": "",
+    "url": "/docs/gsid/cpp/usage/",
+    "order": 12
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "cpp",
+    "title": "Reference API C++",
+    "summary": "Reference de l API publique exposee par GalacticShrine.GsId.Cpp.",
+    "url": "/docs/gsid/cpp/api/",
+    "order": 13
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "cpp",
+    "title": "Exemples C++",
+    "summary": "",
+    "url": "/docs/gsid/cpp/examples/",
+    "order": 14
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "csharp",
+    "title": "Installation C#",
+    "summary": "Préparer une application .NET 8 pour utiliser GalacticShrine.GsId.",
+    "url": "/docs/gsid/csharp/",
+    "order": 20
+  },
+
+  {
+    "projectId": "galactic-shrine-docs",
+    "implementationId": null,
+    "title": "Architecture documentaire",
+    "summary": "Organisation des sources locales, des fournisseurs de métadonnées et du build Eleventy.",
+    "url": "/docs/portal/architecture.html",
+    "order": 20
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "csharp",
+    "title": "Configuration C#",
+    "summary": "",
+    "url": "/docs/gsid/csharp/configuration/",
+    "order": 21
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "csharp",
+    "title": "Utilisation C#",
+    "summary": "",
+    "url": "/docs/gsid/csharp/usage/",
+    "order": 22
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "csharp",
+    "title": "Reference API C#",
+    "summary": "Reference des types publics de GalacticShrine.GsId pour .NET 8.",
+    "url": "/docs/gsid/csharp/api/",
+    "order": 23
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "csharp",
+    "title": "Exemples C#",
+    "summary": "",
+    "url": "/docs/gsid/csharp/examples/",
+    "order": 24
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Installation PHP",
+    "summary": "Installer le package galactic-shrine/gsid dans une application PHP 8.1+.",
+    "url": "/docs/gsid/php/",
+    "order": 30
+  },
+
+  {
+    "projectId": "galactic-shrine-docs",
+    "implementationId": null,
+    "title": "Métadonnées GitHub",
+    "summary": "Mise à jour facultative des informations GitHub utilisées par le portail.",
+    "url": "/docs/portal/metadata.html",
+    "order": 30
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Configuration PHP",
+    "summary": "",
+    "url": "/docs/gsid/php/configuration/",
+    "order": 31
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Utilisation PHP",
+    "summary": "",
+    "url": "/docs/gsid/php/usage/",
+    "order": 32
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Reference API PHP",
+    "summary": "Reference de l API PHP pure exposee par galactic-shrine/gsid.",
+    "url": "/docs/gsid/php/api/",
+    "order": 33
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Exemples PHP",
+    "summary": "",
+    "url": "/docs/gsid/php/examples/",
+    "order": 34
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "php",
+    "title": "Symfony et Doctrine",
+    "summary": "",
+    "url": "/docs/gsid/php/symfony-doctrine/",
+    "order": 35
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "Installation Unreal Engine",
+    "summary": "Installer le plugin GsId dans un projet Unreal Engine 5.8.",
+    "url": "/docs/gsid/unreal/",
+    "order": 40
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "Configuration Unreal Engine",
+    "summary": "",
+    "url": "/docs/gsid/unreal/configuration/",
+    "order": 41
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "Utilisation Unreal Engine",
+    "summary": "",
+    "url": "/docs/gsid/unreal/usage/",
+    "order": 42
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "Reference API Unreal Engine",
+    "summary": "Reference des APIs FGsId, serialization, reseau et Blueprint.",
+    "url": "/docs/gsid/unreal/api/",
+    "order": 43
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "Exemples Unreal Engine",
+    "summary": "",
+    "url": "/docs/gsid/unreal/examples/",
+    "order": 44
+  },
+
+  {
+    "projectId": "gsid",
+    "implementationId": "unreal",
+    "title": "C++ et Blueprint",
+    "summary": "",
+    "url": "/docs/gsid/unreal/cpp-blueprint/",
+    "order": 45
+  }
+
+]

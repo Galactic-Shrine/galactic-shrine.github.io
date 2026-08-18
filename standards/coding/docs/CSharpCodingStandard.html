@@ -37,8 +37,9 @@
       </a>
       <nav class="nav desktop-only main-nav" aria-label="Navigation principale">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
@@ -67,53 +68,140 @@
       </div>
       <nav class="nav" aria-label="Navigation mobile">
         <a data-nav href="/index.html">Accueil</a>
-        <a data-nav href="/standards/documentation/index.html">Documentation</a>
+        <a data-nav href="/standards/documentation/index.html">Standards docs</a>
         <a data-nav href="/standards/coding/index.html">Codage</a>
+        <a data-nav href="/docs/index.html">Projets</a>
         <a href="/downloads/GalacticShrine-DocStandards-Harmonized-v1.2.0.zip">ZIP Documentation</a>
         <a href="/downloads/GalacticShrine-CodingStandards-v1.0.0.zip">ZIP Codage</a>
       </nav>
     </div>
   </header>
   <main>
-    <section class="section page-header compact-header">
+    <section class="page-hero">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Codage · 1.0.0</div>
-        <h1>Galactic-Shrine C# Coding Standard</h1>
-        <p class="lead">Ce standard définit la manière d’écrire le code **C#** dans les projets Galactic-Shrine.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button" href="/standards/coding/files/CSharpCodingStandard.md">Markdown source</a>
-        <a class="button button-primary" href="../index.html">Retour à la section</a>
-      </div>
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a>
+      <span>›</span>
+      <a href="/standards/coding/index.html">Standards de codage</a>
+      <span>›</span>
+      <span>Galactic-Shrine C# Coding Standard</span>
     </div>
-    
+
+    <div class="kicker">Codage • CSharpCodingStandard.md</div>
+    <h1 class="page-title">Galactic-Shrine C# Coding Standard</h1>
+    <p class="page-intro">Ce standard définit la manière d’écrire le code **C#** dans les projets Galactic-Shrine.</p>
+
     <div class="tag-list">
-      <span class="tag">C#</span><span class="tag">Codage</span><span class="tag">Projets C#</span><span class="tag">.NET</span><span class="tag">Class Libraries</span><span class="tag">SDKs</span>
+      <span class="tag">Version 1.0.0</span>
+      
+        
+          <span class="tag">C#</span>
+        
+          <span class="tag">Codage</span>
+        
+          <span class="tag">Projets C#</span>
+        
+          <span class="tag">.NET</span>
+        
+          <span class="tag">Class Libraries</span>
+        
+          
+        
+      
     </div>
-    
   </div>
 </section>
-<section class="section">
-  <div class="container grid-2 standard-layout-grid">
-    <aside class="aside-card toc-card">
-      <div class="eyebrow">Portée</div>
-      <p>Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</p>
-      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
-      <ul class="footer-links">
-        <li><a href="/standards/coding/files/CSharpCodingStandard.md">Markdown brut</a></li>
-        <li><a href="/standards/coding/index.html">Index codage</a></li>
-        <li><a href="/search/index.html">Recherche globale</a></li>
-      </ul>
+
+<section class="section" style="padding-top:0;">
+  <div class="container viewer-layout">
+    <aside class="sidebar-card" aria-label="Navigation du standard">
+      
+      
+        <div class="eyebrow">Sommaire</div>
+        <ul class="toc-list">
+          
+            <li class="lvl-2"><a href="#1-objectif">1. Objectif</a></li>
+          
+            <li class="lvl-2"><a href="#2-principes-generaux">2. Principes généraux</a></li>
+          
+            <li class="lvl-2"><a href="#3-decisions-officielles-galactic-shrine-pour-c">3. Décisions officielles Galactic-Shrine pour C#</a></li>
+          
+            <li class="lvl-2"><a href="#4-convention-de-nommage">4. Convention de nommage</a></li>
+          
+            <li class="lvl-2"><a href="#5-structure-recommandee-d-un-fichier-c">5. Structure recommandée d’un fichier C#</a></li>
+          
+            <li class="lvl-2"><a href="#6-style-d-ecriture">6. Style d’écriture</a></li>
+          
+            <li class="lvl-3"><a href="#6-1-accolades-et-blocs">6.1 Accolades et blocs</a></li>
+          
+            <li class="lvl-3"><a href="#6-2-retours-anticipes">6.2 Retours anticipés</a></li>
+          
+            <li class="lvl-3"><a href="#6-3-linq">6.3 LINQ</a></li>
+          
+            <li class="lvl-3"><a href="#6-4-var">6.4 var</a></li>
+          
+            <li class="lvl-3"><a href="#6-5-async-await">6.5 async/await</a></li>
+          
+            <li class="lvl-2"><a href="#7-regles-specifiques-c">7. Règles spécifiques C#</a></li>
+          
+            <li class="lvl-2"><a href="#8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</a></li>
+          
+            <li class="lvl-2"><a href="#9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</a></li>
+          
+            <li class="lvl-2"><a href="#10-exemple-complet-recommande">10. Exemple complet recommandé</a></li>
+          
+            <li class="lvl-2"><a href="#11-decision-officielle-recommandee">11. Décision officielle recommandée</a></li>
+          
+            <li class="lvl-2"><a href="#12-resume-executable">12. Résumé exécutable</a></li>
+          
+        </ul>
+      
+
+      <div class="eyebrow" style="margin-top:1rem;">Dans cette section</div>
+      <nav>
+        
+        
+          <a class="active" aria-current="page" href="/standards/coding/docs/CSharpCodingStandard.html">Galactic-Shrine C# Coding Standard</a>
+        
+          <a href="/standards/coding/docs/CppCodingStandard.html">Galactic-Shrine C++ Coding Standard</a>
+        
+          <a href="/standards/coding/docs/GalacticShrineCodingStandard.html">Galactic-Shrine Coding Standard</a>
+        
+          <a href="/standards/coding/docs/HtmlCodingStandard.html">Galactic-Shrine HTML Coding Standard</a>
+        
+          <a href="/standards/coding/docs/JsCodingStandard.html">Galactic-Shrine JavaScript Coding Standard</a>
+        
+          <a href="/standards/coding/docs/PhpCodingStandard.html">Galactic-Shrine PHP Coding Standard</a>
+        
+          <a href="/standards/coding/docs/ScssCodingStandard.html">Galactic-Shrine SCSS Coding Standard</a>
+        
+          <a href="/standards/coding/docs/TwigCodingStandard.html">Galactic-Shrine Twig Coding Standard</a>
+        
+      </nav>
     </aside>
-    <article class="doc-markdown standard-markdown">
-      <h1>Galactic-Shrine C# Coding Standard</h1>
+
+    <article class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <div class="eyebrow">Fichier source</div>
+          <div class="quick-links">
+            <a class="button small button-primary" href="/standards/coding/files/CSharpCodingStandard.md">Télécharger le Markdown</a>
+            <a class="button small" href="/search/index.html">Recherche globale</a>
+          </div>
+        </div>
+        <div class="tag-list">
+          <span class="tag">Standards de codage</span>
+          <span class="tag">Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</span>
+        </div>
+      </div>
+
+      <div class="viewer-body">
+        <h1 id="galactic-shrine-c-coding-standard">Galactic-Shrine C# Coding Standard</h1>
 <p><strong>Version:</strong> 1.0.0<br>
 <strong>Auteur / Author:</strong> ⋞Galactic-Shrine⋟<br>
 <strong>Portée / Scope:</strong> Projets C# / .NET / Class Libraries / SDKs / CLI / Applications Desktop / APIs / Services / Tooling</p>
 <hr>
-<h2>1. Objectif</h2>
+<h2 id="1-objectif">1. Objectif</h2>
 <p>Ce standard définit la manière d’écrire le code <strong>C#</strong> dans les projets Galactic-Shrine.</p>
 <p>Il a pour objectifs :</p>
 <ul>
@@ -123,7 +211,7 @@
 <li>de garder un code compatible avec un usage industriel et maintenable.</li>
 </ul>
 <hr>
-<h2>2. Principes généraux</h2>
+<h2 id="2-principes-generaux">2. Principes généraux</h2>
 <p>Le code C# Galactic-Shrine doit être :</p>
 <ul>
 <li>lisible ;</li>
@@ -141,7 +229,7 @@
 <li>des exceptions réservées aux erreurs réellement exceptionnelles ou contractuelles.</li>
 </ul>
 <hr>
-<h2>3. Décisions officielles Galactic-Shrine pour C#</h2>
+<h2 id="3-decisions-officielles-galactic-shrine-pour-c">3. Décisions officielles Galactic-Shrine pour C#</h2>
 <p>Décisions officielles :</p>
 <ul>
 <li><strong>propriétés</strong> en <code>PascalCase</code> ;</li>
@@ -174,7 +262,7 @@
 }
 </code></pre>
 <hr>
-<h2>4. Convention de nommage</h2>
+<h2 id="4-convention-de-nommage">4. Convention de nommage</h2>
 <ul>
 <li>namespace : stable, hiérarchique, orienté domaine ou couche ;</li>
 <li>classe / record / struct / enum : <code>PascalCase</code> ;</li>
@@ -194,7 +282,7 @@
 <li>des suffixes artificiels partout.</li>
 </ul>
 <hr>
-<h2>5. Structure recommandée d’un fichier C#</h2>
+<h2 id="5-structure-recommandee-d-un-fichier-c">5. Structure recommandée d’un fichier C#</h2>
 <p>Ordre recommandé :</p>
 <ol>
 <li>en-tête légal si requis ;</li>
@@ -222,18 +310,18 @@
 <li>des méthodes privées éparpillées sans ordre.</li>
 </ul>
 <hr>
-<h2>6. Style d’écriture</h2>
-<h3>6.1 Accolades et blocs</h3>
+<h2 id="6-style-d-ecriture">6. Style d’écriture</h2>
+<h3 id="6-1-accolades-et-blocs">6.1 Accolades et blocs</h3>
 <p>Toujours utiliser des blocs explicites pour <code>if</code>, <code>else</code>, <code>for</code>, <code>foreach</code>, <code>while</code>, <code>using</code>, sauf cas ultra-triviaux validés par le projet.</p>
-<h3>6.2 Retours anticipés</h3>
+<h3 id="6-2-retours-anticipes">6.2 Retours anticipés</h3>
 <p>Préférer un retour anticipé lorsqu’il réduit l’imbrication et clarifie le contrat.</p>
-<h3>6.3 LINQ</h3>
+<h3 id="6-3-linq">6.3 LINQ</h3>
 <p>Utiliser LINQ lorsqu’il améliore clairement la lecture.<br>
 Éviter les chaînes LINQ trop denses ou difficiles à déboguer.</p>
-<h3>6.4 <code>var</code></h3>
+<h3 id="6-4-var">6.4 <code>var</code></h3>
 <p>Utiliser <code>var</code> lorsque le type est évident à la lecture immédiate.<br>
 Sinon, préférer le type explicite.</p>
-<h3>6.5 <code>async/await</code></h3>
+<h3 id="6-5-async-await">6.5 <code>async/await</code></h3>
 <ul>
 <li>suffixer les méthodes asynchrones par <code>Async</code> ;</li>
 <li>propager <code>CancellationToken</code> lorsque pertinent ;</li>
@@ -241,7 +329,7 @@ Sinon, préférer le type explicite.</p>
 <li>ne pas bloquer artificiellement sur du code asynchrone.</li>
 </ul>
 <hr>
-<h2>7. Règles spécifiques C#</h2>
+<h2 id="7-regles-specifiques-c">7. Règles spécifiques C#</h2>
 <ul>
 <li>utiliser <code>ArgumentNullException.ThrowIfNull(...)</code> aux frontières appropriées ;</li>
 <li>marquer <code>sealed</code> lorsqu’un type n’a pas vocation à être hérité ;</li>
@@ -253,7 +341,7 @@ Sinon, préférer le type explicite.</p>
 <li>rester prudent avec la réflexion, le <code>dynamic</code> et les conversions implicites coûteuses.</li>
 </ul>
 <hr>
-<h2>8. Gestion des erreurs et robustesse</h2>
+<h2 id="8-gestion-des-erreurs-et-robustesse">8. Gestion des erreurs et robustesse</h2>
 <ul>
 <li>lancer des exceptions avec un message exploitable ;</li>
 <li>ne pas avaler une exception sans traitement ou journalisation pertinente ;</li>
@@ -262,7 +350,7 @@ Sinon, préférer le type explicite.</p>
 <li>séparer les validations d’entrée, les erreurs métier et les erreurs d’infrastructure.</li>
 </ul>
 <hr>
-<h2>9. Types d’éléments à revoir en priorité</h2>
+<h2 id="9-types-d-elements-a-revoir-en-priorite">9. Types d’éléments à revoir en priorité</h2>
 <p>Relire en priorité :</p>
 <ul>
 <li>services applicatifs ;</li>
@@ -275,7 +363,7 @@ Sinon, préférer le type explicite.</p>
 <li>utilitaires partagés.</li>
 </ul>
 <hr>
-<h2>10. Exemple complet recommandé</h2>
+<h2 id="10-exemple-complet-recommande">10. Exemple complet recommandé</h2>
 <pre><code class="language-csharp">namespace GalacticShrine.Users;
 
 public sealed class UserProfileService
@@ -322,7 +410,7 @@ public sealed class UserProfileService
 }
 </code></pre>
 <hr>
-<h2>11. Décision officielle recommandée</h2>
+<h2 id="11-decision-officielle-recommandee">11. Décision officielle recommandée</h2>
 <p>Standard officiel recommandé pour Galactic-Shrine C# :</p>
 <ul>
 <li>utiliser <code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
@@ -333,7 +421,7 @@ public sealed class UserProfileService
 <li>utiliser <code>Async</code> pour les méthodes asynchrones.</li>
 </ul>
 <hr>
-<h2>12. Résumé exécutable</h2>
+<h2 id="12-resume-executable">12. Résumé exécutable</h2>
 <p>À appliquer dans tous les projets C# Galactic-Shrine :</p>
 <ul>
 <li><code>PascalCase</code> pour propriétés, paramètres, méthodes et variables locales ;</li>
@@ -345,6 +433,7 @@ public sealed class UserProfileService
 <li>pas de classes “god object”.</li>
 </ul>
 
+      </div>
     </article>
   </div>
 </section>

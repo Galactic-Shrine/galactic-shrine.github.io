@@ -1,3 +1,4 @@
+
 [
   {
     "title": "Galactic-Shrine C# Documentation Standard",
@@ -330,5 +331,405 @@
     "htmlPath": "/roadmap/index.html",
     "rawPath": "",
     "rawLabel": ""
+  },
+  {
+    "title": "Reference API C++",
+    "summary": "Reference de l API publique exposee par GalacticShrine.GsId.Cpp.",
+    "scope": "gsid/cpp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "cpp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/cpp/api/",
+    "rawPath": null
+  },
+  {
+    "title": "Configuration C++",
+    "summary": "",
+    "scope": "gsid/cpp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "cpp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/cpp/configuration/",
+    "rawPath": null
+  },
+  {
+    "title": "Exemples C++",
+    "summary": "",
+    "scope": "gsid/cpp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "cpp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/cpp/examples/",
+    "rawPath": null
+  },
+  {
+    "title": "Installation C++",
+    "summary": "Compiler, tester et installer GalacticShrine.GsId.Cpp avec CMake.",
+    "scope": "gsid/cpp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "cpp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/cpp/",
+    "rawPath": null
+  },
+  {
+    "title": "Utilisation C++",
+    "summary": "",
+    "scope": "gsid/cpp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "cpp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/cpp/usage/",
+    "rawPath": null
+  },
+  {
+    "title": "Reference API C#",
+    "summary": "Reference des types publics de GalacticShrine.GsId pour .NET 8.",
+    "scope": "gsid/csharp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "csharp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/csharp/api/",
+    "rawPath": null
+  },
+  {
+    "title": "Configuration C#",
+    "summary": "",
+    "scope": "gsid/csharp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "csharp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/csharp/configuration/",
+    "rawPath": null
+  },
+  {
+    "title": "Exemples C#",
+    "summary": "",
+    "scope": "gsid/csharp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "csharp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/csharp/examples/",
+    "rawPath": null
+  },
+  {
+    "title": "Installation C#",
+    "summary": "Préparer une application .NET 8 pour utiliser GalacticShrine.GsId.",
+    "scope": "gsid/csharp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "csharp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/csharp/",
+    "rawPath": null
+  },
+  {
+    "title": "Utilisation C#",
+    "summary": "",
+    "scope": "gsid/csharp",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "csharp"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/csharp/usage/",
+    "rawPath": null
+  },
+  {
+    "title": "⋞Galactic-Shrine⋟ GsId",
+    "summary": "Identifiant Galactic-Shrine 256 bits et ses implémentations officielles.",
+    "scope": "gsid",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/",
+    "rawPath": null
+  },
+  {
+    "title": "Reference API PHP",
+    "summary": "Reference de l API PHP pure exposee par galactic-shrine/gsid.",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/api/",
+    "rawPath": null
+  },
+  {
+    "title": "Configuration PHP",
+    "summary": "",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/configuration/",
+    "rawPath": null
+  },
+  {
+    "title": "Exemples PHP",
+    "summary": "",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/examples/",
+    "rawPath": null
+  },
+  {
+    "title": "Installation PHP",
+    "summary": "Installer le package galactic-shrine/gsid dans une application PHP 8.1+.",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/",
+    "rawPath": null
+  },
+  {
+    "title": "Symfony et Doctrine",
+    "summary": "",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/symfony-doctrine/",
+    "rawPath": null
+  },
+  {
+    "title": "Utilisation PHP",
+    "summary": "",
+    "scope": "gsid/php",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "php"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/php/usage/",
+    "rawPath": null
+  },
+  {
+    "title": "Specification GsId",
+    "summary": "Regles communes de representation, parsing, validation et interoperabilite du GsId 256 bits.",
+    "scope": "gsid",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/specification/",
+    "rawPath": null
+  },
+  {
+    "title": "Reference API Unreal Engine",
+    "summary": "Reference des APIs FGsId, serialization, reseau et Blueprint.",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/api/",
+    "rawPath": null
+  },
+  {
+    "title": "Configuration Unreal Engine",
+    "summary": "",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/configuration/",
+    "rawPath": null
+  },
+  {
+    "title": "C++ et Blueprint",
+    "summary": "",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/cpp-blueprint/",
+    "rawPath": null
+  },
+  {
+    "title": "Exemples Unreal Engine",
+    "summary": "",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/examples/",
+    "rawPath": null
+  },
+  {
+    "title": "Installation Unreal Engine",
+    "summary": "Installer le plugin GsId dans un projet Unreal Engine 5.8.",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/",
+    "rawPath": null
+  },
+  {
+    "title": "Utilisation Unreal Engine",
+    "summary": "",
+    "scope": "gsid/unreal",
+    "version": null,
+    "tags": [
+      "Projet",
+      "gsid",
+      "unreal"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/gsid/unreal/usage/",
+    "rawPath": null
+  },
+  {
+    "title": "Architecture documentaire",
+    "summary": "Organisation des sources locales, des fournisseurs de métadonnées et du build Eleventy.",
+    "scope": "galactic-shrine-docs",
+    "version": null,
+    "tags": [
+      "Projet",
+      "galactic-shrine-docs"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/portal/architecture.html",
+    "rawPath": null
+  },
+  {
+    "title": "Portail Galactic-Shrine",
+    "summary": "Fonctionnement du portail documentaire centralisé Galactic-Shrine.",
+    "scope": "galactic-shrine-docs",
+    "version": null,
+    "tags": [
+      "Projet",
+      "galactic-shrine-docs"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/portal/",
+    "rawPath": null
+  },
+  {
+    "title": "Métadonnées GitHub",
+    "summary": "Mise à jour facultative des informations GitHub utilisées par le portail.",
+    "scope": "galactic-shrine-docs",
+    "version": null,
+    "tags": [
+      "Projet",
+      "galactic-shrine-docs"
+    ],
+    "category": "project",
+    "categoryLabel": "Projet",
+    "htmlPath": "/docs/portal/metadata.html",
+    "rawPath": null
   }
 ]
