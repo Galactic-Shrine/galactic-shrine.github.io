@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // ==========================================================================
 // _variables.scss
 // ==========================================================================
@@ -138,36 +140,36 @@ $theme-light: (
 // ==========================================================================
 
 @mixin apply-theme($theme) {
-  --bg: #{map-get($theme, bg)};
-  --bg-2: #{map-get($theme, bg-2)};
-  --header: #{map-get($theme, header)};
-  --panel: #{map-get($theme, panel)};
-  --panel-strong: #{map-get($theme, panel-strong)};
-  --panel-soft: #{map-get($theme, panel-soft)};
+  --bg: #{map.get($theme, bg)};
+  --bg-2: #{map.get($theme, bg-2)};
+  --header: #{map.get($theme, header)};
+  --panel: #{map.get($theme, panel)};
+  --panel-strong: #{map.get($theme, panel-strong)};
+  --panel-soft: #{map.get($theme, panel-soft)};
 
-  --text: #{map-get($theme, text)};
-  --muted: #{map-get($theme, muted)};
-  --muted-2: #{map-get($theme, muted-2)};
+  --text: #{map.get($theme, text)};
+  --muted: #{map.get($theme, muted)};
+  --muted-2: #{map.get($theme, muted-2)};
 
-  --line: #{map-get($theme, line)};
-  --line-strong: #{map-get($theme, line-strong)};
+  --line: #{map.get($theme, line)};
+  --line-strong: #{map.get($theme, line-strong)};
 
-  --accent: #{map-get($theme, accent)};
-  --accent-2: #{map-get($theme, accent-2)};
-  --accent-3: #{map-get($theme, accent-3)};
-  --accent-soft: #{map-get($theme, accent-soft)};
+  --accent: #{map.get($theme, accent)};
+  --accent-2: #{map.get($theme, accent-2)};
+  --accent-3: #{map.get($theme, accent-3)};
+  --accent-soft: #{map.get($theme, accent-soft)};
 
-  --ok: #{map-get($theme, ok)};
-  --warning: #{map-get($theme, warning)};
+  --ok: #{map.get($theme, ok)};
+  --warning: #{map.get($theme, warning)};
 
-  --shadow: #{map-get($theme, shadow)};
+  --shadow: #{map.get($theme, shadow)};
 
-  --header-2: #{map-get($theme, header-2)};
-  --brand-warm-1: #{map-get($theme, brand-warm-1)};
-  --brand-warm-2: #{map-get($theme, brand-warm-2)};
-  --brand-warm-3: #{map-get($theme, brand-warm-3)};
-  --brand-cold-1: #{map-get($theme, brand-cold-1)};
-  --brand-cold-2: #{map-get($theme, brand-cold-2)};
+  --header-2: #{map.get($theme, header-2)};
+  --brand-warm-1: #{map.get($theme, brand-warm-1)};
+  --brand-warm-2: #{map.get($theme, brand-warm-2)};
+  --brand-warm-3: #{map.get($theme, brand-warm-3)};
+  --brand-cold-1: #{map.get($theme, brand-cold-1)};
+  --brand-cold-2: #{map.get($theme, brand-cold-2)};
 }
 
 // ==========================================================================

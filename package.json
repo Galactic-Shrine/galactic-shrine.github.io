@@ -10,9 +10,15 @@
   "packageManager": "npm@10",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "refresh:metadata": "node scripts/refresh-github-metadata.js",
+    "build:metadata": "npm run refresh:metadata && npm run build",
+    "styles": "sass src/assets/scss/site.scss src/assets/css/site.css --style=expanded --no-source-map",
+    "predev": "npm run styles",
+    "prebuild": "npm run styles"
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.1.2"
+    "@11ty/eleventy": "3.1.2",
+    "sass": "1.90.0"
   }
 }

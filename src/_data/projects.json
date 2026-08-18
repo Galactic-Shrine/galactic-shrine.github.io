@@ -1,0 +1,73 @@
+[
+  {
+    "id": "galactic-shrine-docs",
+    "name": "Portail Galactic-Shrine",
+    "type": "portal",
+    "description": "Portail central de documentation et de standards Galactic-Shrine.",
+    "repository": {
+      "provider": "github",
+      "owner": "Galactic-Shrine",
+      "repo": "galactic-shrine.github.io"
+    },
+    "documentation": {
+      "enabled": true,
+      "baseUrl": "/docs/portal/"
+    }
+  },
+  {
+    "id": "gsid",
+    "name": "⋞Galactic-Shrine⋟ GsId",
+    "type": "project",
+    "description": "Identifiant Galactic-Shrine de 256 bits avec plusieurs implémentations compatibles entre elles.",
+    "documentation": {
+      "enabled": true,
+      "baseUrl": "/docs/gsid/"
+    },
+    "implementations": [
+      {
+        "id": "cpp",
+        "name": "C++",
+        "description": "Implémentation C++20 native.",
+        "repository": {
+          "provider": "github",
+          "owner": "Galactic-Shrine",
+          "repo": "GalacticShrine.GsId.Cpp"
+        },
+        "docsUrl": "/docs/gsid/cpp/"
+      },
+      {
+        "id": "csharp",
+        "name": "C#",
+        "description": "Implémentation .NET 8.",
+        "repository": {
+          "provider": "github",
+          "owner": "Galactic-Shrine",
+          "repo": "CSharp-GalacticShrine.GsId"
+        },
+        "docsUrl": "/docs/gsid/csharp/"
+      },
+      {
+        "id": "php",
+        "name": "PHP",
+        "description": "Implémentation PHP 8.1+ avec Symfony et Doctrine.",
+        "repository": {
+          "provider": "github",
+          "owner": "Galactic-Shrine",
+          "repo": "Php-GalacticShrine.GsId"
+        },
+        "docsUrl": "/docs/gsid/php/"
+      },
+      {
+        "id": "unreal",
+        "name": "Unreal Engine",
+        "description": "Plugin Unreal Engine avec C++ et Blueprint.",
+        "repository": {
+          "provider": "github",
+          "owner": "Galactic-Shrine",
+          "repo": "Unreal-GalacticShrine.GsId"
+        },
+        "docsUrl": "/docs/gsid/unreal/"
+      }
+    ]
+  }
+]

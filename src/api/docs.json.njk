@@ -1,0 +1,16 @@
+---
+permalink: /api/docs.json
+---
+[
+{% set docs = collections.projectDocs | sortByOrder %}
+{% for item in docs %}
+  {
+    "projectId": {{ item.data.projectId | json | safe }},
+    "implementationId": {% if item.data.implementationId %}{{ item.data.implementationId | json | safe }}{% else %}null{% endif %},
+    "title": {{ item.data.title | json | safe }},
+    "summary": {% if item.data.summary %}{{ item.data.summary | json | safe }}{% else %}""{% endif %},
+    "url": {{ item.url | json | safe }},
+    "order": {{ item.data.order | json | safe }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}
+]

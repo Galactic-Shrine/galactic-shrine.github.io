@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Documentation des projets
+permalink: /docs/index.html
+---
+<section class="section page-header compact-header">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Hub documentaire</div>
+        <h1>Documentation des projets</h1>
+        <p class="lead">La documentation reste centralisée dans ce portail. Les APIs externes servent uniquement à enrichir les métadonnées des projets et de leurs implémentations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {% for item in projects %}
+        {% set project = projectCatalog[item.id] %}
+        {% if item.documentation and item.documentation.enabled %}
+          <article class="doc-card">
+            <div class="doc-meta">
+              <span class="badge badge-accent">{{ item.type }}</span>
+              {% if project.metadata.latestRelease %}<span class="badge">{{ project.metadata.latestRelease.tag }}</span>{% endif %}
+            </div>
+            <h3><a href="{{ item.documentation.baseUrl }}">{{ item.name }}</a></h3>
+            <p class="summary">{{ item.description }}</p>
+            <div class="tag-list">
+              <span class="tag">Docs locales</span>
+              {% if item.implementations and item.implementations.length %}
+                {% for implementation in item.implementations %}<span class="tag">{{ implementation.name }}</span>{% endfor %}
+              {% elif item.repository and item.repository.provider %}
+                <span class="tag">Métadonnées {{ item.repository.provider }}</span>
+              {% endif %}
+            </div>
+            <div class="card-actions">
+              <a class="button small button-primary" href="{{ item.documentation.baseUrl }}">Lire</a>
+              {% if project.metadata.repositoryUrl %}<a class="button small" href="{{ project.metadata.repositoryUrl }}" target="_blank" rel="noreferrer">GitHub</a>{% endif %}
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

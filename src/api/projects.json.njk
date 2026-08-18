@@ -1,0 +1,36 @@
+---
+permalink: /api/projects.json
+---
+[
+{% for item in projects %}
+  {% set project = projectCatalog[item.id] %}
+  {
+    "id": {{ item.id | json | safe }},
+    "name": {{ item.name | json | safe }},
+    "type": {{ item.type | json | safe }},
+    "description": {{ item.description | json | safe }},
+    "docs": {{ item.documentation.baseUrl | json | safe }},
+    "repository": {{ project.metadata.repositoryUrl | json | safe }},
+    "defaultBranch": {{ project.metadata.defaultBranch | json | safe }},
+    "latestRelease": {{ project.metadata.latestRelease | json | safe }},
+    "metadataRefreshedAt": {{ project.metadata.refreshedAt | json | safe }},
+    "implementations": [
+      {% if item.implementations %}
+        {% for impl in item.implementations %}
+          {% set implementation = project.implementationCatalog[impl.id] %}
+          {
+            "id": {{ impl.id | json | safe }},
+            "name": {{ impl.name | json | safe }},
+            "description": {{ impl.description | json | safe }},
+            "docs": {{ impl.docsUrl | json | safe }},
+            "repository": {{ implementation.metadata.repositoryUrl | json | safe }},
+            "defaultBranch": {{ implementation.metadata.defaultBranch | json | safe }},
+            "latestRelease": {{ implementation.metadata.latestRelease | json | safe }},
+            "metadataRefreshedAt": {{ implementation.metadata.refreshedAt | json | safe }}
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      {% endif %}
+    ]
+  }{% if not loop.last %},{% endif %}
+{% endfor %}
+]

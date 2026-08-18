@@ -303,6 +303,11 @@
   gap: 0.75rem;
 }
 
+/* Sommaire plus compact que les autres listes. */
+.toc-list {
+  gap: 0.25rem;
+}
+
 .check-list li,
 .link-list li,
 .plain-list li {
@@ -526,6 +531,8 @@
   a {
     color: var(--muted);
     display: block;
+    padding: 0.25rem 0.5rem;
+    line-height: 1.35;
 
     &:hover {
       color: var(--text);
@@ -534,6 +541,11 @@
 
   .lvl-3 {
     padding-left: 0.7rem;
+
+    a {
+      padding-top: 0.15rem;
+      padding-bottom: 0.15rem;
+    }
   }
 
   .lvl-4 {
@@ -845,5 +857,199 @@ html[data-theme="light"] {
 
   .viewer-shell {
     padding: 1rem;
+  }
+}
+
+/* Compact documentation table of contents */
+.sidebar-card .toc-list {
+  gap: 0.1rem;
+}
+
+.sidebar-card .toc-list li {
+  margin: 0;
+}
+
+.sidebar-card .toc-list a {
+  padding-top: 0.12rem;
+  padding-bottom: 0.12rem;
+  line-height: 1.25;
+}
+
+.sidebar-card .toc-list .lvl-3 a {
+  padding-top: 0.08rem;
+  padding-bottom: 0.08rem;
+}
+
+/* GitHub repository links */
+.github-button {
+  inline-size: 38px;
+  block-size: 38px;
+  min-inline-size: 38px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text);
+
+  svg.github-icon {
+    display: block;
+    inline-size: 20px !important;
+    block-size: 20px !important;
+    min-inline-size: 20px;
+    min-block-size: 20px;
+    max-inline-size: 20px;
+    max-block-size: 20px;
+    flex: 0 0 20px;
+    overflow: visible;
+  }
+}
+
+.github-table-link {
+  inline-size: 36px;
+  block-size: 36px;
+  min-inline-size: 36px;
+  min-block-size: 36px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  vertical-align: middle;
+  line-height: 1;
+  color: var(--text);
+  text-decoration: none;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  svg.github-icon {
+    display: block;
+    inline-size: 20px !important;
+    block-size: 20px !important;
+    min-inline-size: 20px;
+    min-block-size: 20px;
+    max-inline-size: 20px;
+    max-block-size: 20px;
+    flex: 0 0 20px;
+    overflow: visible;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+  }
+}
+
+/* Project documentation sidebar accordion */
+.project-nav-group {
+  margin-top: 0.7rem;
+
+  & + & {
+    margin-top: 0.45rem;
+  }
+}
+
+.project-nav-toggle {
+  width: 100%;
+  min-height: 34px;
+  padding: 0.35rem 0.65rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted-2);
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text);
+    background: rgba($white, 0.055);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.project-nav-chevron {
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.project-nav-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 220ms ease,
+    opacity 180ms ease,
+    visibility 0s linear 220ms;
+
+  .project-nav-panel-inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    margin-top: 0.12rem;
+  }
+}
+
+.project-nav-group.is-open {
+  .project-nav-toggle {
+    color: var(--text);
+  }
+
+  .project-nav-chevron {
+    transform: rotate(90deg);
+  }
+
+  .project-nav-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      grid-template-rows 220ms ease,
+      opacity 180ms ease,
+      visibility 0s linear 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-nav-toggle,
+  .project-nav-chevron,
+  .project-nav-panel {
+    transition: none;
   }
 }

@@ -1,40 +1,71 @@
 ---
 layout: layouts/base.njk
 ---
-<section class="section page-header compact-header">
+<section class="page-hero">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">{{ categoryLabel }} · {{ version }}</div>
-        <h1>{{ title }}</h1>
-        {% if summary %}<p class="lead">{{ summary }}</p>{% endif %}
-      </div>
-      <div class="card-actions">
-        {% if rawPath %}<a class="button" href="{{ rawPath }}">Markdown source</a>{% endif %}
-        <a class="button button-primary" href="../index.html">Retour à la section</a>
-      </div>
+    <div class="breadcrumbs">
+      <a href="/index.html">Accueil</a>
+      <span>›</span>
+      <a href="/standards/{{ category }}/index.html">Standards de {{ categoryLabel | lower }}</a>
+      <span>›</span>
+      <span>{{ title }}</span>
     </div>
-    {% if tags and tags.length %}
+
+    <div class="kicker">{{ categoryLabel }}{% if rawPath %} • {{ rawPath | basename }}{% endif %}</div>
+    <h1 class="page-title">{{ title }}</h1>
+    {% if summary %}<p class="page-intro">{{ summary }}</p>{% endif %}
+
     <div class="tag-list">
-      {% for tag in tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      <span class="tag">Version {{ version }}</span>
+      {% if tags and tags.length %}
+        {% for tag in tags %}
+          {% if loop.index0 < 5 %}<span class="tag">{{ tag }}</span>{% endif %}
+        {% endfor %}
+      {% endif %}
     </div>
-    {% endif %}
   </div>
 </section>
-<section class="section">
-  <div class="container grid-2 standard-layout-grid">
-    <aside class="aside-card toc-card">
-      <div class="eyebrow">Portée</div>
-      <p>{{ scope }}</p>
-      <div class="eyebrow" style="margin-top:1rem;">Accès</div>
-      <ul class="footer-links">
-        <li><a href="{{ rawPath }}">Markdown brut</a></li>
-        <li><a href="/standards/{{ category }}/index.html">Index {{ categoryLabel | lower }}</a></li>
-        <li><a href="/search/index.html">Recherche globale</a></li>
-      </ul>
+
+<section class="section" style="padding-top:0;">
+  <div class="container viewer-layout">
+    <aside class="sidebar-card" aria-label="Navigation du standard">
+      {% set tocItems = content | extractHeadings %}
+      {% if tocItems.length %}
+        <div class="eyebrow">Sommaire</div>
+        <ul class="toc-list">
+          {% for heading in tocItems %}
+            <li class="lvl-{{ heading.level }}"><a href="#{{ heading.id }}">{{ heading.text | safe }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <div class="eyebrow"{% if tocItems.length %} style="margin-top:1rem;"{% endif %}>Dans cette section</div>
+      <nav>
+        {% set sectionItems = standards | whereCategory(category) %}
+        {% for item in sectionItems %}
+          <a{% if item.htmlPath == page.url %} class="active" aria-current="page"{% endif %} href="{{ item.htmlPath }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
     </aside>
-    <article class="doc-markdown standard-markdown">
-      {{ content | safe }}
+
+    <article class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <div class="eyebrow">Fichier source</div>
+          <div class="quick-links">
+            {% if rawPath %}<a class="button small button-primary" href="{{ rawPath }}">Télécharger le Markdown</a>{% endif %}
+            <a class="button small" href="/search/index.html">Recherche globale</a>
+          </div>
+        </div>
+        <div class="tag-list">
+          <span class="tag">Standards de {{ categoryLabel | lower }}</span>
+          {% if scope %}<span class="tag">{{ scope }}</span>{% endif %}
+        </div>
+      </div>
+
+      <div class="viewer-body">
+        {{ content | safe }}
+      </div>
     </article>
   </div>
 </section>
